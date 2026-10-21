@@ -21,19 +21,36 @@ export function Header() {
 
         <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
           {mainNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isActive(item.href) ? "page" : undefined}
-              className={cn(
-                "border-b-2 py-1 text-[15px] font-medium transition-colors duration-200",
-                isActive(item.href)
-                  ? "border-navy text-navy"
-                  : "border-transparent text-muted hover:text-navy"
-              )}
-            >
-              {item.label}
-            </Link>
+            <div key={item.href} className="group relative">
+              <Link
+                href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={cn(
+                  "inline-block border-b-2 py-1 text-[15px] font-medium transition-colors duration-200",
+                  isActive(item.href)
+                    ? "border-navy text-navy"
+                    : "border-transparent text-muted hover:text-navy"
+                )}
+              >
+                {item.label}
+              </Link>
+              {item.children ? (
+                <div className="invisible absolute -left-4 top-full z-50 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <ul className="min-w-48 rounded-md border border-line bg-white py-2 shadow-lg">
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <Link
+                          href={child.href}
+                          className="block whitespace-nowrap px-4 py-2 text-[15px] text-muted transition-colors hover:bg-mist hover:text-navy"
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           ))}
         </nav>
 
@@ -59,18 +76,30 @@ export function Header() {
         <nav id="mobile-menu" aria-label="Mobile" className="border-t border-line bg-white md:hidden">
           <Container className="flex flex-col py-3">
             {mainNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                aria-current={isActive(item.href) ? "page" : undefined}
-                className={cn(
-                  "border-b border-line py-4 text-lg font-medium",
-                  isActive(item.href) ? "text-navy" : "text-muted"
-                )}
-              >
-                {item.label}
-              </Link>
+              <div key={item.href}>
+                <Link
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={cn(
+                    "block border-b border-line py-4 text-lg font-medium",
+                    isActive(item.href) ? "text-navy" : "text-muted"
+                  )}
+                >
+                  {item.label}
+                </Link>
+                {item.children ? (
+                  <ul className="border-b border-line py-2 pl-4">
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <Link href={child.href} onClick={() => setOpen(false)} className="block py-2 text-base text-muted">
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
             ))}
             <Link href={contactHref} onClick={() => setOpen(false)} className="py-4 text-lg font-medium text-navy">
               Contact us

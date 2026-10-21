@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { aboutSections } from "@/config/navigation";
 import { board, history, overview, team, type Person } from "@/data/about";
 
 export const metadata: Metadata = {
@@ -10,12 +11,6 @@ export const metadata: Metadata = {
   description: "Odyssey Ventures is a Silicon Valley-based education, consulting and startup accelerator company.",
 };
 
-const sections = [
-  { id: "overview", label: "Company Overview" },
-  { id: "history", label: "History" },
-  { id: "board", label: "Board of Directors" },
-  { id: "team", label: "Team" },
-];
 
 function PersonCard({ person }: { person: Person }) {
   return (
@@ -46,10 +41,10 @@ export default function AboutPage() {
           <h1 className="font-semibold tracking-tight text-5xl text-navy sm:text-6xl">About Us</h1>
           <nav aria-label="About Us sections" className="mt-10 border-b border-line">
             <ul className="-mb-px flex gap-8 overflow-x-auto">
-              {sections.map((s) => (
-                <li key={s.id} className="shrink-0">
+              {aboutSections.map((s) => (
+                <li key={s.href} className="shrink-0">
                   <a
-                    href={`#${s.id}`}
+                    href={s.href.slice(s.href.indexOf("#"))}
                     className="inline-block border-b-2 border-transparent py-3 text-[15px] font-medium text-muted transition-colors hover:border-navy hover:text-navy"
                   >
                     {s.label}
