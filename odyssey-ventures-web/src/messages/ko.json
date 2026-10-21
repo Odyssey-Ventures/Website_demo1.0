@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "title": "Odyssey Ventures",
+    "description": "사이트 설명 Placeholder입니다.",
+    "pages": {
+      "academy": {
+        "title": "아카데미",
+        "description": "아카데미 페이지 설명 Placeholder입니다."
+      },
+      "accelerator": {
+        "title": "액셀러레이터",
+        "description": "액셀러레이터 페이지 설명 Placeholder입니다."
+      },
+      "advisory": {
+        "title": "어드바이저리",
+        "description": "어드바이저리 페이지 설명 Placeholder입니다."
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "본문으로 건너뛰기",
+    "homeAria": "Odyssey Ventures 홈",
+    "learnMore": "자세히 보기",
+    "contactUs": "문의하기",
+    "placeholderTag": "Placeholder"
+  },
+  "nav": {
+    "academy": "아카데미",
+    "accelerator": "액셀러레이터",
+    "advisory": "어드바이저리",
+    "contact": "문의",
+    "main": "주요 메뉴",
+    "mobile": "모바일 메뉴",
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기"
+  },
+  "language": {
+    "label": "언어",
+    "switchToKo": "한국어로 전환",
+    "switchToEn": "영어로 전환"
+  },
+  "hero": {
+    "title": "히어로 제목 Placeholder",
+    "description": "히어로 설명 Placeholder입니다. src/messages/ko.json에서 교체해 주세요.",
+    "primaryCta": "주요 버튼",
+    "secondaryCta": "보조 버튼"
+  },
+  "focus": {
+    "items": [
+      {
+        "title": "핵심 영역 1",
+        "text": "간단한 설명 Placeholder입니다."
+      },
+      {
+        "title": "핵심 영역 2",
+        "text": "간단한 설명 Placeholder입니다."
+      },
+      {
+        "title": "핵심 영역 3",
+        "text": "간단한 설명 Placeholder입니다."
+      }
+    ]
+  },
+  "about": {
+    "title": "회사 소개",
+    "description": "회사 소개 설명 Placeholder입니다. 이곳에 회사 소개를 추가하세요.",
+    "imageAlt": "회사 소개 이미지",
+    "points": [
+      "항목 1 Placeholder",
+      "항목 2 Placeholder",
+      "항목 3 Placeholder"
+    ]
+  },
+  "services": {
+    "title": "서비스",
+    "description": "서비스 설명 Placeholder입니다.",
+    "cards": {
+      "academy": {
+        "description": "간단한 설명 Placeholder입니다."
+      },
+      "accelerator": {
+        "description": "간단한 설명 Placeholder입니다."
+      },
+      "advisory": {
+        "description": "간단한 설명 Placeholder입니다."
+      }
+    }
+  },
+  "additional": {
+    "title": "추가 섹션 제목 Placeholder",
+    "description": "프로그램, 파트너십, 성과 등에 사용할 수 있는 재사용 섹션입니다.",
+    "items": [
+      {
+        "title": "콘텐츠 블록 1",
+        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+      },
+      {
+        "title": "콘텐츠 블록 2",
+        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+      },
+      {
+        "title": "콘텐츠 블록 3",
+        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "후기 섹션 제목 Placeholder",
+    "startup": "스타트업",
+    "partner": "파트너",
+    "partnersTitle": "파트너"
+  },
+  "contact": {
+    "title": "문의하기",
+    "description": "문의 안내 Placeholder입니다.",
+    "emailLabel": "이메일",
+    "locationLabel": "위치",
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "company": "회사명",
+      "interest": "관심 분야",
+      "message": "문의 내용",
+      "submit": "이메일로 보내기",
+      "statusIdle": "이메일 앱이 열리고 작성한 내용이 입력된 상태로 표시됩니다.",
+      "statusSent": "이메일 앱이 열렸을 것입니다. 앱에서 전송을 눌러 문의를 완료해 주세요.",
+      "subjectPrefix": "문의",
+      "interests": {
+        "academy": "아카데미",
+        "accelerator": "액셀러레이터",
+        "advisory": "어드바이저리",
+        "other": "기타"
+      }
+    }
+  },
+  "pages": {
+    "academy": {
+      "heroDescription": "아카데미 페이지 배너 설명 Placeholder입니다.",
+      "introTitle": "소개 제목 Placeholder",
+      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
+      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
+      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
+      "contentItems": [
+        {
+          "title": "콘텐츠 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 3",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "additionalTitle": "추가 섹션 제목 Placeholder",
+      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
+      "additionalItems": [
+        {
+          "title": "추가 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "추가 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "ctaTitle": "문의 안내 제목 Placeholder",
+      "ctaDescription": "문의 안내 설명 Placeholder입니다."
+    },
+    "accelerator": {
+      "heroDescription": "액셀러레이터 페이지 배너 설명 Placeholder입니다.",
+      "introTitle": "소개 제목 Placeholder",
+      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
+      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
+      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
+      "contentItems": [
+        {
+          "title": "콘텐츠 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 3",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "additionalTitle": "추가 섹션 제목 Placeholder",
+      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
+      "additionalItems": [
+        {
+          "title": "추가 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "추가 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "ctaTitle": "문의 안내 제목 Placeholder",
+      "ctaDescription": "문의 안내 설명 Placeholder입니다."
+    },
+    "advisory": {
+      "heroDescription": "어드바이저리 페이지 배너 설명 Placeholder입니다.",
+      "introTitle": "소개 제목 Placeholder",
+      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
+      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
+      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
+      "contentItems": [
+        {
+          "title": "콘텐츠 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 3",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "additionalTitle": "추가 섹션 제목 Placeholder",
+      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
+      "additionalItems": [
+        {
+          "title": "추가 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "추가 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "ctaTitle": "문의 안내 제목 Placeholder",
+      "ctaDescription": "문의 안내 설명 Placeholder입니다."
+    }
+  },
+  "footer": {
+    "navTitle": "메뉴",
+    "navLabel": "푸터",
+    "companyInfo": "회사 정보 Placeholder입니다.",
+    "contactTitle": "문의",
+    "contactInfo": "연락처 정보 Placeholder입니다.",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "페이지를 찾을 수 없습니다",
+    "description": "찾으시는 페이지가 없거나 이동되었습니다.",
+    "backHome": "홈으로 돌아가기"
+  }
+}

@@ -1,45 +1,76 @@
-import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { contactHref } from "@/config/navigation";
-import { getService } from "@/data/services";
+import { PageHero } from "@/components/ui/PageHero";
+import { PlaceholderSection } from "@/components/ui/PlaceholderSection";
+import { Reveal } from "@/components/ui/Reveal";
+import { SectionContainer } from "@/components/ui/SectionContainer";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { contactPath } from "@/config/navigation";
+import { localizedHref, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
 import type { ServiceSlug } from "@/types";
 
+interface PlaceholderPageProps {
+  lang: Locale;
+  slug: ServiceSlug;
+  dict: Dictionary;
+}
+
+const accents = { academy: "blue", accelerator: "green", advisory: "navy" } as const;
+
 /**
- * Temporary page body for services whose full page is not built yet.
- * Replace usage in src/app/<service>/page.tsx when the real page is ready.
+ * Shared body for Academy, Accelerator and Advisory:
+ * banner, introduction, content section, additional section and contact call-to-action.
+ * Real content replaces the text in src/messages/*.json; the layout stays the same.
  */
-export function PlaceholderPage({ slug }: { slug: ServiceSlug }) {
-  const service = getService(slug);
+export function PlaceholderPage({ lang, slug, dict }: PlaceholderPageProps) {
+  const page = dict.pages[slug];
 
   return (
-    <section className="py-20 sm:py-28">
-      <Container>
-        <div className="max-w-3xl">
-          <h1 className="font-semibold tracking-tight text-5xl tracking-tight text-navy sm:text-6xl">{service.name}</h1>
-          <p className="mt-3 text-lg font-medium text-navy-600">{service.tagline}</p>
-          <p className="mt-6 text-xl leading-relaxed text-muted">{service.summary}</p>
+    <>
+      <PageHero
+        eyebrow={dict.services.title}
+        title={dict.nav[slug]}
+        description={page.heroDescription}
+        accent={accents[slug]}
+      />
 
-          <ul className="mt-10 divide-y divide-line border-y border-line">
-            {service.highlights.map((item) => (
-              <li key={item} className="py-4 text-lg text-navy">
-                {item}
-              </li>
-            ))}
-          </ul>
+      <SectionContainer containerClassName="grid gap-10 lg:grid-cols-12 lg:gap-16">
+        <Reveal className="lg:col-span-5">
+          <SectionHeading title={page.introTitle} />
+        </Reveal>
+        <Reveal className="lg:col-span-7" delay={120}>
+          <p className="text-lg leading-relaxed text-muted">{page.introText}</p>
+        </Reveal>
+      </SectionContainer>
 
-          <p className="mt-10 rounded-md border border-dashed border-navy/30 p-5 text-muted">
-            The full {service.name} page is the next build step. In the meantime, send us an inquiry and we will reply
-            by email.
-          </p>
+      <PlaceholderSection
+        tone="mist"
+        title={page.contentTitle}
+        description={page.contentDescription}
+        items={page.contentItems}
+        badge={dict.common.placeholderTag}
+        columns={3}
+      />
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href={contactHref}>Contact us</Button>
-            <Button href="/" variant="secondary">
-              Back to home
-            </Button>
-          </div>
-        </div>
-      </Container>
-    </section>
+      <PlaceholderSection
+        title={page.additionalTitle}
+        description={page.additionalDescription}
+        items={page.additionalItems}
+        badge={dict.common.placeholderTag}
+        columns={2}
+      />
+
+      <SectionContainer
+        tone="navy"
+        containerClassName="flex flex-col gap-8 md:flex-row md:items-center md:justify-between"
+      >
+        <SectionHeading title={page.ctaTitle} inverse>
+          {page.ctaDescription}
+        </SectionHeading>
+        <Button href={localizedHref(lang, contactPath)} variant="accent" className="shrink-0">
+          {dict.common.contactUs}
+        </Button>
+      </SectionContainer>
+    </>
   );
 }
