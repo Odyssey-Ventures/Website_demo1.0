@@ -1,51 +1,38 @@
 import Image from "next/image";
-import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionContainer } from "@/components/ui/SectionContainer";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { images } from "@/config/images";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-/**
- * Source: the live site's company description (translated from Korean).
- * Keep these statements factual and verified; do not add numbers or names here.
- */
-const experience = [
-  "Varied business experience in global markets",
-  "Product experience in Silicon Valley",
-  "Experience founding a startup that listed on Nasdaq",
-  "Experience running Silicon Valley training programs and startup mentoring and consulting",
-];
-
-export function About() {
+/** Frame for the company introduction: title, description, a list area and an image. */
+export function About({ dict }: { dict: Dictionary["about"] }) {
   return (
-    <section id="about" className="scroll-mt-20 py-20 sm:py-28">
-      <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <Reveal>
+    <SectionContainer id="about" containerClassName="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <Reveal>
+        <div className="relative">
+          <span aria-hidden="true" className="absolute -bottom-4 -left-4 hidden h-full w-full rounded-lg bg-brand-blue-tint sm:block" />
           <Image
             src={images.instructors.src}
-            alt={images.instructors.alt}
+            alt={dict.imageAlt}
             width={images.instructors.width}
             height={images.instructors.height}
             sizes="(min-width: 1024px) 560px, 100vw"
-            className="aspect-[4/3] w-full rounded-md object-cover"
+            className="relative aspect-[4/3] w-full rounded-lg object-cover shadow-card"
           />
-        </Reveal>
+        </div>
+      </Reveal>
 
-        <Reveal delay={120}>
-          <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-            Led by experts from Silicon Valley
-          </h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted">
-            Our instructors and mentors bring experience from global markets and Silicon Valley, and have worked on the
-            problems your team is facing now.
-          </p>
-          <ul className="mt-8 divide-y divide-line border-y border-line">
-            {experience.map((item) => (
-              <li key={item} className="py-4 text-lg leading-snug">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </Container>
-    </section>
+      <Reveal delay={120}>
+        <SectionHeading title={dict.title}>{dict.description}</SectionHeading>
+        <ul className="mt-8 divide-y divide-line border-y border-line">
+          {dict.points.map((point, index) => (
+            <li key={`${point}-${index}`} className="py-4 text-lg leading-snug">
+              {point}
+            </li>
+          ))}
+        </ul>
+      </Reveal>
+    </SectionContainer>
   );
 }

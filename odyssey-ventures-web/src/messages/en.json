@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "title": "Odyssey Ventures",
+    "description": "Site description placeholder.",
+    "pages": {
+      "academy": {
+        "title": "Academy",
+        "description": "Academy page description placeholder."
+      },
+      "accelerator": {
+        "title": "Accelerator",
+        "description": "Accelerator page description placeholder."
+      },
+      "advisory": {
+        "title": "Advisory",
+        "description": "Advisory page description placeholder."
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "homeAria": "Odyssey Ventures, home",
+    "learnMore": "Learn more",
+    "contactUs": "Contact us",
+    "placeholderTag": "Placeholder"
+  },
+  "nav": {
+    "academy": "Academy",
+    "accelerator": "Accelerator",
+    "advisory": "Advisory",
+    "contact": "Contact",
+    "main": "Main",
+    "mobile": "Mobile",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "language": {
+    "label": "Language",
+    "switchToKo": "Switch to Korean",
+    "switchToEn": "Switch to English"
+  },
+  "hero": {
+    "title": "Hero headline placeholder",
+    "description": "Hero description placeholder. Replace this text in src/messages/en.json.",
+    "primaryCta": "Primary CTA",
+    "secondaryCta": "Secondary CTA"
+  },
+  "focus": {
+    "items": [
+      {
+        "title": "Focus area 1",
+        "text": "Short description placeholder."
+      },
+      {
+        "title": "Focus area 2",
+        "text": "Short description placeholder."
+      },
+      {
+        "title": "Focus area 3",
+        "text": "Short description placeholder."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "description": "About Us description placeholder. Add the company introduction here.",
+    "imageAlt": "About Us image",
+    "points": [
+      "Point 1 placeholder",
+      "Point 2 placeholder",
+      "Point 3 placeholder"
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Services description placeholder.",
+    "cards": {
+      "academy": {
+        "description": "Short description placeholder."
+      },
+      "accelerator": {
+        "description": "Short description placeholder."
+      },
+      "advisory": {
+        "description": "Short description placeholder."
+      }
+    }
+  },
+  "additional": {
+    "title": "Additional section title placeholder",
+    "description": "Reusable section for programs, partnerships or results.",
+    "items": [
+      {
+        "title": "Content block 1",
+        "text": "Placeholder text. Replace this in src/messages/en.json."
+      },
+      {
+        "title": "Content block 2",
+        "text": "Placeholder text. Replace this in src/messages/en.json."
+      },
+      {
+        "title": "Content block 3",
+        "text": "Placeholder text. Replace this in src/messages/en.json."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonials section title placeholder",
+    "startup": "Startup",
+    "partner": "Partner",
+    "partnersTitle": "Partners"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Contact description placeholder.",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "interest": "I am interested in",
+      "message": "How can we help?",
+      "submit": "Send by email",
+      "statusIdle": "This opens your email app with your message ready to send.",
+      "statusSent": "Your email app should now be open with your message. Press send there to finish.",
+      "subjectPrefix": "Inquiry",
+      "interests": {
+        "academy": "Academy",
+        "accelerator": "Accelerator",
+        "advisory": "Advisory",
+        "other": "Something else"
+      }
+    }
+  },
+  "pages": {
+    "academy": {
+      "heroDescription": "Academy page banner description placeholder.",
+      "introTitle": "Introduction title placeholder",
+      "introText": "Placeholder text. Replace this in src/messages/en.json.",
+      "contentTitle": "Content section title placeholder",
+      "contentDescription": "Content section description placeholder.",
+      "contentItems": [
+        {
+          "title": "Content block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 3",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "additionalTitle": "Additional section title placeholder",
+      "additionalDescription": "Additional section description placeholder.",
+      "additionalItems": [
+        {
+          "title": "Additional block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Additional block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "ctaTitle": "Contact call-to-action title placeholder",
+      "ctaDescription": "Contact call-to-action description placeholder."
+    },
+    "accelerator": {
+      "heroDescription": "Accelerator page banner description placeholder.",
+      "introTitle": "Introduction title placeholder",
+      "introText": "Placeholder text. Replace this in src/messages/en.json.",
+      "contentTitle": "Content section title placeholder",
+      "contentDescription": "Content section description placeholder.",
+      "contentItems": [
+        {
+          "title": "Content block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 3",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "additionalTitle": "Additional section title placeholder",
+      "additionalDescription": "Additional section description placeholder.",
+      "additionalItems": [
+        {
+          "title": "Additional block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Additional block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "ctaTitle": "Contact call-to-action title placeholder",
+      "ctaDescription": "Contact call-to-action description placeholder."
+    },
+    "advisory": {
+      "heroDescription": "Advisory page banner description placeholder.",
+      "introTitle": "Introduction title placeholder",
+      "introText": "Placeholder text. Replace this in src/messages/en.json.",
+      "contentTitle": "Content section title placeholder",
+      "contentDescription": "Content section description placeholder.",
+      "contentItems": [
+        {
+          "title": "Content block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 3",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "additionalTitle": "Additional section title placeholder",
+      "additionalDescription": "Additional section description placeholder.",
+      "additionalItems": [
+        {
+          "title": "Additional block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Additional block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "ctaTitle": "Contact call-to-action title placeholder",
+      "ctaDescription": "Contact call-to-action description placeholder."
+    }
+  },
+  "footer": {
+    "navTitle": "Navigation",
+    "navLabel": "Footer",
+    "companyInfo": "Company information placeholder.",
+    "contactTitle": "Contact",
+    "contactInfo": "Contact details placeholder.",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has moved.",
+    "backHome": "Back to home"
+  }
+}

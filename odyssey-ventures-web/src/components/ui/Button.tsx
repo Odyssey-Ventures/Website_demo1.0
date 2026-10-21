@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "inverse" | "outlineInverse";
+type Variant = "primary" | "secondary" | "accent" | "inverse" | "outlineInverse";
 
 interface ButtonProps {
   children: ReactNode;
@@ -14,11 +14,14 @@ interface ButtonProps {
 }
 
 const base =
-  "inline-flex items-center justify-center rounded px-6 py-3 text-base font-medium transition-colors duration-200";
+  "inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-medium transition-colors duration-200";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-navy text-white hover:bg-navy-700",
+  /** Brand blue, for light backgrounds. */
+  primary: "bg-brand-blue text-white hover:bg-brand-blue-dark",
   secondary: "border border-navy text-navy hover:bg-navy hover:text-white",
+  /** Brand green, for dark backgrounds. */
+  accent: "bg-brand-green text-navy hover:bg-white",
   inverse: "bg-white text-navy hover:bg-navy-100",
   outlineInverse: "border border-white text-white hover:bg-white hover:text-navy",
 };
