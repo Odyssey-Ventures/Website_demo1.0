@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Noto_Sans_KR } from "next/font/google";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
@@ -10,22 +9,8 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import "../globals.css";
 
-// Latin letters use Inter; Hangul falls through to Noto Sans KR (see fontFamily.sans in tailwind.config.ts).
-const sans = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const korean = Noto_Sans_KR({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-kr",
-  display: "swap",
-  preload: false,
-});
-
-// This layout is the root layout. Only /en and /ko are generated; other values fail the isLocale() guards below.
+// Use browser/system font fallbacks to avoid Google font download failures during Vercel builds.
+// Font stacks are defined in tailwind.config.ts.
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
@@ -35,13 +20,9 @@ export async function generateMetadata({ params }: LangParams): Promise<Metadata
   if (!isLocale(lang)) return {};
   const dict = getDictionary(lang);
   const openGraphLocale = lang === "ko" ? "ko_KR" : "en_US";
-
   return {
     metadataBase: new URL(siteConfig.url),
-    title: {
-      default: dict.meta.title,
-      template: `%s | ${siteConfig.name}`,
-    },
+    title: { default: dict.meta.title, template: `%s | ${siteConfig.name}` },
     description: dict.meta.description,
     applicationName: siteConfig.name,
     openGraph: {
@@ -57,7 +38,9 @@ export async function generateMetadata({ params }: LangParams): Promise<Metadata
       title: dict.meta.title,
       description: dict.meta.description,
     },
-    robots: siteConfig.allowIndexing ? { index: true, follow: true } : { index: false, follow: false },
+    robots: siteConfig.allowIndexing
+      ? { index: true, follow: true }
+      : { index: false, follow: false },
   };
 }
 
@@ -67,11 +50,13 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default async function RootLayout({ children, params }: { children: ReactNode } & LangParams) {
+export default async function RootLayout({
+  children,
+  params,
+}: { children: ReactNode } & LangParams) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const dict = getDictionary(lang);
-
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -82,7 +67,7 @@ export default async function RootLayout({ children, params }: { children: React
   };
 
   return (
-    <html lang={lang} className={`${sans.variable} ${korean.variable}`}>
+    <html lang={lang}>
       <body>
         <noscript>
           <style>{".reveal{opacity:1!important;transform:none!important}"}</style>
@@ -96,9 +81,15 @@ export default async function RootLayout({ children, params }: { children: React
         <LocaleProvider value={{ lang, notFound: dict.notFound }}>
           <Header lang={lang} dict={{ common: dict.common, nav: dict.nav, language: dict.language }} />
           <main id="main">{children}</main>
-          <Footer lang={lang} dict={{ common: dict.common, nav: dict.nav, language: dict.language, footer: dict.footer }} />
+          <Footer
+            lang={lang}
+            dict={{ common: dict.common, nav: dict.nav, language: dict.language, footer: dict.footer }}
+          />
         </LocaleProvider>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </body>
     </html>
   );

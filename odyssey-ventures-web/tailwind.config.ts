@@ -16,7 +16,6 @@ const config: Config = {
         },
         brand: {
           blue: "#3129F2",
-          // Hover shade and light tint are derived from the brand blue.
           "blue-dark": "#2119C9",
           "blue-tint": "#EEEDFE",
           green: "#29F27C",
@@ -26,17 +25,15 @@ const config: Config = {
         muted: "#56627A",
       },
       fontFamily: {
-        // Inter covers Latin; Noto Sans KR (--font-kr) covers Hangul.
-        display: ["var(--font-sans)", "var(--font-kr)", "ui-sans-serif", "system-ui", "sans-serif"],
-        sans: ["var(--font-sans)", "var(--font-kr)", "ui-sans-serif", "system-ui", "sans-serif"],
+        // No build-time network calls. Korean and English both have suitable system fallbacks.
+        display: ["Arial", "Apple SD Gothic Neo", "Malgun Gothic", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["Arial", "Apple SD Gothic Neo", "Malgun Gothic", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       boxShadow: {
         card: "0 1px 2px rgba(11, 31, 68, 0.04), 0 10px 30px -18px rgba(11, 31, 68, 0.18)",
         "card-hover": "0 2px 4px rgba(11, 31, 68, 0.06), 0 18px 40px -16px rgba(11, 31, 68, 0.28)",
       },
-      maxWidth: {
-        content: "72rem",
-      },
+      maxWidth: { content: "72rem" },
     },
   },
   plugins: [],
