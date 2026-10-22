@@ -3,6 +3,10 @@
     "title": "Odyssey Ventures",
     "description": "Site description placeholder.",
     "pages": {
+      "about": {
+        "title": "About Us",
+        "description": "Odyssey Ventures is a Silicon Valley-based education, consulting and startup accelerator company."
+      },
       "academy": {
         "title": "Academy",
         "description": "Academy page description placeholder."
@@ -25,6 +29,7 @@
     "placeholderTag": "Placeholder"
   },
   "nav": {
+    "about": "About Us",
     "academy": "Academy",
     "accelerator": "Accelerator",
     "advisory": "Advisory",
@@ -32,7 +37,13 @@
     "main": "Main",
     "mobile": "Mobile",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "aboutSections": {
+      "overview": "Company Overview",
+      "history": "History",
+      "board": "Board of Directors",
+      "team": "Team"
+    }
   },
   "language": {
     "label": "Language",
@@ -239,6 +250,80 @@
       "ctaTitle": "Contact call-to-action title placeholder",
       "ctaDescription": "Contact call-to-action description placeholder."
     }
+  },
+  "aboutPage": {
+    "sectionsLabel": "About Us sections",
+    "overview": {
+      "lead": "Helping startups expand into the U.S.",
+      "paragraphs": [
+        "Odyssey Ventures is a Silicon Valley-based education, consulting and startup accelerator company. We help startups and businesses build the product, fundraising and sales capabilities they need to succeed in global markets.",
+        "Through Academy, Accelerator and Advisory, we support teams from their first market research through U.S. market entry and their first potential customers."
+      ],
+      "pillars": [
+        {
+          "title": "Academy",
+          "text": "Education for global markets"
+        },
+        {
+          "title": "Accelerator",
+          "text": "Structured support for entering the U.S."
+        },
+        {
+          "title": "Advisory",
+          "text": "Direct guidance from experts"
+        }
+      ]
+    },
+    "history": [
+      {
+        "year": "YYYY",
+        "text": "Milestone to be added"
+      },
+      {
+        "year": "YYYY",
+        "text": "Milestone to be added"
+      },
+      {
+        "year": "YYYY",
+        "text": "Milestone to be added"
+      },
+      {
+        "year": "YYYY",
+        "text": "Milestone to be added"
+      }
+    ],
+    "board": [
+      {
+        "name": "Name",
+        "role": "Title"
+      },
+      {
+        "name": "Name",
+        "role": "Title"
+      },
+      {
+        "name": "Name",
+        "role": "Title"
+      }
+    ],
+    "team": [
+      {
+        "name": "Name",
+        "role": "Role"
+      },
+      {
+        "name": "Name",
+        "role": "Role"
+      },
+      {
+        "name": "Name",
+        "role": "Role"
+      },
+      {
+        "name": "Name",
+        "role": "Role"
+      }
+    ]
   },
   "footer": {
     "navTitle": "Navigation",

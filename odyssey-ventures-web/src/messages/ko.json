@@ -3,6 +3,10 @@
     "title": "Odyssey Ventures",
     "description": "사이트 설명 Placeholder입니다.",
     "pages": {
+      "about": {
+        "title": "회사 소개",
+        "description": "Odyssey Ventures는 실리콘밸리에 기반을 둔 교육, 컨설팅, 스타트업 액셀러레이터 기업입니다."
+      },
       "academy": {
         "title": "아카데미",
         "description": "아카데미 페이지 설명 Placeholder입니다."
@@ -25,6 +29,7 @@
     "placeholderTag": "Placeholder"
   },
   "nav": {
+    "about": "회사 소개",
     "academy": "아카데미",
     "accelerator": "액셀러레이터",
     "advisory": "어드바이저리",
@@ -32,7 +37,13 @@
     "main": "주요 메뉴",
     "mobile": "모바일 메뉴",
     "openMenu": "메뉴 열기",
-    "closeMenu": "메뉴 닫기"
+    "closeMenu": "메뉴 닫기",
+    "aboutSections": {
+      "overview": "회사 개요",
+      "history": "연혁",
+      "board": "이사회",
+      "team": "팀"
+    }
   },
   "language": {
     "label": "언어",
@@ -239,6 +250,80 @@
       "ctaTitle": "문의 안내 제목 Placeholder",
       "ctaDescription": "문의 안내 설명 Placeholder입니다."
     }
+  },
+  "aboutPage": {
+    "sectionsLabel": "회사 소개 섹션",
+    "overview": {
+      "lead": "스타트업의 미국 진출을 돕습니다",
+      "paragraphs": [
+        "Odyssey Ventures는 실리콘밸리에 기반을 둔 교육, 컨설팅, 스타트업 액셀러레이터 기업입니다. 스타트업과 기업이 글로벌 시장에서 성공하는 데 필요한 제품, 투자 유치, 영업 역량을 갖출 수 있도록 돕습니다.",
+        "아카데미, 액셀러레이터, 어드바이저리를 통해 첫 시장 조사부터 미국 시장 진출, 첫 잠재 고객 확보까지 팀을 지원합니다."
+      ],
+      "pillars": [
+        {
+          "title": "아카데미",
+          "text": "글로벌 시장을 위한 교육"
+        },
+        {
+          "title": "액셀러레이터",
+          "text": "미국 진출을 위한 체계적인 지원"
+        },
+        {
+          "title": "어드바이저리",
+          "text": "전문가의 직접적인 조언"
+        }
+      ]
+    },
+    "history": [
+      {
+        "year": "YYYY",
+        "text": "추가 예정 연혁"
+      },
+      {
+        "year": "YYYY",
+        "text": "추가 예정 연혁"
+      },
+      {
+        "year": "YYYY",
+        "text": "추가 예정 연혁"
+      },
+      {
+        "year": "YYYY",
+        "text": "추가 예정 연혁"
+      }
+    ],
+    "board": [
+      {
+        "name": "이름",
+        "role": "직함"
+      },
+      {
+        "name": "이름",
+        "role": "직함"
+      },
+      {
+        "name": "이름",
+        "role": "직함"
+      }
+    ],
+    "team": [
+      {
+        "name": "이름",
+        "role": "역할"
+      },
+      {
+        "name": "이름",
+        "role": "역할"
+      },
+      {
+        "name": "이름",
+        "role": "역할"
+      },
+      {
+        "name": "이름",
+        "role": "역할"
+      }
+    ]
   },
   "footer": {
     "navTitle": "메뉴",
