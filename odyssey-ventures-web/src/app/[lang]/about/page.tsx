@@ -147,14 +147,25 @@ export default async function AboutPage({ params }: LangParams) {
             const member = page.team[id];
             return (
               <li key={id} className="flex flex-col overflow-hidden rounded-lg border border-line bg-white shadow-card">
-                <Image
-                  src={photo.src}
-                  alt={member.name}
-                  width={photo.width}
-                  height={photo.height}
-                  sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                  className="aspect-[4/5] w-full object-cover object-top"
-                />
+                {photo ? (
+                  <Image
+                    src={photo.src}
+                    alt={member.name}
+                    width={photo.width}
+                    height={photo.height}
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                    className="aspect-[4/5] w-full object-cover object-top"
+                  />
+                ) : (
+                  <div aria-hidden="true" className="flex aspect-[4/5] w-full items-center justify-center bg-navy-50">
+                    <span className="text-5xl font-semibold tracking-tight text-navy/30">
+                      {member.name
+                        .split(" ")
+                        .map((part) => part[0])
+                        .join("")}
+                    </span>
+                  </div>
+                )}
                 <div className="flex flex-1 flex-col p-6">
                   <span className="w-fit rounded bg-brand-blue-tint px-2 py-1 text-xs font-semibold tracking-widest text-brand-blue-dark">
                     {member.badge}
@@ -169,18 +180,20 @@ export default async function AboutPage({ params }: LangParams) {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${member.name} ${page.linkedinLabel}`}
-                    className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-medium text-brand-blue transition-colors duration-200 hover:text-brand-blue-dark"
-                  >
-                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
-                    </svg>
-                    LinkedIn
-                  </a>
+                  {linkedin ? (
+                    <a
+                      href={linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${member.name} ${page.linkedinLabel}`}
+                      className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-medium text-brand-blue transition-colors duration-200 hover:text-brand-blue-dark"
+                    >
+                      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                      </svg>
+                      LinkedIn
+                    </a>
+                  ) : null}
                 </div>
               </li>
             );

@@ -350,12 +350,41 @@
           "Native Design, Senior Designer"
         ]
       },
+      "juye-kim": {
+        "name": "Juye Kim",
+        "badge": "OPERATIONS",
+        "title": "Program Director, Odyssey Ventures",
+        "credentials": [
+          "Stanford University Hoover 연구소 Enviropreneur Fellow",
+          "(전) Synergy Inc 미국 법인장",
+          "(전) Qcells North America 기술 전략 리드, Business Development Manager",
+          "카네기멜론대 빌딩관리 석사"
+        ]
+      },
+      "yoomi-yi": {
+        "name": "Yoomi Yi",
+        "badge": "OPERATIONS",
+        "title": "Operation Director, Odyssey Ventures",
+        "credentials": [
+          "(전) KIC(Korea Innovation Center) Program Manager",
+          "KIC Startup Acceleration Program 및 TRT 프로그램 진행 (2020, 2021)",
+          "K-Global 스타트업 Pitch Competition 등 행사 진행 경험 다수"
+        ]
+      },
       "juna-lee": {
         "name": "Juna Lee",
         "badge": "OPERATIONS",
         "title": "Operation Manager, Odyssey Ventures",
         "credentials": [
           "University of California, Berkeley"
+        ]
+      },
+      "seunghoon-baek": {
+        "name": "Seunghoon Baek",
+        "badge": "OPERATIONS",
+        "title": "Operation Manager, Odyssey Ventures",
+        "credentials": [
+          "실리콘밸리에서 스타트업 행사 운영 경험 다수"
         ]
       }
     }
