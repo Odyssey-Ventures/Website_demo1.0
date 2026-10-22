@@ -7,12 +7,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { contactPath } from "@/config/navigation";
 import { localizedHref, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import type { ReactNode } from "react";
 import type { ServiceSlug } from "@/types";
 
 interface PlaceholderPageProps {
   lang: Locale;
   slug: ServiceSlug;
   dict: Dictionary;
+  /** Page-specific sections shown before the contact call-to-action. */
+  children?: ReactNode;
 }
 
 const accents = { academy: "blue", accelerator: "green", advisory: "navy" } as const;
@@ -22,7 +25,7 @@ const accents = { academy: "blue", accelerator: "green", advisory: "navy" } as c
  * banner, introduction, content section, additional section and contact call-to-action.
  * Real content replaces the text in src/messages/*.json; the layout stays the same.
  */
-export function PlaceholderPage({ lang, slug, dict }: PlaceholderPageProps) {
+export function PlaceholderPage({ lang, slug, dict, children }: PlaceholderPageProps) {
   const page = dict.pages[slug];
 
   return (
@@ -59,6 +62,8 @@ export function PlaceholderPage({ lang, slug, dict }: PlaceholderPageProps) {
         badge={dict.common.placeholderTag}
         columns={2}
       />
+
+      {children}
 
       <SectionContainer
         tone="navy"

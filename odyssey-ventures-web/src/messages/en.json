@@ -41,7 +41,7 @@
     "aboutSections": {
       "overview": "Company Overview",
       "history": "History",
-      "board": "Board of Directors",
+      "experts": "Experts",
       "team": "Team"
     }
   },
@@ -51,10 +51,10 @@
     "switchToEn": "Switch to English"
   },
   "hero": {
-    "title": "Hero headline placeholder",
-    "description": "Hero description placeholder. Replace this text in src/messages/en.json.",
-    "primaryCta": "Primary CTA",
-    "secondaryCta": "Secondary CTA"
+    "title": "Let's get ready for the global market",
+    "description": "Silicon Valley-based education, consulting and startup acceleration for companies going global.",
+    "primaryCta": "Explore our services",
+    "secondaryCta": "Contact us"
   },
   "focus": {
     "items": [
@@ -254,76 +254,162 @@
   "aboutPage": {
     "sectionsLabel": "About Us sections",
     "overview": {
-      "lead": "Helping startups expand into the U.S.",
+      "lead": "Global capability building and startup acceleration, from Silicon Valley",
       "paragraphs": [
-        "Odyssey Ventures is a Silicon Valley-based education, consulting and startup accelerator company. We help startups and businesses build the product, fundraising and sales capabilities they need to succeed in global markets.",
-        "Through Academy, Accelerator and Advisory, we support teams from their first market research through U.S. market entry and their first potential customers."
+        "Headquartered in Silicon Valley, Odyssey Ventures, LLC was founded in 2018 as a specialist in capability-building education for global markets and startup acceleration. We design and run hands-on education programs for public institutions, startups and universities, along with acceleration programs that help startups expand globally, providing practical and structured solutions for entering overseas markets and strengthening global competitiveness.",
+        "Odyssey Ventures launched its startup acceleration business in earnest in 2024. Building on our founder's and team's years of experience mentoring and growing startups, and on our wide network across Silicon Valley, we run both partner programs and our own programs."
       ],
-      "pillars": [
+      "capabilitiesTitle": "What we strengthen",
+      "capabilities": [
+        "Product capability",
+        "Sales capability",
+        "Fundraising capability"
+      ],
+      "capabilitiesResult": "Entry into the U.S. market",
+      "facts": [
         {
-          "title": "Academy",
-          "text": "Education for global markets"
+          "label": "Company",
+          "value": "Odyssey Ventures, LLC"
         },
         {
-          "title": "Accelerator",
-          "text": "Structured support for entering the U.S."
+          "label": "Founded",
+          "value": "March 2018"
         },
         {
-          "title": "Advisory",
-          "text": "Direct guidance from experts"
+          "label": "Headquarters",
+          "value": "San Jose, California (Silicon Valley)"
+        },
+        {
+          "label": "Business",
+          "value": "Startup acceleration, corporate education and consulting"
+        },
+        {
+          "label": "CEO",
+          "value": "Kevin Kim"
         }
       ]
     },
     "history": [
       {
-        "year": "YYYY",
-        "text": "Milestone to be added"
+        "year": "2018–2023",
+        "items": [
+          "Founded GlobalLeadersCamp, LLC (San Jose, CA), starting as a corporate leadership consulting company",
+          "Corporate advisory and startup mentoring"
+        ]
       },
       {
-        "year": "YYYY",
-        "text": "Milestone to be added"
+        "year": "2024",
+        "items": [
+          "Renamed to Odyssey Ventures, LLC and launched the startup acceleration business in earnest",
+          "Ran the Global Product Academy (Design Thinking, Product Management, Program Management)",
+          "Planned and ran the Hanyang University global meetup program"
+        ]
       },
       {
-        "year": "YYYY",
-        "text": "Milestone to be added"
+        "year": "2025",
+        "items": [
+          "Hosted the Odyssey Startup Meetup",
+          "Ran the 2025 Odyssey Spring Batch",
+          "Ran the KIC DC Tech Frontier_Startup Talk & Mixer program",
+          "Ran the KIRO robot startup global meetup program",
+          "Ran the Silicon Valley Accelerator Around-X Program & K-Global Program Networking Event",
+          "Planned and ran the Mobility Matters business meetup",
+          "Delivered the 2025 KSC Silicon Valley onlanding program brokerage service"
+        ]
       },
       {
-        "year": "YYYY",
-        "text": "Milestone to be added"
+        "year": "2026",
+        "items": [
+          "Recruiting the first cohort of the 2026 Odyssey U.S. Expansion Support Program"
+        ]
       }
     ],
-    "board": [
-      {
-        "name": "Name",
-        "role": "Title"
-      },
-      {
-        "name": "Name",
-        "role": "Title"
-      },
-      {
-        "name": "Name",
-        "role": "Title"
-      }
-    ],
+    "expertsDescription": "Odyssey Ventures brings together experts with deep hands-on experience in product design, product management, program management and marketing in Silicon Valley.",
     "team": [
       {
-        "name": "Name",
-        "role": "Role"
+        "name": "Kevin Kim",
+        "role": "CEO · Program Lead",
+        "bio": [
+          "Founder of NEXED Inc.",
+          "Co-founder of WiderThan (Korea; NASDAQ listing in 2005)",
+          "Former Director of Product Management at Samsung Electronics America; former Senior Director at RealNetworks",
+          "Former PM for wireless internet at SK Telecom; Head of International Product & Business Development at WiderThan",
+          "B.S. in Electronic Engineering, Hanyang University; M.S., Carnegie Mellon University",
+          "12 years of startup mentoring and consulting; 3 years of acceleration"
+        ]
       },
       {
-        "name": "Name",
-        "role": "Role"
+        "name": "Juye Kim",
+        "role": "Program Director",
+        "bio": [
+          "Program Director, Odyssey Ventures",
+          "Enviropreneur Fellow, Hoover Institution, Stanford University",
+          "Former U.S. Country Manager, Synergy Inc",
+          "Former Technology Strategy Lead and Business Development Manager, Qcells North America",
+          "M.S. in Building Management, Carnegie Mellon University",
+          "Startup mentoring, consulting and acceleration experience"
+        ]
       },
       {
-        "name": "Name",
-        "role": "Role"
+        "name": "Yoomi Yi",
+        "role": "Operation Director",
+        "bio": [
+          "Former Program Manager, KIC (Korea Innovation Center)",
+          "Ran the KIC Startup Acceleration Program and TRT program (2020, 2021)",
+          "Ran many events, including the K-Global Startup Pitch Competition"
+        ]
       },
       {
-        "name": "Name",
-        "role": "Role"
+        "name": "Juna Lee",
+        "role": "Operation Manager",
+        "bio": [
+          "Extensive experience running startup events in Silicon Valley",
+          "Extensive communication with experts and investors for startup mentoring and events"
+        ]
+      },
+      {
+        "name": "Seunghoon Baek",
+        "role": "Operation Manager",
+        "bio": [
+          "Extensive experience running startup events in Silicon Valley"
+        ]
       }
     ]
+  },
+  "advisoryBoard": {
+    "title": "Odyssey Advisory Board",
+    "description": "Beyond our own mentors, we work with partners across the U.S. market — law firms, accountants, marketers, investors and technologists — so startups can enter the market with less risk and reach early customers faster.",
+    "hint": "Tap a card to see the advisor's area of expertise.",
+    "jump": "Jump to a field",
+    "specialty": "Expertise",
+    "field": "Field",
+    "noSpecialty": "Details to be added",
+    "groups": {
+      "business": {
+        "title": "Business experts",
+        "note": "* Odyssey Ventures works with more than 100 business partners for advisory and consulting."
+      },
+      "tech": {
+        "title": "Technology experts",
+        "note": "* We also have a wide personal network built directly and indirectly over the years."
+      }
+    },
+    "categories": {
+      "legal": "Legal",
+      "finance": "Finance & Accounting",
+      "marketing": "Marketing",
+      "fundraising": "Fundraising",
+      "hr": "HR",
+      "interpretation": "Interpretation",
+      "internet": "Internet",
+      "ai": "AI",
+      "mobility": "Mobility",
+      "robots": "Robotics",
+      "energy": "Energy",
+      "bio": "Bio",
+      "semiconductor": "Semiconductors",
+      "kbeauty": "K-Beauty / K-Food"
+    }
   },
   "footer": {
     "navTitle": "Navigation",

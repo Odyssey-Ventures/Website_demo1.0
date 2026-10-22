@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AdvisoryBoard } from "@/components/advisory/AdvisoryBoard";
 import { PlaceholderPage } from "@/components/shared/PlaceholderPage";
 import { alternatesFor, isLocale, type LangParams } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -18,5 +19,10 @@ export async function generateMetadata({ params }: LangParams): Promise<Metadata
 export default async function AdvisoryPage({ params }: LangParams) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  return <PlaceholderPage lang={lang} slug="advisory" dict={getDictionary(lang)} />;
+  const dict = getDictionary(lang);
+  return (
+    <PlaceholderPage lang={lang} slug="advisory" dict={dict}>
+      <AdvisoryBoard lang={lang} dict={dict.advisoryBoard} />
+    </PlaceholderPage>
+  );
 }

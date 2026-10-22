@@ -1,6 +1,6 @@
 import type { ServiceSlug } from "@/types";
 
-export type AboutSectionKey = "overview" | "history" | "board" | "team";
+export type AboutSectionKey = "overview" | "history" | "experts" | "team";
 
 export interface MainNavItem {
   /** Dictionary key under "nav". */
@@ -15,7 +15,7 @@ export interface MainNavItem {
 export const aboutSections = [
   { key: "overview", path: "/about#overview" },
   { key: "history", path: "/about#history" },
-  { key: "board", path: "/about#board" },
+  { key: "experts", path: "/about#experts" },
   { key: "team", path: "/about#team" },
 ] as const satisfies ReadonlyArray<{ key: AboutSectionKey; path: string }>;
 
