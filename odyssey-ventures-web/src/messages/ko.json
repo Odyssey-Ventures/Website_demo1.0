@@ -325,56 +325,40 @@
       }
     ],
     "expertsDescription": "오디세이 벤처스는 실리콘밸리의 product design, product management, program management, marketing에 대한 실전 경험이 풍부한 전문가들로 구성되어 있습니다.",
-    "team": [
-      {
-        "name": "Kevin Kim (김태훈)",
-        "role": "대표 · 사업관리자(PM)",
-        "bio": [
-          "NEXED Inc. 창업",
-          "WiderThan 공동 창업 (한국; 2005년 나스닥 상장)",
-          "(전) 삼성전자 미주법인 상품관리 디렉터, RealNetworks 시니어 디렉터",
-          "(전) SK텔레콤 무선인터넷 PM, WiderThan 해외 상품·사업개발 헤드",
-          "한양대 전자공학 학사, 카네기멜론대(CMU) 석사",
-          "스타트업 멘토링·컨설팅 12년, 액셀러레이팅 경력 3년"
+    "teamDescription": "관련 전공과 현장 경험이 많은 실리콘밸리 강사진과 글로벌 시장에서의 성공적인 비지니스 및 스타트업 경험을 바탕으로 다년간의 스타트업 멘토링/컨설팅 경험을 보유한 파트너들이 프로그램을 운영합니다.",
+    "linkedinLabel": "LinkedIn 프로필",
+    "team": {
+      "kevin-kim": {
+        "name": "Kevin Kim",
+        "badge": "PARTNER",
+        "title": "CEO, Odyssey Ventures",
+        "credentials": [
+          "한양대학교 전자공학과",
+          "카네기멜론 Master's in Software Management",
+          "SK 텔레콤 무선인터넷 PM",
+          "삼성전자 미주법인 상품관리 Director"
         ]
       },
-      {
-        "name": "Juye Kim (김주예)",
-        "role": "운영 책임자 · Program Director",
-        "bio": [
-          "Odyssey Ventures Program Director",
-          "Stanford University Hoover 연구소 Enviropreneur Fellow",
-          "(전) Synergy Inc 미국 법인장",
-          "(전) Qcells North America 기술 전략 리드, Business Development Manager",
-          "카네기멜론대 빌딩관리 석사",
-          "스타트업 멘토링·컨설팅 및 액셀러레이팅 경험"
+      "okkeun-lee": {
+        "name": "Okkeun Lee",
+        "badge": "INSTRUCTOR",
+        "title": "Researcher, Stanford University",
+        "credentials": [
+          "Stanford 대학교 기계공학 박사",
+          "(현) Stanford 연구원",
+          "삼성전자, Mechanical Engineer & Industrial Designer",
+          "Native Design, Senior Designer"
         ]
       },
-      {
-        "name": "Yoomi Yi (이유미)",
-        "role": "운영 팀원 · Operation Director",
-        "bio": [
-          "(전) KIC(Korea Innovation Center) Program Manager",
-          "KIC Startup Acceleration Program 및 TRT 프로그램 진행 (2020, 2021)",
-          "K-Global 스타트업 Pitch Competition 등 행사 진행 경험 다수"
-        ]
-      },
-      {
-        "name": "Juna Lee (이준아)",
-        "role": "운영 팀원 · Operation Manager",
-        "bio": [
-          "실리콘밸리에서 스타트업 행사 운영 경험 다수",
-          "스타트업 멘토링 및 스타트업 행사를 위한 전문가, 투자자들과의 커뮤니케이션 경험 다수"
-        ]
-      },
-      {
-        "name": "Seunghoon Baek (백승훈)",
-        "role": "운영 팀원 · Operation Manager",
-        "bio": [
-          "실리콘밸리에서 스타트업 행사 운영 경험 다수"
+      "juna-lee": {
+        "name": "Juna Lee",
+        "badge": "OPERATIONS",
+        "title": "Operation Manager, Odyssey Ventures",
+        "credentials": [
+          "University of California, Berkeley"
         ]
       }
-    ]
+    }
   },
   "advisoryBoard": {
     "title": "오디세이 자문단",

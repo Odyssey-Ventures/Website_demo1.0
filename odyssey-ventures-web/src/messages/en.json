@@ -325,56 +325,40 @@
       }
     ],
     "expertsDescription": "Odyssey Ventures brings together experts with deep hands-on experience in product design, product management, program management and marketing in Silicon Valley.",
-    "team": [
-      {
+    "teamDescription": "Our programs are run by Silicon Valley instructors with deep academic and field expertise, together with partners who bring years of startup mentoring and consulting experience built on successful business and startup careers in global markets.",
+    "linkedinLabel": "LinkedIn profile",
+    "team": {
+      "kevin-kim": {
         "name": "Kevin Kim",
-        "role": "CEO · Program Lead",
-        "bio": [
-          "Founder of NEXED Inc.",
-          "Co-founder of WiderThan (Korea; NASDAQ listing in 2005)",
-          "Former Director of Product Management at Samsung Electronics America; former Senior Director at RealNetworks",
-          "Former PM for wireless internet at SK Telecom; Head of International Product & Business Development at WiderThan",
-          "B.S. in Electronic Engineering, Hanyang University; M.S., Carnegie Mellon University",
-          "12 years of startup mentoring and consulting; 3 years of acceleration"
+        "badge": "PARTNER",
+        "title": "CEO, Odyssey Ventures",
+        "credentials": [
+          "B.S. in Electronic Engineering, Hanyang University",
+          "Master's in Software Management, Carnegie Mellon University",
+          "Wireless Internet PM, SK Telecom",
+          "Director of Product Management, Samsung Electronics America"
         ]
       },
-      {
-        "name": "Juye Kim",
-        "role": "Program Director",
-        "bio": [
-          "Program Director, Odyssey Ventures",
-          "Enviropreneur Fellow, Hoover Institution, Stanford University",
-          "Former U.S. Country Manager, Synergy Inc",
-          "Former Technology Strategy Lead and Business Development Manager, Qcells North America",
-          "M.S. in Building Management, Carnegie Mellon University",
-          "Startup mentoring, consulting and acceleration experience"
+      "okkeun-lee": {
+        "name": "Okkeun Lee",
+        "badge": "INSTRUCTOR",
+        "title": "Researcher, Stanford University",
+        "credentials": [
+          "Ph.D. in Mechanical Engineering, Stanford University",
+          "(Current) Researcher, Stanford University",
+          "Mechanical Engineer & Industrial Designer, Samsung Electronics",
+          "Senior Designer, Native Design"
         ]
       },
-      {
-        "name": "Yoomi Yi",
-        "role": "Operation Director",
-        "bio": [
-          "Former Program Manager, KIC (Korea Innovation Center)",
-          "Ran the KIC Startup Acceleration Program and TRT program (2020, 2021)",
-          "Ran many events, including the K-Global Startup Pitch Competition"
-        ]
-      },
-      {
+      "juna-lee": {
         "name": "Juna Lee",
-        "role": "Operation Manager",
-        "bio": [
-          "Extensive experience running startup events in Silicon Valley",
-          "Extensive communication with experts and investors for startup mentoring and events"
-        ]
-      },
-      {
-        "name": "Seunghoon Baek",
-        "role": "Operation Manager",
-        "bio": [
-          "Extensive experience running startup events in Silicon Valley"
+        "badge": "OPERATIONS",
+        "title": "Operation Manager, Odyssey Ventures",
+        "credentials": [
+          "University of California, Berkeley"
         ]
       }
-    ]
+    }
   },
   "advisoryBoard": {
     "title": "Odyssey Advisory Board",
