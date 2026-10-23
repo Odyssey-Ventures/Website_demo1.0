@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# local environment (real keys live in Vercel, never in git)
+.env
+.env*.local
+
+# Vercel
+.vercel/
+
+# OS and editor files
+.DS_Store
+*.log

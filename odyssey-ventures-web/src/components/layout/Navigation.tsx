@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { mainNav } from "@/config/navigation";
+import { mainNav, type NavChild } from "@/config/navigation";
 import { localizedHref, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
@@ -20,32 +20,40 @@ export function Navigation({ lang, dict, variant = "desktop", onNavigate }: Navi
   const isMobile = variant === "mobile";
 
   const isActive = (path: string) => {
-    const href = localizedHref(lang, path);
+    const href = localizedHref(lang, path.split("#")[0] || "/");
+    if (href === `/${lang}`) return false;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
+  const childLabel = (child: NavChild) => (child.group === "about" ? dict.aboutSections[child.key] : dict[child.key]);
 
   return (
     <nav aria-label={isMobile ? dict.mobile : dict.main}>
-      <ul className={isMobile ? "flex flex-col" : "flex items-center gap-9"}>
+      <ul className={isMobile ? "flex flex-col" : "flex items-center gap-8"}>
         {mainNav.map((item) => {
-          const active = isActive(item.path);
+          // Services has no page of its own: it is active while one of its services is open.
+          const active = item.key === "services" ? (item.children ?? []).some((child) => isActive(child.path)) : isActive(item.path);
           return (
             <li key={item.key} className={isMobile ? undefined : "group relative"}>
               <Link
                 href={localizedHref(lang, item.path)}
                 onClick={onNavigate}
-                aria-current={active ? "page" : undefined}
+                aria-current={active && item.key !== "services" ? "page" : undefined}
                 className={cn(
                   "transition-colors duration-200",
                   isMobile
                     ? cn("block border-b border-line py-4 text-lg font-medium", active ? "text-brand-blue" : "text-navy")
                     : cn(
-                        "inline-block border-b-2 py-1 text-[15px] font-medium",
+                        "inline-flex items-center gap-1 border-b-2 py-1 text-[15px] font-medium",
                         active ? "border-brand-blue text-navy" : "border-transparent text-muted hover:text-navy"
                       )
                 )}
               >
                 {dict[item.key]}
+                {item.children && !isMobile ? (
+                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                ) : null}
               </Link>
 
               {item.children ? (
@@ -56,9 +64,13 @@ export function Navigation({ lang, dict, variant = "desktop", onNavigate }: Navi
                         <Link
                           href={localizedHref(lang, child.path)}
                           onClick={onNavigate}
-                          className="block py-2 text-base text-muted transition-colors duration-200 hover:text-navy"
+                          aria-current={isActive(child.path) && child.group === "services" ? "page" : undefined}
+                          className={cn(
+                            "block py-2 text-base transition-colors duration-200 hover:text-navy",
+                            child.group === "services" && isActive(child.path) ? "text-brand-blue" : "text-muted"
+                          )}
                         >
-                          {dict.aboutSections[child.key]}
+                          {childLabel(child)}
                         </Link>
                       </li>
                     ))}
@@ -78,7 +90,7 @@ export function Navigation({ lang, dict, variant = "desktop", onNavigate }: Navi
                             }}
                             className="block whitespace-nowrap px-4 py-2 text-[15px] text-muted transition-colors duration-200 hover:bg-mist hover:text-navy"
                           >
-                            {dict.aboutSections[child.key]}
+                            {childLabel(child)}
                           </Link>
                         </li>
                       ))}

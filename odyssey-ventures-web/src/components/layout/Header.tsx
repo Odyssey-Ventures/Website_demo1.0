@@ -1,14 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { Logo } from "@/components/layout/Logo";
 import { Navigation } from "@/components/layout/Navigation";
 import { Container } from "@/components/ui/Container";
-import { contactPath } from "@/config/navigation";
-import { localizedHref, type Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface HeaderProps {
@@ -46,7 +44,7 @@ export function Header({ lang, dict }: HeaderProps) {
       <Container className="flex h-16 items-center justify-between gap-6 md:h-20">
         <Logo lang={lang} label={dict.common.homeAria} priority />
 
-        <div className="hidden items-center gap-10 md:flex">
+        <div className="hidden items-center gap-10 lg:flex">
           <Navigation lang={lang} dict={dict.nav} />
           <LanguageSwitcher lang={lang} dict={dict.language} />
         </div>
@@ -54,7 +52,7 @@ export function Header({ lang, dict }: HeaderProps) {
         <button
           ref={menuButton}
           type="button"
-          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded text-navy md:hidden"
+          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded text-navy lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? dict.nav.closeMenu : dict.nav.openMenu}
@@ -67,16 +65,9 @@ export function Header({ lang, dict }: HeaderProps) {
       </Container>
 
       {open ? (
-        <div id="mobile-menu" className="border-t border-line bg-white md:hidden">
+        <div id="mobile-menu" className="border-t border-line bg-white lg:hidden">
           <Container className="flex flex-col py-2">
             <Navigation lang={lang} dict={dict.nav} variant="mobile" onNavigate={closeMenu} />
-            <Link
-              href={localizedHref(lang, contactPath)}
-              onClick={closeMenu}
-              className="border-b border-line py-4 text-lg font-medium text-navy"
-            >
-              {dict.nav.contact}
-            </Link>
             <div className="py-5">
               <LanguageSwitcher lang={lang} dict={dict.language} onNavigate={closeMenu} />
             </div>

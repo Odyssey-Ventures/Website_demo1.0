@@ -1,4 +1,4 @@
-export type ServiceSlug = "academy" | "accelerator" | "advisory";
+export type ServiceSlug = "academy" | "accelerator" | "advisory" | "consulting";
 
 export interface Service {
   slug: ServiceSlug;
@@ -22,4 +22,30 @@ export interface Partner {
   /** Path inside /public, e.g. "/logos/partner.svg" */
   logoSrc: string;
   href?: string;
+}
+
+export interface Localized {
+  ko: string;
+  en: string;
+}
+
+/** An Academy lecture or webinar. Managed in the "Programs" Google Sheet (see docs/operations.md). */
+export interface Program {
+  id: string;
+  type: "webinar" | "course";
+  title: Localized;
+  summary: Localized;
+  description: Localized;
+  /** YYYY-MM-DD */
+  date: string;
+  /** HH:MM, as written in the sheet */
+  startTime: string;
+  endTime: string;
+  /** Label shown next to the time, e.g. "PT" or "KST" */
+  timezone: string;
+  instructor: string;
+  /** e.g. "Zoom" or "Google Meet" */
+  format: string;
+  capacity: string;
+  registrationOpen: boolean;
 }

@@ -18,7 +18,7 @@ export function Services({ lang, dict }: ServicesProps) {
         <SectionHeading title={dict.services.title}>{dict.services.description}</SectionHeading>
       </Reveal>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-3">
+      <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {services.map((service, index) => (
           <Reveal key={service.slug} delay={index * 100} className="h-full">
             <ServiceCard
