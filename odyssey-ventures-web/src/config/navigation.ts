@@ -4,7 +4,7 @@ export type AboutSectionKey = "overview" | "history" | "experts" | "team";
 
 export interface MainNavItem {
   /** Dictionary key under "nav". */
-  key: "about" | ServiceSlug;
+  key: "about" | ServiceSlug | "consulting";
   /** Path without a language prefix. */
   path: string;
   /** Shown as a hover dropdown on desktop and indented links on mobile. */
@@ -24,6 +24,7 @@ export const mainNav: readonly MainNavItem[] = [
   { key: "advisory", path: "/advisory" },
   { key: "academy", path: "/academy" },
   { key: "accelerator", path: "/accelerator" },
+  { key: "consulting", path: "/consulting" },
 ];
 
 export const contactPath = "/#contact";

@@ -46,7 +46,7 @@ export function Header({ lang, dict }: HeaderProps) {
       <Container className="flex h-16 items-center justify-between gap-6 md:h-20">
         <Logo lang={lang} label={dict.common.homeAria} priority />
 
-        <div className="hidden items-center gap-10 md:flex">
+        <div className="hidden items-center gap-10 lg:flex">
           <Navigation lang={lang} dict={dict.nav} />
           <LanguageSwitcher lang={lang} dict={dict.language} />
         </div>
@@ -54,7 +54,7 @@ export function Header({ lang, dict }: HeaderProps) {
         <button
           ref={menuButton}
           type="button"
-          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded text-navy md:hidden"
+          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded text-navy lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? dict.nav.closeMenu : dict.nav.openMenu}
@@ -67,7 +67,7 @@ export function Header({ lang, dict }: HeaderProps) {
       </Container>
 
       {open ? (
-        <div id="mobile-menu" className="border-t border-line bg-white md:hidden">
+        <div id="mobile-menu" className="border-t border-line bg-white lg:hidden">
           <Container className="flex flex-col py-2">
             <Navigation lang={lang} dict={dict.nav} variant="mobile" onNavigate={closeMenu} />
             <Link

@@ -18,6 +18,10 @@
       "advisory": {
         "title": "Advisory",
         "description": "Advisory page description placeholder."
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Odyssey Ventures consulting: our advisory board and Silicon Valley know-how take you from U.S. sales to VC fundraising."
       }
     }
   },
@@ -33,6 +37,7 @@
     "academy": "Academy",
     "accelerator": "Accelerator",
     "advisory": "Advisory",
+    "consulting": "Consulting",
     "contact": "Contact",
     "main": "Main",
     "mobile": "Mobile",
@@ -140,6 +145,7 @@
         "academy": "Academy",
         "accelerator": "Accelerator",
         "advisory": "Advisory",
+        "consulting": "Consulting",
         "other": "Something else"
       }
     }
@@ -424,6 +430,53 @@
       "semiconductor": "Semiconductors",
       "kbeauty": "K-Beauty / K-Food"
     }
+  },
+  "consultingPage": {
+    "eyebrow": "Odyssey Consulting",
+    "title": "From your first U.S. sale to your VC round, we see it through",
+    "description": "Our top-tier advisory board and Odyssey Ventures' hands-on Silicon Valley know-how take you all the way from sales to venture funding.",
+    "primaryCta": "Talk to us",
+    "whyTitle": "Why Odyssey Consulting",
+    "whyDescription": "Not a report that sits on a shelf. We work with you until the results are in.",
+    "why": [
+      {
+        "title": "A top-tier advisory board",
+        "text": "More than 100 partners in law, accounting, marketing and investment, plus experts from leading tech companies, matched to your specific challenge."
+      },
+      {
+        "title": "Proven Odyssey know-how",
+        "text": "Experience founding a NASDAQ-listed startup, leading product at global tech companies and years of startup acceleration, applied directly to your business."
+      },
+      {
+        "title": "All the way to sales",
+        "text": "We find potential U.S. customers, set up the meetings and design pilots and PoCs to land your first revenue in the market."
+      },
+      {
+        "title": "All the way to VC funding",
+        "text": "We sharpen your IR deck and pitch, then connect you with Silicon Valley VCs and support you through the round."
+      }
+    ],
+    "processTitle": "How we work",
+    "process": [
+      {
+        "title": "Diagnose",
+        "text": "Assess your product, market and team, and set clear goals for the U.S."
+      },
+      {
+        "title": "Strategize",
+        "text": "Build your go-to-market, sales and fundraising strategy."
+      },
+      {
+        "title": "Execute",
+        "text": "Match advisors to your needs and set up customer and investor meetings."
+      },
+      {
+        "title": "Deliver",
+        "text": "Stay with you closely through contracts and closing your round."
+      }
+    ],
+    "contactTitle": "Start the conversation today",
+    "contactDescription": "Tell us where you are with U.S. expansion, sales or fundraising, and the Odyssey Ventures team will get back to you directly."
   },
   "footer": {
     "navTitle": "Navigation",

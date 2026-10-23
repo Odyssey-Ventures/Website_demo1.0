@@ -7,8 +7,8 @@ import type { Dictionary } from "@/i18n/dictionaries";
 
 type ContactFormDict = Dictionary["contact"]["form"];
 
-const interestKeys = ["academy", "accelerator", "advisory", "other"] as const;
-type InterestKey = (typeof interestKeys)[number];
+const interestKeys = ["academy", "accelerator", "advisory", "consulting", "other"] as const;
+export type InterestKey = (typeof interestKeys)[number];
 
 const fieldClass =
   "mt-2 w-full rounded-md border border-line bg-white px-4 py-3 text-base text-navy placeholder:text-muted/70 transition-colors focus:border-brand-blue";
@@ -18,7 +18,13 @@ const fieldClass =
  * prepared. To store inquiries later, replace handleSubmit with a call to a
  * Next.js route handler that writes to Supabase (see README).
  */
-export function ContactForm({ dict }: { dict: ContactFormDict }) {
+interface ContactFormProps {
+  dict: ContactFormDict;
+  /** Interest preselected in the dropdown. */
+  defaultInterest?: InterestKey;
+}
+
+export function ContactForm({ dict, defaultInterest = interestKeys[0] }: ContactFormProps) {
   const [sent, setSent] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -62,7 +68,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
         </label>
         <label className="block text-sm font-medium text-navy">
           {dict.interest}
-          <select name="interest" defaultValue={interestKeys[0]} className={fieldClass}>
+          <select name="interest" defaultValue={defaultInterest} className={fieldClass}>
             {interestKeys.map((key) => (
               <option key={key} value={key}>
                 {dict.interests[key]}
