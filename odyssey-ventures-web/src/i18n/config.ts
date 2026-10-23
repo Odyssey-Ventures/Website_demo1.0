@@ -2,7 +2,7 @@ export const locales = ["en", "ko"] as const;
 export type Locale = (typeof locales)[number];
 
 /** Visitors who open "/" are sent to this language. */
-export const defaultLocale: Locale = "en";
+export const defaultLocale: Locale = "ko";
 
 /** Order shown in the language switcher. */
 export const localeDisplayOrder: readonly Locale[] = ["ko", "en"];

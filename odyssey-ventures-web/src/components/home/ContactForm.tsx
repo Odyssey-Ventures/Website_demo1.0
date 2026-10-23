@@ -1,73 +1,44 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
-import { Button } from "@/components/ui/Button";
-import { siteConfig } from "@/config/site";
+import { Field, fieldClass, Honeypot, SubmitRow } from "@/components/forms/FormParts";
+import { useSubmission } from "@/components/forms/useSubmission";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 type ContactFormDict = Dictionary["contact"]["form"];
 
-const interestKeys = ["academy", "accelerator", "advisory", "consulting", "other"] as const;
+const interestKeys = ["consulting", "advisory", "academy", "accelerator", "membership", "other"] as const;
 export type InterestKey = (typeof interestKeys)[number];
 
-const fieldClass =
-  "mt-2 w-full rounded-md border border-line bg-white px-4 py-3 text-base text-navy placeholder:text-muted/70 transition-colors focus:border-brand-blue";
-
-/**
- * No backend yet: submitting opens the visitor's email app with the message
- * prepared. To store inquiries later, replace handleSubmit with a call to a
- * Next.js route handler that writes to Supabase (see README).
- */
 interface ContactFormProps {
   dict: ContactFormDict;
+  lang: string;
   /** Interest preselected in the dropdown. */
   defaultInterest?: InterestKey;
 }
 
-export function ContactForm({ dict, defaultInterest = interestKeys[0] }: ContactFormProps) {
-  const [sent, setSent] = useState(false);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const company = String(data.get("company") ?? "");
-    const interestKey = String(data.get("interest") ?? interestKeys[0]) as InterestKey;
-    const interest = dict.interests[interestKey] ?? interestKey;
-    const message = String(data.get("message") ?? "");
-
-    const subject = `${dict.subjectPrefix}: ${interest}${company ? ` (${company})` : ""}`;
-    const body = [
-      `${dict.name}: ${name}`,
-      `${dict.email}: ${email}`,
-      `${dict.company}: ${company || "-"}`,
-      `${dict.interest}: ${interest}`,
-      "",
-      message,
-    ].join("\n");
-
-    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
-  }
+/** General inquiry form (Contact, Consulting, Accelerator, Membership). Saved to the "Inquiries" sheet. */
+export function ContactForm({ dict, lang, defaultInterest = "other" }: ContactFormProps) {
+  const { status, handleSubmit } = useSubmission({
+    kind: "inquiry",
+    lang,
+    emailSubject: (fields) => `${dict.subjectPrefix}: ${dict.interests[fields.interest as InterestKey] ?? fields.interest}`,
+    labels: { name: dict.name, email: dict.email, company: dict.company, interest: dict.interest, message: dict.message },
+  });
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-lg border border-line bg-white p-6 shadow-card sm:p-8">
+    <form onSubmit={handleSubmit} className="relative rounded-lg border border-line bg-white p-6 shadow-card sm:p-8">
+      <Honeypot />
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-sm font-medium text-navy">
-          {dict.name}
+        <Field label={dict.name}>
           <input name="name" type="text" required autoComplete="name" className={fieldClass} />
-        </label>
-        <label className="block text-sm font-medium text-navy">
-          {dict.email}
+        </Field>
+        <Field label={dict.email}>
           <input name="email" type="email" required autoComplete="email" className={fieldClass} />
-        </label>
-        <label className="block text-sm font-medium text-navy">
-          {dict.company}
+        </Field>
+        <Field label={dict.company}>
           <input name="company" type="text" autoComplete="organization" className={fieldClass} />
-        </label>
-        <label className="block text-sm font-medium text-navy">
-          {dict.interest}
+        </Field>
+        <Field label={dict.interest}>
           <select name="interest" defaultValue={defaultInterest} className={fieldClass}>
             {interestKeys.map((key) => (
               <option key={key} value={key}>
@@ -75,20 +46,14 @@ export function ContactForm({ dict, defaultInterest = interestKeys[0] }: Contact
               </option>
             ))}
           </select>
-        </label>
+        </Field>
       </div>
 
-      <label className="mt-5 block text-sm font-medium text-navy">
-        {dict.message}
+      <Field label={dict.message} className="mt-5">
         <textarea name="message" required rows={5} className={fieldClass} />
-      </label>
+      </Field>
 
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <Button type="submit">{dict.submit}</Button>
-        <p className="text-sm text-muted" role="status">
-          {sent ? dict.statusSent : dict.statusIdle}
-        </p>
-      </div>
+      <SubmitRow status={status} messages={dict.status} />
     </form>
   );
 }

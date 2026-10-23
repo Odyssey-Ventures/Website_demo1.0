@@ -3,7 +3,7 @@ import { defaultLocale, locales } from "@/i18n/config";
 
 /**
  * Every page lives under /en or /ko. Any other path is sent to the default
- * language, so "/" becomes "/en" and the old "/academy" becomes "/en/academy".
+ * language, so "/" becomes "/ko" and the old "/academy" becomes "/ko/academy".
  */
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

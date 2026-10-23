@@ -89,6 +89,7 @@ export default async function ConsultingPage({ params }: LangParams) {
 
       <Contact
         dict={dict.contact}
+        lang={lang}
         title={page.contactTitle}
         description={page.contactDescription}
         defaultInterest="consulting"

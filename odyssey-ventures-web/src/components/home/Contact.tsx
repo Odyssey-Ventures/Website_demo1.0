@@ -7,6 +7,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 
 interface ContactProps {
   dict: Dictionary["contact"];
+  lang: string;
   /** Overrides the section heading, e.g. on a service page. */
   title?: string;
   description?: string;
@@ -14,7 +15,7 @@ interface ContactProps {
   defaultInterest?: InterestKey;
 }
 
-export function Contact({ dict, title = dict.title, description = dict.description, defaultInterest }: ContactProps) {
+export function Contact({ dict, lang, title = dict.title, description = dict.description, defaultInterest }: ContactProps) {
   return (
     <SectionContainer id="contact" tone="mist" containerClassName="grid gap-12 lg:grid-cols-12 lg:gap-16">
       <div className="lg:col-span-5">
@@ -40,7 +41,7 @@ export function Contact({ dict, title = dict.title, description = dict.descripti
       </div>
 
       <Reveal className="lg:col-span-7" delay={120}>
-        <ContactForm dict={dict.form} defaultInterest={defaultInterest} />
+        <ContactForm dict={dict.form} lang={lang} defaultInterest={defaultInterest} />
       </Reveal>
     </SectionContainer>
   );

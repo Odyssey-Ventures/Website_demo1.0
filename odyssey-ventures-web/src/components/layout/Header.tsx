@@ -1,14 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { Logo } from "@/components/layout/Logo";
 import { Navigation } from "@/components/layout/Navigation";
 import { Container } from "@/components/ui/Container";
-import { contactPath } from "@/config/navigation";
-import { localizedHref, type Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface HeaderProps {
@@ -70,13 +68,6 @@ export function Header({ lang, dict }: HeaderProps) {
         <div id="mobile-menu" className="border-t border-line bg-white lg:hidden">
           <Container className="flex flex-col py-2">
             <Navigation lang={lang} dict={dict.nav} variant="mobile" onNavigate={closeMenu} />
-            <Link
-              href={localizedHref(lang, contactPath)}
-              onClick={closeMenu}
-              className="border-b border-line py-4 text-lg font-medium text-navy"
-            >
-              {dict.nav.contact}
-            </Link>
             <div className="py-5">
               <LanguageSwitcher lang={lang} dict={dict.language} onNavigate={closeMenu} />
             </div>

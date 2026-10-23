@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Odyssey Ventures",
-    "description": "사이트 설명 Placeholder입니다.",
+    "description": "실리콘밸리 기반 글로벌 역량 강화 교육·컨설팅 및 스타트업 액셀러레이팅 기업, 오디세이 벤처스",
     "pages": {
       "about": {
         "title": "회사 소개",
@@ -9,19 +9,35 @@
       },
       "academy": {
         "title": "아카데미",
-        "description": "아카데미 페이지 설명 Placeholder입니다."
+        "description": "실리콘밸리 전문가와 함께하는 글로벌 프로덕트·스타트업 교육과 웨비나"
       },
       "accelerator": {
         "title": "액셀러레이터",
-        "description": "액셀러레이터 페이지 설명 Placeholder입니다."
+        "description": "스타트업의 글로벌 역량 강화와 미국 시장 진출을 지원하는 Global Acceleration Program"
       },
       "advisory": {
-        "title": "어드바이저리",
-        "description": "어드바이저리 페이지 설명 Placeholder입니다."
+        "title": "1:1 어드바이저리",
+        "description": "오디세이 자문단과 함께하는 일대일 전문 자문"
       },
       "consulting": {
         "title": "컨설팅",
         "description": "오디세이 벤처스 컨설팅: 최고의 자문단과 실리콘밸리 노하우로 미국 시장 세일즈부터 VC 투자 유치까지 책임집니다."
+      },
+      "advisoryRequest": {
+        "title": "1:1 자문 신청",
+        "description": "오디세이 자문단과의 일대일 자문을 신청하세요."
+      },
+      "membership": {
+        "title": "멤버십",
+        "description": "오디세이 벤처스 멤버십 안내"
+      },
+      "contact": {
+        "title": "문의하기",
+        "description": "오디세이 벤처스에 문의하세요."
+      },
+      "news": {
+        "title": "소식",
+        "description": "오디세이 벤처스의 소식과 이벤트"
       }
     }
   },
@@ -34,10 +50,13 @@
   },
   "nav": {
     "about": "회사 소개",
+    "services": "서비스",
     "academy": "아카데미",
     "accelerator": "액셀러레이터",
-    "advisory": "어드바이저리",
+    "advisory": "1:1 어드바이저리",
     "consulting": "컨설팅",
+    "news": "소식",
+    "membership": "멤버십",
     "contact": "문의",
     "main": "주요 메뉴",
     "mobile": "모바일 메뉴",
@@ -64,71 +83,82 @@
   "focus": {
     "items": [
       {
-        "title": "핵심 영역 1",
-        "text": "간단한 설명 Placeholder입니다."
+        "title": "상품 역량",
+        "text": "사용자 리서치부터 로드맵까지, 글로벌 시장에 맞는 제품을 만드는 힘"
       },
       {
-        "title": "핵심 영역 2",
-        "text": "간단한 설명 Placeholder입니다."
+        "title": "세일즈 역량",
+        "text": "미국 현지 잠재 고객을 찾고 첫 계약으로 연결하는 힘"
       },
       {
-        "title": "핵심 영역 3",
-        "text": "간단한 설명 Placeholder입니다."
+        "title": "투자 유치 역량",
+        "text": "IR 덱과 피칭을 다듬어 실리콘밸리 투자자를 설득하는 힘"
       }
     ]
   },
   "about": {
-    "title": "회사 소개",
-    "description": "회사 소개 설명 Placeholder입니다. 이곳에 회사 소개를 추가하세요.",
-    "imageAlt": "회사 소개 이미지",
+    "title": "오디세이 벤처스",
+    "description": "오디세이 벤처스는 글로벌 시장에서 상품 역량, 투자 유치 역량, 그리고 세일즈 역량을 강화할 수 있도록 도와주는 기업 교육·컨설팅 및 스타트업 액셀러레이팅 기업입니다.",
+    "imageAlt": "오디세이 벤처스 강연 현장",
     "points": [
-      "항목 1 Placeholder",
-      "항목 2 Placeholder",
-      "항목 3 Placeholder"
+      "글로벌 시장에서의 다양한 사업 경험, 실리콘밸리에서의 상품 경험, 나스닥 상장 스타트업 창업 경험, 실리콘밸리 연수 프로그램과 창업 멘토링·컨설팅 경험을 가진 전문가들이 함께합니다.",
+      "스타트업과 해외 진출 기업의 글로벌 상품 역량을 강화하고, 이를 기반으로 글로벌 시장에서 성공적인 비즈니스를 할 수 있도록 Startup Accelerator 사업을 진행합니다."
+    ],
+    "linkLabel": "회사 소개 자세히 보기"
+  },
+  "highlights": {
+    "title": "숫자로 보는 오디세이",
+    "items": [
+      {
+        "value": "2018",
+        "label": "실리콘밸리에서 설립"
+      },
+      {
+        "value": "100+",
+        "label": "비즈니스·기술 전문가 네트워크"
+      },
+      {
+        "value": "7",
+        "label": "2025년 운영·기획한 프로그램"
+      },
+      {
+        "value": "12년",
+        "label": "대표의 스타트업 멘토링·컨설팅 경력"
+      }
     ]
+  },
+  "upcoming": {
+    "title": "다가오는 강의·웨비나",
+    "description": "실리콘밸리 전문가에게 직접 배우는 자리에 참여하세요.",
+    "viewAll": "전체 일정 보기"
   },
   "services": {
     "title": "서비스",
-    "description": "서비스 설명 Placeholder입니다.",
+    "description": "교육부터 일대일 자문, 종합 액셀러레이팅, 기업 컨설팅까지. 필요한 만큼 골라 시작하세요.",
     "cards": {
       "academy": {
-        "description": "간단한 설명 Placeholder입니다."
-      },
-      "accelerator": {
-        "description": "간단한 설명 Placeholder입니다."
+        "description": "실리콘밸리 현직 전문가가 진행하는 글로벌 프로덕트·스타트업 강의와 웨비나"
       },
       "advisory": {
-        "description": "간단한 설명 Placeholder입니다."
+        "description": "법무·재무·마케팅·투자 분야 자문단과의 일대일 전문 자문"
+      },
+      "accelerator": {
+        "description": "교육, 자문, 현지 네트워크를 묶은 미국 시장 진출 종합 프로그램"
+      },
+      "consulting": {
+        "description": "세일즈부터 VC 투자 유치까지 함께하는 기업 대상 컨설팅"
       }
     }
   },
-  "additional": {
-    "title": "추가 섹션 제목 Placeholder",
-    "description": "프로그램, 파트너십, 성과 등에 사용할 수 있는 재사용 섹션입니다.",
-    "items": [
-      {
-        "title": "콘텐츠 블록 1",
-        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-      },
-      {
-        "title": "콘텐츠 블록 2",
-        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-      },
-      {
-        "title": "콘텐츠 블록 3",
-        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-      }
-    ]
-  },
   "testimonials": {
-    "title": "후기 섹션 제목 Placeholder",
+    "title": "고객 후기",
     "startup": "스타트업",
     "partner": "파트너",
     "partnersTitle": "파트너"
   },
   "contact": {
     "title": "문의하기",
-    "description": "문의 안내 Placeholder입니다.",
+    "description": "교육, 자문, 액셀러레이팅, 컨설팅 무엇이든 남겨 주세요. 오디세이 벤처스 팀이 직접 연락드립니다.",
     "emailLabel": "이메일",
     "locationLabel": "위치",
     "form": {
@@ -137,124 +167,23 @@
       "company": "회사명",
       "interest": "관심 분야",
       "message": "문의 내용",
-      "submit": "이메일로 보내기",
-      "statusIdle": "이메일 앱이 열리고 작성한 내용이 입력된 상태로 표시됩니다.",
-      "statusSent": "이메일 앱이 열렸을 것입니다. 앱에서 전송을 눌러 문의를 완료해 주세요.",
       "subjectPrefix": "문의",
       "interests": {
+        "consulting": "컨설팅",
+        "advisory": "1:1 어드바이저리",
         "academy": "아카데미",
         "accelerator": "액셀러레이터",
-        "advisory": "어드바이저리",
-        "consulting": "컨설팅",
+        "membership": "멤버십",
         "other": "기타"
+      },
+      "status": {
+        "submit": "보내기",
+        "sending": "보내는 중…",
+        "saved": "접수되었습니다. 확인 후 이메일로 연락드리겠습니다.",
+        "emailFallback": "이메일 앱이 열렸습니다. 앱에서 전송을 눌러 문의를 완료해 주세요.",
+        "error": "전송하지 못했습니다. 잠시 후 다시 시도하시거나 이메일로 연락해 주세요:",
+        "idle": ""
       }
-    }
-  },
-  "pages": {
-    "academy": {
-      "heroDescription": "아카데미 페이지 배너 설명 Placeholder입니다.",
-      "introTitle": "소개 제목 Placeholder",
-      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
-      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
-      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
-      "contentItems": [
-        {
-          "title": "콘텐츠 블록 1",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "콘텐츠 블록 2",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "콘텐츠 블록 3",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        }
-      ],
-      "additionalTitle": "추가 섹션 제목 Placeholder",
-      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
-      "additionalItems": [
-        {
-          "title": "추가 블록 1",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "추가 블록 2",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        }
-      ],
-      "ctaTitle": "문의 안내 제목 Placeholder",
-      "ctaDescription": "문의 안내 설명 Placeholder입니다."
-    },
-    "accelerator": {
-      "heroDescription": "액셀러레이터 페이지 배너 설명 Placeholder입니다.",
-      "introTitle": "소개 제목 Placeholder",
-      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
-      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
-      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
-      "contentItems": [
-        {
-          "title": "콘텐츠 블록 1",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "콘텐츠 블록 2",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "콘텐츠 블록 3",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        }
-      ],
-      "additionalTitle": "추가 섹션 제목 Placeholder",
-      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
-      "additionalItems": [
-        {
-          "title": "추가 블록 1",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "추가 블록 2",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        }
-      ],
-      "ctaTitle": "문의 안내 제목 Placeholder",
-      "ctaDescription": "문의 안내 설명 Placeholder입니다."
-    },
-    "advisory": {
-      "heroDescription": "어드바이저리 페이지 배너 설명 Placeholder입니다.",
-      "introTitle": "소개 제목 Placeholder",
-      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
-      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
-      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
-      "contentItems": [
-        {
-          "title": "콘텐츠 블록 1",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "콘텐츠 블록 2",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "콘텐츠 블록 3",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        }
-      ],
-      "additionalTitle": "추가 섹션 제목 Placeholder",
-      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
-      "additionalItems": [
-        {
-          "title": "추가 블록 1",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        },
-        {
-          "title": "추가 블록 2",
-          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
-        }
-      ],
-      "ctaTitle": "문의 안내 제목 Placeholder",
-      "ctaDescription": "문의 안내 설명 Placeholder입니다."
     }
   },
   "aboutPage": {
@@ -478,12 +407,300 @@
     "contactTitle": "지금 바로 상담을 시작하세요",
     "contactDescription": "미국 진출, 세일즈, 투자 유치에 대한 고민을 남겨 주시면 오디세이 벤처스 팀이 직접 연락드립니다."
   },
+  "academyPage": {
+    "eyebrow": "Global Startup Academy",
+    "title": "실리콘밸리 현장의 프로덕트 노하우를 배우세요",
+    "description": "Design Thinking, Product Management, Program Management를 실리콘밸리 현지 IT 전문가와 글로벌 기업 종사자에게 직접 배우는 교육 프로그램입니다.",
+    "ctaSchedule": "강의 일정 보기",
+    "scheduleTitle": "강의·웨비나 일정",
+    "scheduleDescription": "Zoom 또는 Google Meet으로 온라인 진행합니다. 신청하시면 접속 정보를 이메일로 보내드립니다.",
+    "upcoming": "예정",
+    "past": "지난 강의",
+    "empty": "현재 예정된 강의가 없습니다. 새 일정 소식을 받으시려면 문의를 남겨 주세요.",
+    "emptyCta": "일정 알림 신청",
+    "sampleNotice": "예시 데이터입니다. 실제 사이트에는 표시되지 않으며, Programs 시트에 입력한 강의로 대체됩니다.",
+    "curriculumTitle": "커리큘럼",
+    "curriculumDescription": "글로벌 상품 관리에 대한 실무 강의와 실전 연습으로, 글로벌 세일즈와 투자 유치의 기반을 만듭니다.",
+    "curriculum": [
+      {
+        "title": "Global Startup 101",
+        "text": "글로벌 시장과 스타트업 생태계 이해"
+      },
+      {
+        "title": "User Research",
+        "text": "사용자 분석과 프로토타입, Design Thinking"
+      },
+      {
+        "title": "Product Management",
+        "text": "상품 전략과 로드맵"
+      },
+      {
+        "title": "Program Management",
+        "text": "상품 개발과 출시"
+      },
+      {
+        "title": "PMF",
+        "text": "Product Market Fit, PoC, Growth Marketing"
+      }
+    ],
+    "coursesTitle": "교육 과정",
+    "courses": [
+      {
+        "title": "Global Product 실무 교육",
+        "audience": "한국 스타트업, 정부·지자체·스타트업 육성 기관",
+        "items": [
+          "사용자 분석·프로토타입 — User Research, Design Thinking, Product Design",
+          "상품 전략·로드맵 — Product Management",
+          "상품 개발·출시 — Program Management",
+          "세일즈·마케팅 — Product Market Fit, PoC, Growth Marketing"
+        ]
+      },
+      {
+        "title": "Global 스타트업 CEO 교육",
+        "audience": "한국 스타트업, 정부·지자체·스타트업 육성 기관",
+        "items": [
+          "Product 전략",
+          "Go-to-Market 전략",
+          "Sales & Marketing 전략",
+          "Fund-raising 전략",
+          "미국 법인 설립 전략",
+          "미국 법인 운영 전략 (법률, 재무·회계·세무, HR)"
+        ]
+      }
+    ],
+    "instructorTitle": "강사",
+    "labels": {
+      "date": "일시",
+      "format": "진행",
+      "instructor": "강사",
+      "capacity": "정원",
+      "capacityUnit": "명",
+      "webinar": "웨비나",
+      "course": "강의",
+      "details": "자세히 보기",
+      "register": "참가 신청",
+      "closed": "신청 마감",
+      "back": "전체 일정으로"
+    },
+    "register": {
+      "title": "참가 신청",
+      "description": "신청이 접수되면 확인 메일을 보내드리고, 행사 전에 접속 링크를 안내드립니다.",
+      "name": "이름",
+      "email": "이메일",
+      "company": "회사·소속",
+      "question": "강사에게 궁금한 점 (선택)",
+      "status": {
+        "submit": "신청하기",
+        "sending": "신청하는 중…",
+        "saved": "신청이 접수되었습니다. 접속 정보는 행사 전에 이메일로 보내드립니다.",
+        "emailFallback": "이메일 앱이 열렸습니다. 앱에서 전송을 눌러 신청을 완료해 주세요.",
+        "error": "신청하지 못했습니다. 잠시 후 다시 시도하시거나 이메일로 연락해 주세요:"
+      },
+      "subjectPrefix": "참가 신청",
+      "closedNote": "이 강의는 신청이 마감되었습니다."
+    }
+  },
+  "advisoryPage": {
+    "eyebrow": "1:1 Advisory",
+    "title": "실리콘밸리 전문가와 일대일로 해결하세요",
+    "description": "미국 시장 진출 전략부터 법무, 재무, 투자 유치까지. 오디세이 자문단이 귀사의 과제에 맞는 전문가를 직접 연결합니다.",
+    "cta": "1:1 자문 신청하기",
+    "areasTitle": "자문 분야",
+    "areas": [
+      {
+        "title": "글로벌 시장 진출 전략",
+        "items": [
+          "Product Strategy",
+          "Go-To-Market Strategy",
+          "Fund-Raising Strategy",
+          "IR Deck·Pitching",
+          "미국 법인 설립 및 운영 전략"
+        ]
+      },
+      {
+        "title": "미국 시장 정착·운영",
+        "items": [
+          "Legal — 투자 계약, 플립, M&A, 특허·IP, 고용 계약, 스타트업 이민·비자",
+          "Fund-Raising — 미국 초기 투자 유치 IR Pitching",
+          "Finance — Corporate Finance, Financial Accounting, Tax",
+          "Sales·Marketing",
+          "HR·Team Building"
+        ]
+      }
+    ],
+    "processTitle": "진행 절차",
+    "processDescription": "요청 내용을 먼저 확인한 뒤 결제를 진행하므로, 맞지 않는 자문에 비용을 먼저 내실 일이 없습니다.",
+    "process": [
+      {
+        "title": "자문 신청",
+        "text": "분야와 구체적인 요청 사항을 남겨 주세요."
+      },
+      {
+        "title": "요청 확인",
+        "text": "운영팀이 내용을 검토하고 필요하면 추가로 여쭙니다."
+      },
+      {
+        "title": "전문가 매칭",
+        "text": "자문단에서 가장 적합한 전문가를 연결합니다."
+      },
+      {
+        "title": "결제",
+        "text": "매칭 내용과 비용을 안내드리고, 결제 후 일정을 확정합니다."
+      },
+      {
+        "title": "1:1 자문",
+        "text": "전문가와 일대일로 자문을 진행합니다."
+      }
+    ],
+    "pricingNote": "자문 비용과 환불 기준은 요청을 확인한 뒤 개별 안내드립니다."
+  },
+  "advisoryRequest": {
+    "title": "1:1 자문 신청",
+    "description": "요청 내용을 확인한 뒤 적합한 전문가와 비용을 이메일로 안내드립니다. 신청만으로는 비용이 발생하지 않습니다.",
+    "name": "이름",
+    "email": "이메일",
+    "company": "회사명",
+    "stage": "회사 단계",
+    "stages": {
+      "idea": "아이디어·창업 준비",
+      "seed": "Seed",
+      "seriesA": "Pre-A·Series A",
+      "growth": "Series B 이상",
+      "corporate": "기업·기관",
+      "other": "기타"
+    },
+    "field": "자문 분야",
+    "unsure": "잘 모르겠어요 (상담 후 결정)",
+    "preferredExpert": "희망 전문가·소속 (선택)",
+    "request": "구체적인 요청 사항",
+    "requestHint": "현재 상황, 해결하고 싶은 문제, 기대하는 결과를 적어 주세요.",
+    "schedule": "희망 일정 (선택)",
+    "status": {
+      "submit": "자문 신청하기",
+      "sending": "신청하는 중…",
+      "saved": "신청이 접수되었습니다. 요청 내용을 확인한 뒤 이메일로 연락드리겠습니다.",
+      "emailFallback": "이메일 앱이 열렸습니다. 앱에서 전송을 눌러 신청을 완료해 주세요.",
+      "error": "신청하지 못했습니다. 잠시 후 다시 시도하시거나 이메일로 연락해 주세요:"
+    },
+    "subjectPrefix": "1:1 자문 신청",
+    "back": "1:1 어드바이저리로 돌아가기"
+  },
+  "acceleratorPage": {
+    "eyebrow": "Global Acceleration Program",
+    "title": "미국 시장 진출, 프로그램으로 한 번에",
+    "description": "정부 기관·기업·학교와 협력해 스타트업의 글로벌 역량 강화와 미국 시장 진출을 지원합니다. 기업 탐방, 전문가 자문, 시장 검증, 투자 유치, 법인 설립·운영까지 함께합니다.",
+    "cta": "프로그램 문의하기",
+    "tracksTitle": "프로그램 구성",
+    "tracksDescription": "참가 기업의 단계에 맞춰 세 가지 트랙으로 운영합니다.",
+    "audienceLabel": "대상",
+    "tracks": [
+      {
+        "title": "글로벌 스타트업 육성",
+        "audience": "Seed 또는 팁스 투자를 유치한 한국 스타트업, 정부·지자체·스타트업 육성 기관",
+        "items": [
+          "스탠포드·UC 버클리 탐방, 기업 탐방, 글로벌 스타트업 역량 교육",
+          "시장 진출을 위한 Product 전략·GTM 전략·시장 검증 지원",
+          "실리콘밸리 전문가·투자자·잠재 고객과의 네트워킹 행사"
+        ]
+      },
+      {
+        "title": "미국 시장 진출 지원",
+        "audience": "Pre-A 또는 Series A 이상 투자를 유치한 한국 스타트업, 정부·지자체·스타트업 육성 기관",
+        "items": [
+          "미국 시장 진출·정착을 위한 전문가 자문",
+          "잠재 고객과의 미팅·상담회",
+          "투자 유치 자문과 투자자 미팅 지원",
+          "미국 법인 설립·운영 자문 및 지원"
+        ]
+      },
+      {
+        "title": "글로벌 역량 강화",
+        "audience": "초·중·고·대학교, 정부·지자체·스타트업 육성 기관",
+        "items": [
+          "글로벌 의식 고취와 스타트업 동기 부여",
+          "스타트업 역량 강화 교육",
+          "스탠포드·UC 버클리 탐방, 기업 탐방, 글로벌 스타트업 실행 역량 교육"
+        ]
+      }
+    ],
+    "recordTitle": "주요 프로그램 실적",
+    "records": [
+      {
+        "year": "2026",
+        "title": "오디세이 미국진출 지원 프로그램 1기 참가기업 모집"
+      },
+      {
+        "year": "2025",
+        "title": "실험실 창업 글로벌 진출 프로그램"
+      },
+      {
+        "year": "2025",
+        "title": "KIRO 로봇 스타트업 글로벌 밋업 프로그램"
+      },
+      {
+        "year": "2025",
+        "title": "Mobility Matters 비즈니스 밋업 기획·운영"
+      },
+      {
+        "year": "2025",
+        "title": "KIC DC Tech Frontier_Startup Talk & Mixer"
+      },
+      {
+        "year": "2025",
+        "title": "Silicon Valley Accelerator Around-X Program & K-Global Program Networking Event"
+      },
+      {
+        "year": "2024",
+        "title": "테크 스타트업 글로벌 액셀러레이팅 프로그램"
+      }
+    ],
+    "contactTitle": "프로그램 참가·협력 문의",
+    "contactDescription": "참가를 원하는 스타트업, 프로그램을 함께 운영할 기관 모두 환영합니다. 회사와 관심 트랙을 남겨 주세요."
+  },
+  "membershipPage": {
+    "eyebrow": "Membership",
+    "title": "멤버십을 준비하고 있습니다",
+    "description": "누구나 오디세이 벤처스의 정보를 볼 수 있고, 회원이 되면 실제 서비스와 혜택을 이용할 수 있도록 멤버십을 준비 중입니다.",
+    "tiersTitle": "비회원과 회원",
+    "tiers": [
+      {
+        "title": "비회원",
+        "items": [
+          "회사 소개와 서비스 안내 열람",
+          "공개 강의·웨비나 신청",
+          "1:1 자문 신청"
+        ]
+      },
+      {
+        "title": "회원 (준비 중)",
+        "items": [
+          "회원 전용 서비스와 혜택",
+          "신청 내역을 계정에서 한 번에 확인",
+          "자세한 내용은 오픈 시 안내"
+        ]
+      }
+    ],
+    "contactTitle": "오픈 소식 받기",
+    "contactDescription": "멤버십이 열리면 가장 먼저 알려 드립니다. 이름과 이메일을 남겨 주세요."
+  },
+  "contactPage": {
+    "eyebrow": "Contact"
+  },
+  "newsPage": {
+    "eyebrow": "News",
+    "title": "오디세이 소식",
+    "description": "회사 소식, 프로그램 활동, 이벤트와 스타트업 이야기를 전합니다.",
+    "empty": "첫 소식을 준비하고 있습니다.",
+    "readMore": "읽어 보기",
+    "external": "원문 보기",
+    "back": "소식 목록으로"
+  },
   "footer": {
     "navTitle": "메뉴",
     "navLabel": "푸터",
-    "companyInfo": "회사 정보 Placeholder입니다.",
+    "companyInfo": "실리콘밸리 기반 글로벌 역량 강화 교육·컨설팅 및 스타트업 액셀러레이팅 기업",
     "contactTitle": "문의",
-    "contactInfo": "연락처 정보 Placeholder입니다.",
+    "contactInfo": "contact@odysseyventures.llc\nSan Jose, California",
     "rights": "All rights reserved."
   },
   "notFound": {

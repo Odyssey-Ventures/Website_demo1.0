@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Odyssey Ventures",
-    "description": "Site description placeholder.",
+    "description": "Odyssey Ventures: Silicon Valley-based global capability training, consulting and startup acceleration",
     "pages": {
       "about": {
         "title": "About Us",
@@ -9,19 +9,35 @@
       },
       "academy": {
         "title": "Academy",
-        "description": "Academy page description placeholder."
+        "description": "Global product and startup courses and webinars led by Silicon Valley practitioners"
       },
       "accelerator": {
         "title": "Accelerator",
-        "description": "Accelerator page description placeholder."
+        "description": "Global Acceleration Program for startups expanding into the U.S."
       },
       "advisory": {
-        "title": "Advisory",
-        "description": "Advisory page description placeholder."
+        "title": "1:1 Advisory",
+        "description": "One-on-one advisory with the Odyssey advisory board"
       },
       "consulting": {
         "title": "Consulting",
         "description": "Odyssey Ventures consulting: our advisory board and Silicon Valley know-how take you from U.S. sales to VC fundraising."
+      },
+      "advisoryRequest": {
+        "title": "Request 1:1 Advisory",
+        "description": "Request a one-on-one session with the Odyssey advisory board."
+      },
+      "membership": {
+        "title": "Membership",
+        "description": "Odyssey Ventures membership"
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "Get in touch with Odyssey Ventures."
+      },
+      "news": {
+        "title": "News",
+        "description": "News and events from Odyssey Ventures"
       }
     }
   },
@@ -34,10 +50,13 @@
   },
   "nav": {
     "about": "About Us",
+    "services": "Services",
     "academy": "Academy",
     "accelerator": "Accelerator",
-    "advisory": "Advisory",
+    "advisory": "1:1 Advisory",
     "consulting": "Consulting",
+    "news": "News",
+    "membership": "Membership",
     "contact": "Contact",
     "main": "Main",
     "mobile": "Mobile",
@@ -64,71 +83,82 @@
   "focus": {
     "items": [
       {
-        "title": "Focus area 1",
-        "text": "Short description placeholder."
+        "title": "Product",
+        "text": "Building a product that fits global markets, from user research to roadmap"
       },
       {
-        "title": "Focus area 2",
-        "text": "Short description placeholder."
+        "title": "Sales",
+        "text": "Finding U.S. customers and turning them into a first contract"
       },
       {
-        "title": "Focus area 3",
-        "text": "Short description placeholder."
+        "title": "Fundraising",
+        "text": "Sharpening the deck and pitch to win Silicon Valley investors"
       }
     ]
   },
   "about": {
-    "title": "About Us",
-    "description": "About Us description placeholder. Add the company introduction here.",
-    "imageAlt": "About Us image",
+    "title": "Odyssey Ventures",
+    "description": "Odyssey Ventures is a corporate training, consulting and startup acceleration company that helps teams strengthen their product, fundraising and sales capabilities for global markets.",
+    "imageAlt": "An Odyssey Ventures session",
     "points": [
-      "Point 1 placeholder",
-      "Point 2 placeholder",
-      "Point 3 placeholder"
+      "Our experts bring global business experience, product leadership in Silicon Valley, experience founding a NASDAQ-listed startup, and years of Silicon Valley training programs and startup mentoring and consulting.",
+      "We run startup acceleration programs that strengthen the global product capabilities of startups and companies going abroad, so they can succeed in the global market."
+    ],
+    "linkLabel": "More about us"
+  },
+  "highlights": {
+    "title": "Odyssey in numbers",
+    "items": [
+      {
+        "value": "2018",
+        "label": "Founded in Silicon Valley"
+      },
+      {
+        "value": "100+",
+        "label": "Business and technology experts in our network"
+      },
+      {
+        "value": "7",
+        "label": "Programs run or organized in 2025"
+      },
+      {
+        "value": "12 yrs",
+        "label": "Our CEO's startup mentoring and consulting experience"
+      }
     ]
   },
+  "upcoming": {
+    "title": "Upcoming courses and webinars",
+    "description": "Learn directly from Silicon Valley practitioners.",
+    "viewAll": "See the full schedule"
+  },
   "services": {
-    "title": "Our Services",
-    "description": "Services description placeholder.",
+    "title": "Services",
+    "description": "From training to one-on-one advisory, full acceleration and corporate consulting. Start with what you need.",
     "cards": {
       "academy": {
-        "description": "Short description placeholder."
-      },
-      "accelerator": {
-        "description": "Short description placeholder."
+        "description": "Global product and startup courses and webinars led by Silicon Valley practitioners"
       },
       "advisory": {
-        "description": "Short description placeholder."
+        "description": "One-on-one advisory with experts in law, finance, marketing and fundraising"
+      },
+      "accelerator": {
+        "description": "A complete U.S. market entry program combining training, advisory and local network"
+      },
+      "consulting": {
+        "description": "Consulting for companies, from sales to VC fundraising"
       }
     }
   },
-  "additional": {
-    "title": "Additional section title placeholder",
-    "description": "Reusable section for programs, partnerships or results.",
-    "items": [
-      {
-        "title": "Content block 1",
-        "text": "Placeholder text. Replace this in src/messages/en.json."
-      },
-      {
-        "title": "Content block 2",
-        "text": "Placeholder text. Replace this in src/messages/en.json."
-      },
-      {
-        "title": "Content block 3",
-        "text": "Placeholder text. Replace this in src/messages/en.json."
-      }
-    ]
-  },
   "testimonials": {
-    "title": "Testimonials section title placeholder",
+    "title": "What clients say",
     "startup": "Startup",
     "partner": "Partner",
     "partnersTitle": "Partners"
   },
   "contact": {
-    "title": "Contact",
-    "description": "Contact description placeholder.",
+    "title": "Contact us",
+    "description": "Training, advisory, acceleration or consulting: tell us what you need and the Odyssey Ventures team will get back to you.",
     "emailLabel": "Email",
     "locationLabel": "Location",
     "form": {
@@ -137,124 +167,23 @@
       "company": "Company",
       "interest": "I am interested in",
       "message": "How can we help?",
-      "submit": "Send by email",
-      "statusIdle": "This opens your email app with your message ready to send.",
-      "statusSent": "Your email app should now be open with your message. Press send there to finish.",
       "subjectPrefix": "Inquiry",
       "interests": {
+        "consulting": "Consulting",
+        "advisory": "1:1 Advisory",
         "academy": "Academy",
         "accelerator": "Accelerator",
-        "advisory": "Advisory",
-        "consulting": "Consulting",
-        "other": "Something else"
+        "membership": "Membership",
+        "other": "Other"
+      },
+      "status": {
+        "submit": "Send",
+        "sending": "Sending…",
+        "saved": "Received. We will reply by email.",
+        "emailFallback": "Your email app opened. Press send there to complete your message.",
+        "error": "We couldn't send this. Please try again shortly or email us at",
+        "idle": ""
       }
-    }
-  },
-  "pages": {
-    "academy": {
-      "heroDescription": "Academy page banner description placeholder.",
-      "introTitle": "Introduction title placeholder",
-      "introText": "Placeholder text. Replace this in src/messages/en.json.",
-      "contentTitle": "Content section title placeholder",
-      "contentDescription": "Content section description placeholder.",
-      "contentItems": [
-        {
-          "title": "Content block 1",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Content block 2",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Content block 3",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        }
-      ],
-      "additionalTitle": "Additional section title placeholder",
-      "additionalDescription": "Additional section description placeholder.",
-      "additionalItems": [
-        {
-          "title": "Additional block 1",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Additional block 2",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        }
-      ],
-      "ctaTitle": "Contact call-to-action title placeholder",
-      "ctaDescription": "Contact call-to-action description placeholder."
-    },
-    "accelerator": {
-      "heroDescription": "Accelerator page banner description placeholder.",
-      "introTitle": "Introduction title placeholder",
-      "introText": "Placeholder text. Replace this in src/messages/en.json.",
-      "contentTitle": "Content section title placeholder",
-      "contentDescription": "Content section description placeholder.",
-      "contentItems": [
-        {
-          "title": "Content block 1",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Content block 2",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Content block 3",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        }
-      ],
-      "additionalTitle": "Additional section title placeholder",
-      "additionalDescription": "Additional section description placeholder.",
-      "additionalItems": [
-        {
-          "title": "Additional block 1",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Additional block 2",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        }
-      ],
-      "ctaTitle": "Contact call-to-action title placeholder",
-      "ctaDescription": "Contact call-to-action description placeholder."
-    },
-    "advisory": {
-      "heroDescription": "Advisory page banner description placeholder.",
-      "introTitle": "Introduction title placeholder",
-      "introText": "Placeholder text. Replace this in src/messages/en.json.",
-      "contentTitle": "Content section title placeholder",
-      "contentDescription": "Content section description placeholder.",
-      "contentItems": [
-        {
-          "title": "Content block 1",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Content block 2",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Content block 3",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        }
-      ],
-      "additionalTitle": "Additional section title placeholder",
-      "additionalDescription": "Additional section description placeholder.",
-      "additionalItems": [
-        {
-          "title": "Additional block 1",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        },
-        {
-          "title": "Additional block 2",
-          "text": "Placeholder text. Replace this in src/messages/en.json."
-        }
-      ],
-      "ctaTitle": "Contact call-to-action title placeholder",
-      "ctaDescription": "Contact call-to-action description placeholder."
     }
   },
   "aboutPage": {
@@ -478,12 +407,300 @@
     "contactTitle": "Start the conversation today",
     "contactDescription": "Tell us where you are with U.S. expansion, sales or fundraising, and the Odyssey Ventures team will get back to you directly."
   },
+  "academyPage": {
+    "eyebrow": "Global Startup Academy",
+    "title": "Learn product know-how straight from Silicon Valley",
+    "description": "Learn Design Thinking, Product Management and Program Management from Silicon Valley IT experts and people working at global companies.",
+    "ctaSchedule": "See the schedule",
+    "scheduleTitle": "Courses and webinars",
+    "scheduleDescription": "Held online on Zoom or Google Meet. After you register we email you the joining details.",
+    "upcoming": "Upcoming",
+    "past": "Past sessions",
+    "empty": "No sessions are scheduled right now. Leave us a note to hear about the next one.",
+    "emptyCta": "Notify me",
+    "sampleNotice": "Sample data. It is never shown on the live site and is replaced by sessions entered in the Programs sheet.",
+    "curriculumTitle": "Curriculum",
+    "curriculumDescription": "Hands-on lectures and practice in global product management, building the base for global sales and fundraising.",
+    "curriculum": [
+      {
+        "title": "Global Startup 101",
+        "text": "Global markets and the startup ecosystem"
+      },
+      {
+        "title": "User Research",
+        "text": "User analysis, prototyping and Design Thinking"
+      },
+      {
+        "title": "Product Management",
+        "text": "Product strategy and roadmap"
+      },
+      {
+        "title": "Program Management",
+        "text": "Product development and launch"
+      },
+      {
+        "title": "PMF",
+        "text": "Product Market Fit, PoCs and growth marketing"
+      }
+    ],
+    "coursesTitle": "Courses",
+    "courses": [
+      {
+        "title": "Global Product in practice",
+        "audience": "Korean startups, government and startup support organizations",
+        "items": [
+          "User analysis and prototyping — User Research, Design Thinking, Product Design",
+          "Product strategy and roadmap — Product Management",
+          "Product development and launch — Program Management",
+          "Sales and marketing — Product Market Fit, PoCs, Growth Marketing"
+        ]
+      },
+      {
+        "title": "Global startup CEO program",
+        "audience": "Korean startups, government and startup support organizations",
+        "items": [
+          "Product strategy",
+          "Go-to-Market strategy",
+          "Sales and marketing strategy",
+          "Fundraising strategy",
+          "Setting up a U.S. entity",
+          "Running a U.S. entity (legal, finance, accounting, tax, HR)"
+        ]
+      }
+    ],
+    "instructorTitle": "Instructor",
+    "labels": {
+      "date": "Date",
+      "format": "Format",
+      "instructor": "Instructor",
+      "capacity": "Seats",
+      "capacityUnit": "",
+      "webinar": "Webinar",
+      "course": "Course",
+      "details": "Details",
+      "register": "Register",
+      "closed": "Registration closed",
+      "back": "Back to the schedule"
+    },
+    "register": {
+      "title": "Register",
+      "description": "We confirm your registration by email and send the joining link before the session.",
+      "name": "Name",
+      "email": "Email",
+      "company": "Company or organization",
+      "question": "A question for the instructor (optional)",
+      "status": {
+        "submit": "Register",
+        "sending": "Registering…",
+        "saved": "You're registered. We'll email the joining details before the session.",
+        "emailFallback": "Your email app opened. Press send there to complete your registration.",
+        "error": "We couldn't register you. Please try again shortly or email us at"
+      },
+      "subjectPrefix": "Registration",
+      "closedNote": "Registration for this session is closed."
+    }
+  },
+  "advisoryPage": {
+    "eyebrow": "1:1 Advisory",
+    "title": "Solve it one-on-one with a Silicon Valley expert",
+    "description": "From U.S. market entry strategy to legal, finance and fundraising, the Odyssey advisory board connects you with the right expert for your challenge.",
+    "cta": "Request 1:1 advisory",
+    "areasTitle": "Advisory areas",
+    "areas": [
+      {
+        "title": "Global market entry strategy",
+        "items": [
+          "Product Strategy",
+          "Go-To-Market Strategy",
+          "Fund-Raising Strategy",
+          "IR deck and pitching",
+          "Setting up and running a U.S. entity"
+        ]
+      },
+      {
+        "title": "Settling and operating in the U.S.",
+        "items": [
+          "Legal — investment agreements, flips, M&A, patents and IP, employment, startup immigration and visas",
+          "Fund-Raising — early-stage U.S. IR pitching",
+          "Finance — corporate finance, financial accounting, tax",
+          "Sales and marketing",
+          "HR and team building"
+        ]
+      }
+    ],
+    "processTitle": "How it works",
+    "processDescription": "We review your request before any payment, so you never pay up front for advisory that doesn't fit.",
+    "process": [
+      {
+        "title": "Request",
+        "text": "Tell us the area and what you need."
+      },
+      {
+        "title": "Review",
+        "text": "Our team reviews it and asks follow-up questions if needed."
+      },
+      {
+        "title": "Match",
+        "text": "We connect you with the best-fit expert from our advisory board."
+      },
+      {
+        "title": "Payment",
+        "text": "We share the match and the fee; your session is scheduled after payment."
+      },
+      {
+        "title": "1:1 session",
+        "text": "You work one-on-one with the expert."
+      }
+    ],
+    "pricingNote": "Fees and refund terms are shared individually after we review your request."
+  },
+  "advisoryRequest": {
+    "title": "Request 1:1 advisory",
+    "description": "We review your request and email you the matched expert and the fee. Submitting a request costs nothing.",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company",
+    "stage": "Company stage",
+    "stages": {
+      "idea": "Idea or pre-founding",
+      "seed": "Seed",
+      "seriesA": "Pre-A or Series A",
+      "growth": "Series B or later",
+      "corporate": "Company or institution",
+      "other": "Other"
+    },
+    "field": "Advisory area",
+    "unsure": "Not sure yet (decide after a call)",
+    "preferredExpert": "Preferred expert or company (optional)",
+    "request": "What do you need?",
+    "requestHint": "Your current situation, the problem to solve and the result you expect.",
+    "schedule": "Preferred timing (optional)",
+    "status": {
+      "submit": "Send request",
+      "sending": "Sending…",
+      "saved": "Request received. We'll review it and reply by email.",
+      "emailFallback": "Your email app opened. Press send there to complete your request.",
+      "error": "We couldn't send your request. Please try again shortly or email us at"
+    },
+    "subjectPrefix": "1:1 advisory request",
+    "back": "Back to 1:1 Advisory"
+  },
+  "acceleratorPage": {
+    "eyebrow": "Global Acceleration Program",
+    "title": "Enter the U.S. market in one program",
+    "description": "Working with government agencies, companies and schools, we help startups build global capabilities and enter the U.S. market: company visits, expert advisory, market validation, fundraising and setting up and running a U.S. entity.",
+    "cta": "Ask about the program",
+    "tracksTitle": "Program tracks",
+    "tracksDescription": "Three tracks, matched to each participant's stage.",
+    "audienceLabel": "For",
+    "tracks": [
+      {
+        "title": "Global startup development",
+        "audience": "Korean startups with Seed or TIPS funding; government and startup support organizations",
+        "items": [
+          "Visits to Stanford, UC Berkeley and companies; global startup training",
+          "Product strategy, GTM strategy and market validation",
+          "Networking with Silicon Valley experts, investors and potential customers"
+        ]
+      },
+      {
+        "title": "U.S. market entry",
+        "audience": "Korean startups with Pre-A or Series A funding or later; government and startup support organizations",
+        "items": [
+          "Expert advisory for entering and settling in the U.S.",
+          "Meetings with potential customers",
+          "Fundraising advisory and investor meetings",
+          "Advisory and support for setting up and running a U.S. entity"
+        ]
+      },
+      {
+        "title": "Global capability building",
+        "audience": "Schools and universities; government and startup support organizations",
+        "items": [
+          "Global mindset and startup motivation",
+          "Startup capability training",
+          "Visits to Stanford, UC Berkeley and companies; global startup execution training"
+        ]
+      }
+    ],
+    "recordTitle": "Program track record",
+    "records": [
+      {
+        "year": "2026",
+        "title": "Recruiting the first cohort of the Odyssey U.S. Expansion Support Program"
+      },
+      {
+        "year": "2025",
+        "title": "Lab startup global expansion program"
+      },
+      {
+        "year": "2025",
+        "title": "KIRO robot startup global meetup program"
+      },
+      {
+        "year": "2025",
+        "title": "Mobility Matters business meetup"
+      },
+      {
+        "year": "2025",
+        "title": "KIC DC Tech Frontier_Startup Talk & Mixer"
+      },
+      {
+        "year": "2025",
+        "title": "Silicon Valley Accelerator Around-X Program & K-Global Program Networking Event"
+      },
+      {
+        "year": "2024",
+        "title": "Tech startup global acceleration program"
+      }
+    ],
+    "contactTitle": "Join or partner with us",
+    "contactDescription": "Startups that want to take part and organizations that want to run a program with us are both welcome. Tell us about your company and the track you're interested in."
+  },
+  "membershipPage": {
+    "eyebrow": "Membership",
+    "title": "Membership is coming",
+    "description": "Anyone can explore Odyssey Ventures; members will get access to the services and benefits themselves. We are preparing it now.",
+    "tiersTitle": "Visitors and members",
+    "tiers": [
+      {
+        "title": "Visitors",
+        "items": [
+          "Company and service information",
+          "Register for public courses and webinars",
+          "Request 1:1 advisory"
+        ]
+      },
+      {
+        "title": "Members (coming soon)",
+        "items": [
+          "Member-only services and benefits",
+          "All your requests in one account",
+          "Details at launch"
+        ]
+      }
+    ],
+    "contactTitle": "Get notified",
+    "contactDescription": "Leave your name and email and we'll tell you first when membership opens."
+  },
+  "contactPage": {
+    "eyebrow": "Contact"
+  },
+  "newsPage": {
+    "eyebrow": "News",
+    "title": "Odyssey news",
+    "description": "Company news, program activities, events and startup stories.",
+    "empty": "Our first story is on its way.",
+    "readMore": "Read more",
+    "external": "Read the original",
+    "back": "Back to news"
+  },
   "footer": {
     "navTitle": "Navigation",
     "navLabel": "Footer",
-    "companyInfo": "Company information placeholder.",
+    "companyInfo": "Silicon Valley-based global capability training, consulting and startup acceleration",
     "contactTitle": "Contact",
-    "contactInfo": "Contact details placeholder.",
+    "contactInfo": "contact@odysseyventures.llc\nSan Jose, California",
     "rights": "All rights reserved."
   },
   "notFound": {
