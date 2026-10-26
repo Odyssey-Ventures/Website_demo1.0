@@ -33,7 +33,7 @@ export function Footer({ lang, dict }: FooterProps) {
             <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3">
               {/* The Services entry is listed as its four services instead of a link to the Home section. */}
               {mainNav
-                .flatMap<{ key: Exclude<keyof typeof nav, "aboutSections">; path: string }>((item) => (item.key === "services" ? [...serviceLinks] : [item]))
+                .flatMap<{ key: Exclude<keyof typeof nav, "aboutSections" | "newsSections">; path: string }>((item) => (item.key === "services" ? [...serviceLinks] : [item]))
                 .map((item) => (
                   <li key={item.key}>
                     <Link href={localizedHref(lang, item.path)} className={linkClass}>

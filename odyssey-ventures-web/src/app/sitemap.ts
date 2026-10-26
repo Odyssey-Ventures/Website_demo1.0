@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { locales } from "@/i18n/config";
 
-const paths = ["", "/about", "/academy", "/advisory", "/advisory/request", "/accelerator", "/consulting", "/news", "/membership", "/contact"];
+const paths = ["", "/about", "/academy", "/advisory", "/advisory/request", "/accelerator", "/consulting", "/news", "/faq", "/support", "/membership", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

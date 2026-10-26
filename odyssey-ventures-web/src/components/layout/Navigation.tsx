@@ -24,20 +24,24 @@ export function Navigation({ lang, dict, variant = "desktop", onNavigate }: Navi
     if (href === `/${lang}`) return false;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
-  const childLabel = (child: NavChild) => (child.group === "about" ? dict.aboutSections[child.key] : dict[child.key]);
+  const childLabel = (child: NavChild) =>
+    child.group === "about" ? dict.aboutSections[child.key] : child.group === "news" ? dict.newsSections[child.key] : dict[child.key];
 
   return (
     <nav aria-label={isMobile ? dict.mobile : dict.main}>
       <ul className={isMobile ? "flex flex-col" : "flex items-center gap-8"}>
         {mainNav.map((item) => {
-          // Services has no page of its own: it is active while one of its services is open.
-          const active = item.key === "services" ? (item.children ?? []).some((child) => isActive(child.path)) : isActive(item.path);
+          // Services and News are groups: active while one of their pages is open.
+          const active =
+            item.key === "services" || item.key === "news"
+              ? (item.children ?? []).some((child) => isActive(child.path))
+              : isActive(item.path);
           return (
             <li key={item.key} className={isMobile ? undefined : "group relative"}>
               <Link
                 href={localizedHref(lang, item.path)}
                 onClick={onNavigate}
-                aria-current={active && item.key !== "services" ? "page" : undefined}
+                aria-current={active && !item.children ? "page" : undefined}
                 className={cn(
                   "transition-colors duration-200",
                   isMobile
@@ -64,10 +68,10 @@ export function Navigation({ lang, dict, variant = "desktop", onNavigate }: Navi
                         <Link
                           href={localizedHref(lang, child.path)}
                           onClick={onNavigate}
-                          aria-current={isActive(child.path) && child.group === "services" ? "page" : undefined}
+                          aria-current={isActive(child.path) && child.group !== "about" ? "page" : undefined}
                           className={cn(
                             "block py-2 text-base transition-colors duration-200 hover:text-navy",
-                            child.group === "services" && isActive(child.path) ? "text-brand-blue" : "text-muted"
+                            child.group !== "about" && isActive(child.path) ? "text-brand-blue" : "text-muted"
                           )}
                         >
                           {childLabel(child)}

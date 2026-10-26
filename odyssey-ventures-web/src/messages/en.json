@@ -36,8 +36,20 @@
         "description": "Get in touch with Odyssey Ventures."
       },
       "news": {
-        "title": "News",
+        "title": "Newsroom",
         "description": "News and events from Odyssey Ventures"
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "Frequently asked questions about Odyssey Ventures services"
+      },
+      "support": {
+        "title": "Customer Support",
+        "description": "Ask Odyssey Ventures a private question."
+      },
+      "login": {
+        "title": "Sign in",
+        "description": "Sign in with a link sent to your email."
       }
     }
   },
@@ -67,6 +79,11 @@
       "history": "History",
       "experts": "Experts",
       "team": "Team"
+    },
+    "newsSections": {
+      "newsroom": "Newsroom",
+      "faq": "FAQ",
+      "support": "Customer Support"
     }
   },
   "language": {
@@ -689,13 +706,243 @@
     "eyebrow": "Contact"
   },
   "newsPage": {
-    "eyebrow": "News",
-    "title": "Odyssey news",
+    "eyebrow": "Newsroom",
+    "title": "Newsroom",
     "description": "Company news, program activities, events and startup stories.",
     "empty": "Our first story is on its way.",
     "readMore": "Read more",
     "external": "Read the original",
-    "back": "Back to news"
+    "back": "Back to the Newsroom",
+    "write": "New post",
+    "edit": "Edit",
+    "draft": "Draft",
+    "notConfigured": "The Newsroom is coming soon.",
+    "editor": {
+      "titleNew": "New post",
+      "titleEdit": "Edit post",
+      "title": "Title",
+      "slug": "Address name",
+      "slugHint": "Lowercase letters, numbers and hyphens only, e.g. spring-batch-2026",
+      "summary": "Summary (one or two lines shown in the list)",
+      "body": "Body",
+      "bodyHint": "Separate paragraphs with a blank line.",
+      "externalUrl": "Original link (optional, starts with https://)",
+      "published": "Published (when off, only staff can see it)",
+      "save": "Save",
+      "saving": "Saving…",
+      "error": "Couldn't save:",
+      "delete": "Delete post",
+      "confirmDelete": "Delete this post and all its comments? This can't be undone.",
+      "staffOnly": "Only staff signed in with a company address (@odysseyventures.llc) can write posts."
+    },
+    "comments": {
+      "title": "Comments",
+      "empty": "Be the first to comment.",
+      "name": "Name",
+      "body": "Comment",
+      "submit": "Post comment",
+      "sending": "Posting…",
+      "loginToComment": "Sign in with your email to comment.",
+      "hiddenLabel": "Hidden (visible to staff and the author only)",
+      "hide": "Hide",
+      "unhide": "Unhide",
+      "delete": "Delete",
+      "confirmDelete": "Delete this comment?",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "faqPage": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "description": "Common questions about our services, registration, payment and accounts.",
+    "searchPlaceholder": "Search the FAQ",
+    "all": "All",
+    "empty": "No results. Try other words or ask Customer Support.",
+    "moreTitle": "Didn't find your answer?",
+    "moreText": "Leave a private question in Customer Support and the Odyssey Ventures team will reply.",
+    "moreCta": "Ask Customer Support",
+    "categories": {
+      "general": "General",
+      "academy": "Academy",
+      "advisory": "1:1 Advisory",
+      "accelerator": "Accelerator & Consulting",
+      "payment": "Payment & refunds",
+      "account": "Account"
+    },
+    "items": [
+      {
+        "category": "general",
+        "q": "What is Odyssey Ventures?",
+        "a": "A global capability training, consulting and startup acceleration company headquartered in Silicon Valley (San Jose, California). Founded in 2018, we help startups and companies build the product, sales and fundraising capabilities they need in global markets."
+      },
+      {
+        "category": "general",
+        "q": "What services do you offer?",
+        "a": "Four: Academy (courses and webinars), 1:1 Advisory (one-on-one expert advisory), Accelerator (a complete U.S. market entry program) and Consulting (sales and fundraising consulting for companies). See Services in the top menu for each."
+      },
+      {
+        "category": "general",
+        "q": "Can companies based in Korea use your services?",
+        "a": "Yes. Academy sessions run online on Zoom or Google Meet, and we run programs for Korean startups and organizations."
+      },
+      {
+        "category": "academy",
+        "q": "How do I register for a session?",
+        "a": "Choose a session on the Academy page and fill in the form on its page. We confirm by email and send the joining link before the session."
+      },
+      {
+        "category": "academy",
+        "q": "Do sessions cost anything?",
+        "a": "It depends on the session. Any fee is shown on the session page and in our emails."
+      },
+      {
+        "category": "academy",
+        "q": "I didn't get the joining link.",
+        "a": "We send it to your registration email before the session. Check your spam folder, and if it isn't there, contact Customer Support."
+      },
+      {
+        "category": "advisory",
+        "q": "How does 1:1 Advisory work?",
+        "a": "Send a request; our team reviews it and matches an expert from our advisory board. After we share the fee and you pay, we schedule your one-on-one session."
+      },
+      {
+        "category": "advisory",
+        "q": "Am I charged when I submit a request?",
+        "a": "No. Requests are free. We share the fee after reviewing your request and matching an expert, and payment comes after that."
+      },
+      {
+        "category": "advisory",
+        "q": "What areas can I get advice on?",
+        "a": "Global market entry strategy (product, go-to-market, fundraising, IR, setting up a U.S. entity) and settling and operating in the U.S. (legal, finance, accounting and tax, sales and marketing, HR). The advisory board is listed on the 1:1 Advisory page."
+      },
+      {
+        "category": "accelerator",
+        "q": "Who can join the Accelerator?",
+        "a": "It depends on the track: startups with Seed or TIPS funding, startups with Pre-A or Series A funding or later, and schools and government or startup support organizations."
+      },
+      {
+        "category": "accelerator",
+        "q": "Can our organization run a program with you?",
+        "a": "Yes. We run programs with government agencies, companies and schools. Use the form on the Accelerator page to reach us."
+      },
+      {
+        "category": "accelerator",
+        "q": "How is Consulting different from 1:1 Advisory?",
+        "a": "1:1 Advisory is a per-request, one-on-one session with an expert on a specific issue. Consulting is a project we run with your company, from sales to VC fundraising."
+      },
+      {
+        "category": "payment",
+        "q": "How do I pay?",
+        "a": "After we review your request, we email you the amount and how to pay."
+      },
+      {
+        "category": "payment",
+        "q": "Can I get a refund?",
+        "a": "Refund terms will be published here and in our emails as they are finalized for each service. For your specific case, please contact Customer Support."
+      },
+      {
+        "category": "account",
+        "q": "Do I need an account?",
+        "a": "No account is needed to register for sessions or request advisory. You sign in with your email only to use Customer Support or comment in the Newsroom."
+      },
+      {
+        "category": "account",
+        "q": "How do I set a password?",
+        "a": "There is no password. Enter your email, we send you a sign-in link, and opening it signs you in."
+      },
+      {
+        "category": "account",
+        "q": "Who can see my Customer Support questions?",
+        "a": "Only you and Odyssey Ventures staff. Others see them on the board only as a private post."
+      },
+      {
+        "category": "account",
+        "q": "When does membership start?",
+        "a": "It is in preparation. Sign up for launch news on the Membership page and we'll tell you first."
+      }
+    ]
+  },
+  "supportPage": {
+    "eyebrow": "Customer Support",
+    "title": "Customer Support",
+    "description": "Leave your question privately. Only you and Odyssey Ventures staff can see it.",
+    "ask": "Ask a question",
+    "faqLink": "Check the FAQ first",
+    "columns": {
+      "number": "No.",
+      "category": "Category",
+      "title": "Title",
+      "status": "Status",
+      "date": "Date"
+    },
+    "private": "Private post",
+    "mine": "Mine",
+    "status": {
+      "open": "Waiting",
+      "answered": "Answered",
+      "closed": "Closed"
+    },
+    "categories": {
+      "general": "General",
+      "academy": "Academy",
+      "advisory": "1:1 Advisory",
+      "accelerator": "Accelerator",
+      "consulting": "Consulting",
+      "membership": "Membership",
+      "payment": "Payment & refunds",
+      "other": "Other"
+    },
+    "empty": "No questions yet.",
+    "prev": "Previous",
+    "next": "Next",
+    "notConfigured": "The support board is coming soon. Meanwhile, please use the Contact page.",
+    "loginRequired": "Sign in with your email to ask a question or read replies. No password: just open the link we email you.",
+    "form": {
+      "title": "New question",
+      "category": "Category",
+      "subject": "Title",
+      "body": "Your question",
+      "privacyNote": "Only you and Odyssey Ventures staff can see this question.",
+      "submit": "Submit question",
+      "sending": "Submitting…",
+      "error": "Couldn't submit. Please try again."
+    },
+    "detail": {
+      "back": "Back to Customer Support",
+      "replies": "Replies",
+      "staff": "Odyssey Ventures",
+      "author": "You",
+      "noReplies": "No reply yet. You'll find the answer on this page once it's posted.",
+      "replyLabel": "Write a reply",
+      "followUpLabel": "Follow-up question",
+      "reply": "Send",
+      "sending": "Sending…",
+      "close": "Close question",
+      "reopen": "Reopen",
+      "delete": "Delete",
+      "confirmDelete": "Delete this question and all replies?",
+      "closedNote": "This question is closed. Please ask a new question for anything else.",
+      "notAllowed": "This is a private post. Only its author and staff can see it.",
+      "error": "Something went wrong. Please try again."
+    },
+    "notifySubject": "New Customer Support question"
+  },
+  "auth": {
+    "login": "Sign in",
+    "logout": "Sign out",
+    "account": "Account",
+    "title": "Sign in with email",
+    "description": "No password: enter your email and open the sign-in link we send you.",
+    "email": "Email",
+    "send": "Email me a sign-in link",
+    "sending": "Sending…",
+    "sent": "Check your inbox for the sign-in link. If you don't see it, check your spam folder too.",
+    "error": "We couldn't send the link. Check the address and try again.",
+    "linkError": "That sign-in link has expired or was already used. Please request a new one.",
+    "staffHint": "Signing in with a company address (@odysseyventures.llc) lets you write Newsroom posts, moderate comments and answer support questions.",
+    "signedInAs": "Signed in as",
+    "staffBadge": "Staff",
+    "notConfigured": "Sign-in is coming soon. For anything urgent, please use the Contact page."
   },
   "footer": {
     "navTitle": "Navigation",

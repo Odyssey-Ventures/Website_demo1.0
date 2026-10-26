@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { AccountMenu } from "@/components/layout/AccountMenu";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { Logo } from "@/components/layout/Logo";
 import { Navigation } from "@/components/layout/Navigation";
@@ -11,7 +12,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 
 interface HeaderProps {
   lang: Locale;
-  dict: Pick<Dictionary, "common" | "nav" | "language">;
+  dict: Pick<Dictionary, "common" | "nav" | "language" | "auth">;
 }
 
 export function Header({ lang, dict }: HeaderProps) {
@@ -44,8 +45,9 @@ export function Header({ lang, dict }: HeaderProps) {
       <Container className="flex h-16 items-center justify-between gap-6 md:h-20">
         <Logo lang={lang} label={dict.common.homeAria} priority />
 
-        <div className="hidden items-center gap-10 lg:flex">
+        <div className="hidden items-center gap-6 lg:flex xl:gap-8">
           <Navigation lang={lang} dict={dict.nav} />
+          <AccountMenu lang={lang} dict={dict.auth} />
           <LanguageSwitcher lang={lang} dict={dict.language} />
         </div>
 
@@ -68,8 +70,9 @@ export function Header({ lang, dict }: HeaderProps) {
         <div id="mobile-menu" className="border-t border-line bg-white lg:hidden">
           <Container className="flex flex-col py-2">
             <Navigation lang={lang} dict={dict.nav} variant="mobile" onNavigate={closeMenu} />
-            <div className="py-5">
+            <div className="flex flex-wrap items-center justify-between gap-4 py-5">
               <LanguageSwitcher lang={lang} dict={dict.language} onNavigate={closeMenu} />
+              <AccountMenu lang={lang} dict={dict.auth} />
             </div>
           </Container>
         </div>

@@ -2,10 +2,13 @@ import type { ServiceSlug } from "@/types";
 
 export type AboutSectionKey = "overview" | "history" | "experts" | "team";
 
-/** A dropdown entry. `key` is looked up under "nav.aboutSections" (about) or "nav" (services). */
+export type NewsSectionKey = "newsroom" | "faq" | "support";
+
+/** A dropdown entry. `key` is looked up under "nav.aboutSections" (about), "nav" (services) or "nav.newsSections" (news). */
 export type NavChild =
   | { group: "about"; key: AboutSectionKey; path: string }
-  | { group: "services"; key: ServiceSlug; path: string };
+  | { group: "services"; key: ServiceSlug; path: string }
+  | { group: "news"; key: NewsSectionKey; path: string };
 
 export interface MainNavItem {
   /** Dictionary key under "nav". */
@@ -31,10 +34,16 @@ export const serviceLinks = [
   { group: "services", key: "consulting", path: "/consulting" },
 ] as const satisfies readonly NavChild[];
 
+export const newsLinks = [
+  { group: "news", key: "newsroom", path: "/news" },
+  { group: "news", key: "faq", path: "/faq" },
+  { group: "news", key: "support", path: "/support" },
+] as const satisfies readonly NavChild[];
+
 export const mainNav: readonly MainNavItem[] = [
   { key: "about", path: "/about", children: aboutSections },
   { key: "services", path: "/#services", children: serviceLinks },
-  { key: "news", path: "/news" },
+  { key: "news", path: "/news", children: newsLinks },
   { key: "membership", path: "/membership" },
   { key: "contact", path: "/contact" },
 ];

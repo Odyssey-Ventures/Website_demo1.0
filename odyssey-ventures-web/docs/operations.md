@@ -13,7 +13,9 @@
 | 문의 확인 (컨설팅, 액셀러레이터, 멤버십, 일반) | 운영 시트 `Inquiries` 탭 | 즉시 |
 | 화면 문구 수정 | `src/messages/ko.json`, `en.json` (개발자) | 배포 후 |
 | 자문단 명단 수정 | `src/data/advisors.ts` (개발자) | 배포 후 |
-| 소식(News) 글 추가 | `src/data/news.ts` (개발자) | 배포 후 |
+| 뉴스룸 글 쓰기·수정·삭제, 댓글 숨김·삭제 | 사이트 `소식 → 뉴스룸` (회사 이메일로 로그인) | 즉시 |
+| 고객센터 문의 답변, 상태 변경 | 사이트 `소식 → 고객센터` (회사 이메일로 로그인) | 즉시 |
+| 자주 하는 질문 수정 | `src/messages/ko.json`, `en.json`의 `faqPage` (개발자) | 배포 후 |
 
 새 신청이 들어오면 운영자 이메일로 알림이 갑니다.
 
@@ -99,7 +101,38 @@
 
 **문의 (`Inquiries`)**: `interest` 열로 컨설팅·액셀러레이터·멤버십·기타를 구분합니다. 회신 후 `status`를 `replied`로 바꿉니다.
 
-## 5. 문제가 생겼을 때
+## 5. 뉴스룸·고객센터 (Supabase)
+
+뉴스룸과 고객센터 게시판은 **Supabase**(데이터베이스 + 이메일 로그인)에 저장됩니다.
+로그인은 비밀번호 없이, 이메일로 받은 링크를 누르는 방식입니다.
+
+**직원 권한**: `@odysseyventures.llc` 이메일로 로그인한 사람이 직원입니다. 직원만 뉴스룸 글을 쓰고, 댓글을 숨기거나 지우고, 고객센터의 모든 문의를 보고 답변할 수 있습니다.
+이 규칙은 데이터베이스 자체(행 수준 보안)에 걸려 있어서, 화면을 우회해도 바뀌지 않습니다.
+
+### 5-1. 처음 한 번만: 연결
+
+1. [supabase.com](https://supabase.com)에서 회사 계정으로 새 프로젝트를 만듭니다 (리전은 West US 권장).
+2. **SQL Editor**에서 `supabase/migrations/0001_newsroom_and_support.sql` 내용을 붙여 넣고 실행합니다. 여러 번 실행해도 안전합니다.
+3. **Authentication → URL Configuration**
+   - Site URL: 실제 사이트 주소 (예: `https://www.odysseyventures.llc`)
+   - Redirect URLs: `https://<사이트 주소>/api/auth/callback` 를 추가합니다. Vercel 미리보기에서도 쓰려면 `https://*-<팀이름>.vercel.app/api/auth/callback` 도 추가합니다.
+4. **Authentication → Providers → Email**이 켜져 있는지 확인합니다. 기본 메일 발송은 시간당 몇 통으로 제한되므로, 운영 전에 **Authentication → SMTP Settings**에서 회사 메일(SMTP)을 연결하는 것을 권장합니다.
+5. **Project Settings → API**의 `Project URL`과 `anon public` 키를 Vercel 환경 변수 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`에 넣고 다시 배포합니다. (`service_role` 키는 절대 넣지 마세요.)
+
+### 5-2. 뉴스룸 운영
+
+- 회사 이메일로 로그인하면 뉴스룸에 **글쓰기** 버튼이 보입니다. 주소(슬러그)는 영문 소문자·숫자·하이픈만 씁니다.
+- 편집 화면의 **공개**를 끄면 직원에게만 보이고(초안), 켜면 모두에게 보입니다.
+- 댓글은 이메일로 로그인한 누구나 쓸 수 있습니다. 직원은 각 댓글의 **숨기기 / 삭제**로 관리합니다. 숨긴 댓글은 작성자와 직원에게만 보입니다.
+
+### 5-3. 고객센터 운영
+
+- 방문자는 이메일로 로그인한 뒤 비공개 문의를 남깁니다. 목록에는 분류·상태·날짜만 보이고, 제목과 내용은 **작성자 본인과 직원만** 볼 수 있습니다.
+- 새 문의가 들어오면 운영 시트 연결(2장)이 되어 있는 경우 `Inquiries` 탭(관심 분야 `support`)과 알림 메일로 제목과 링크가 옵니다. 내용은 사이트에서 확인합니다.
+- 직원이 답변을 달면 상태가 **답변 완료**로 바뀝니다. 작성자가 추가 질문을 달면 다시 **답변 대기**가 됩니다. 처리가 끝나면 **종료**로 바꿉니다.
+- 답변이 달렸다는 메일 알림은 아직 자동 발송되지 않습니다. 필요하면 작성자 이메일(문의 상세에 표시)로 직접 알려 주세요.
+
+## 6. 문제가 생겼을 때
 
 | 증상 | 확인할 것 |
 | --- | --- |
@@ -107,3 +140,7 @@
 | "전송하지 못했습니다" 오류 | Apps Script 스크립트 속성의 비밀 문자열이 Vercel 값과 같은지, 웹 앱 액세스가 "모든 사용자"인지 |
 | 강의가 사이트에 안 보임 | `status`가 `published`인지, `date` 형식, 5분 기다렸는지, CSV 게시가 켜져 있는지 |
 | 알림 메일이 안 옴 | 스크립트 속성 `NOTIFY_EMAIL`, Gmail 스팸함 |
+| 뉴스룸이 "준비 중"으로 보임 | Vercel 환경 변수 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`가 있는지, 넣은 뒤 다시 배포했는지 |
+| 로그인 링크를 눌렀는데 오류 | Supabase Redirect URLs에 `/api/auth/callback` 주소가 있는지, 링크가 만료되지 않았는지(1시간) |
+| 로그인 메일이 안 옴 | 스팸함, Supabase 기본 메일 발송 한도 (SMTP 연결 권장) |
+| 회사 이메일인데 글쓰기 버튼이 없음 | 로그인한 주소가 정확히 `@odysseyventures.llc`로 끝나는지 |
