@@ -6,6 +6,7 @@ import type { Service } from "@/types";
  */
 export const services: Service[] = [
   { slug: "academy", path: "/academy" },
-  { slug: "accelerator", path: "/accelerator" },
   { slug: "advisory", path: "/advisory" },
+  { slug: "accelerator", path: "/accelerator" },
+  { slug: "consulting", path: "/consulting" },
 ];
