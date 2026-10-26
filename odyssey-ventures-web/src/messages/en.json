@@ -144,11 +144,6 @@
       }
     ]
   },
-  "upcoming": {
-    "title": "Upcoming courses and webinars",
-    "description": "Learn directly from Silicon Valley practitioners.",
-    "viewAll": "See the full schedule"
-  },
   "services": {
     "title": "Services",
     "description": "From training to one-on-one advisory, full acceleration and corporate consulting. Start with what you need.",

@@ -8,12 +8,8 @@ import { Hero } from "@/components/home/Hero";
 import { Highlights } from "@/components/home/Highlights";
 import { Services } from "@/components/home/Services";
 import { Testimonials } from "@/components/home/Testimonials";
-import { UpcomingPrograms } from "@/components/home/UpcomingPrograms";
 import { alternatesFor, isLocale, type LangParams } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
-
-/** Re-read the Programs sheet at most every 5 minutes. */
-export const revalidate = 300;
 
 export async function generateMetadata({ params }: LangParams): Promise<Metadata> {
   const { lang } = await params;
@@ -32,12 +28,6 @@ export default async function HomePage({ params }: LangParams) {
       <Focus dict={dict.focus} />
       <About lang={lang} dict={dict.about} />
       <Services lang={lang} dict={dict} />
-      <UpcomingPrograms
-        lang={lang}
-        dict={dict.upcoming}
-        labels={dict.academyPage.labels}
-        sampleNotice={dict.academyPage.sampleNotice}
-      />
       <Highlights dict={dict.highlights} />
       <Testimonials dict={dict.testimonials} />
       <Contact dict={dict.contact} lang={lang} />
