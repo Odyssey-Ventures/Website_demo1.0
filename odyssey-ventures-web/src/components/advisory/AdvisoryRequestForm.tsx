@@ -2,23 +2,25 @@
 
 import { Field, fieldClass, Honeypot, SubmitRow } from "@/components/forms/FormParts";
 import { useSubmission } from "@/components/forms/useSubmission";
-import { advisorCategories } from "@/data/advisors";
+import { advisorAreas, type AdvisorArea } from "@/data/advisor-profiles";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface AdvisoryRequestFormProps {
   lang: string;
   dict: Dictionary["advisoryRequest"];
-  categories: Dictionary["advisoryBoard"]["categories"];
+  areas: Dictionary["advisors"]["areas"];
+  /** Set on an advisor's page: the form asks for a meeting with that advisor. */
+  advisor?: { name: string; area: AdvisorArea };
 }
 
 const stageKeys = ["idea", "seed", "seriesA", "growth", "corporate", "other"] as const;
 
 /** 1:1 Advisory request. Saved to the "AdvisoryRequests" sheet; an operator reviews it and matches an expert by hand. */
-export function AdvisoryRequestForm({ lang, dict, categories }: AdvisoryRequestFormProps) {
+export function AdvisoryRequestForm({ lang, dict, areas, advisor }: AdvisoryRequestFormProps) {
   const { status, handleSubmit } = useSubmission({
     kind: "advisory",
     lang,
-    emailSubject: (fields) => `${dict.subjectPrefix}: ${categories[fields.field as keyof typeof categories] ?? dict.unsure}`,
+    emailSubject: (fields) => `${dict.subjectPrefix}: ${fields.preferredExpert || areas[fields.field as AdvisorArea] || dict.unsure}`,
     labels: {
       name: dict.name,
       email: dict.email,
@@ -54,17 +56,17 @@ export function AdvisoryRequestForm({ lang, dict, categories }: AdvisoryRequestF
           </select>
         </Field>
         <Field label={dict.field}>
-          <select name="field" required defaultValue="unsure" className={fieldClass}>
+          <select name="field" required defaultValue={advisor?.area ?? "unsure"} className={fieldClass}>
             <option value="unsure">{dict.unsure}</option>
-            {advisorCategories.map(({ key }) => (
+            {advisorAreas.map((key) => (
               <option key={key} value={key}>
-                {categories[key]}
+                {areas[key]}
               </option>
             ))}
           </select>
         </Field>
         <Field label={dict.preferredExpert}>
-          <input name="preferredExpert" type="text" className={fieldClass} />
+          <input name="preferredExpert" type="text" defaultValue={advisor?.name} className={fieldClass} />
         </Field>
       </div>
 

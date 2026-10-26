@@ -344,39 +344,73 @@
       }
     }
   },
-  "advisoryBoard": {
-    "title": "Odyssey Advisory Board",
-    "description": "Beyond our own mentors, we work with partners across the U.S. market — law firms, accountants, marketers, investors and technologists — so startups can enter the market with less risk and reach early customers faster.",
-    "hint": "Tap a card to see the advisor's area of expertise.",
-    "jump": "Jump to a field",
-    "specialty": "Expertise",
-    "field": "Field",
-    "noSpecialty": "Details to be added",
-    "groups": {
-      "business": {
-        "title": "Business experts",
-        "note": "* Odyssey Ventures works with more than 100 business partners for advisory and consulting."
-      },
-      "tech": {
-        "title": "Technology experts",
-        "note": "* We also have a wide personal network built directly and indirectly over the years."
-      }
-    },
-    "categories": {
+  "advisors": {
+    "title": "1:1 meeting advisors",
+    "description": "52 Silicon Valley experts across seven areas, from legal to experienced founders. Select a name to read their profile and request a 1:1 meeting.",
+    "searchPlaceholder": "Search by name, company or specialty",
+    "all": "All",
+    "empty": "No advisors match. Try another word or switch the area to All.",
+    "count": "{count} advisors",
+    "areas": {
       "legal": "Legal",
-      "finance": "Finance & Accounting",
-      "marketing": "Marketing",
-      "fundraising": "Fundraising",
-      "hr": "HR",
-      "interpretation": "Interpretation",
-      "internet": "Internet",
-      "ai": "AI",
-      "mobility": "Mobility",
-      "robots": "Robotics",
-      "energy": "Energy",
+      "tax": "Tax & Accounting",
+      "sales": "Sales & Marketing",
+      "hr": "HR & Hiring",
+      "investment": "Investment & Funding",
+      "industry": "Industry Experts",
+      "founders": "Startup Founders"
+    },
+    "meeting": {
+      "inPerson": "In-person meetings available",
+      "online": "Online meetings only",
+      "tbc": "Meeting format to be confirmed"
+    },
+    "profile": {
+      "back": "All advisors",
+      "tabsLabel": "Advisor details",
+      "tabs": {
+        "profile": "Profile",
+        "meeting": "Request a meeting"
+      },
+      "specialties": "Specialties",
       "bio": "Bio",
-      "semiconductor": "Semiconductors",
-      "kbeauty": "K-Beauty / K-Food"
+      "career": "Professional history",
+      "education": "Education",
+      "areas": "Advisory areas",
+      "meetingFormat": "Meeting format",
+      "linkedin": "LinkedIn profile",
+      "sourceNote": "Profile from the 2026 Advisor Brochure.",
+      "requestCta": "Request a meeting with this advisor"
+    },
+    "request": {
+      "title": "Request a 1:1 meeting with {name}",
+      "description": "Tell us what you need and when suits you. Our team arranges a time with the advisor and confirms it by email. Sending a request costs nothing.",
+      "steps": [
+        "Request",
+        "Time arranged and confirmed",
+        "Payment",
+        "1:1 meeting"
+      ]
+    },
+    "payment": {
+      "title": "Meeting payment",
+      "description": "Once your meeting time is confirmed, pay the rate that applies to you. The payment link is also in the confirmation email.",
+      "tiers": {
+        "guest": {
+          "name": "Non-member",
+          "note": "No membership needed"
+        },
+        "member": {
+          "name": "Basic member",
+          "note": "The meeting goes ahead once membership is confirmed"
+        }
+      },
+      "pay": "Pay now",
+      "priceTbd": "Rate shared when the time is confirmed",
+      "notReady": "Payment coming soon",
+      "notReadyNote": "Online payment is being set up. Send a meeting request and we will email you how to pay.",
+      "upperTier": "Higher-tier members only need to send the request form, without paying here. We will follow up according to your membership benefits.",
+      "external": "Payment opens on a secure external payment page in a new window."
     }
   },
   "consultingPage": {
@@ -813,7 +847,7 @@
       {
         "category": "advisory",
         "q": "What areas can I get advice on?",
-        "a": "Global market entry strategy (product, go-to-market, fundraising, IR, setting up a U.S. entity) and settling and operating in the U.S. (legal, finance, accounting and tax, sales and marketing, HR). The advisory board is listed on the 1:1 Advisory page."
+        "a": "Seven areas: legal, tax and accounting, sales and marketing, HR and hiring, investment and funding, industry expertise, and experienced startup founders. On the 1:1 Advisory page you can read all 52 advisors' profiles and request a meeting with the one you want."
       },
       {
         "category": "accelerator",

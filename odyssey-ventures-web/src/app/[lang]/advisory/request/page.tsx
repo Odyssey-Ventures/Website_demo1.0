@@ -40,7 +40,7 @@ export default async function AdvisoryRequestPage({ params }: LangParams) {
           ))}
         </ol>
         <div className="mt-8">
-          <AdvisoryRequestForm lang={lang} dict={page} categories={dict.advisoryBoard.categories} />
+          <AdvisoryRequestForm lang={lang} dict={page} areas={dict.advisors.areas} />
         </div>
       </Container>
     </section>

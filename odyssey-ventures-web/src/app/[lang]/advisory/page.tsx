@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { AdvisoryBoard } from "@/components/advisory/AdvisoryBoard";
+import { AdvisorDirectory } from "@/components/advisory/AdvisorDirectory";
+import { advisorProfiles } from "@/data/advisor-profiles";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: LangParams): Promise<Metadata
   return { title: page.title, description: page.description, alternates: alternatesFor(lang, "/advisory") };
 }
 
-/** 1:1 Advisory: areas, the request → review → match → payment → session process, and the advisory board. */
+/** 1:1 Advisory: areas, the request → review → match → payment → session process, and the 1:1 meeting advisors. */
 export default async function AdvisoryPage({ params }: LangParams) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
@@ -73,7 +74,16 @@ export default async function AdvisoryPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <AdvisoryBoard lang={lang} dict={dict.advisoryBoard} />
+      <SectionContainer id="advisors" tone="mist">
+        <SectionHeading title={dict.advisors.title}>{dict.advisors.description}</SectionHeading>
+        <div className="mt-10">
+          <AdvisorDirectory
+            lang={lang}
+            dict={dict.advisors}
+            advisors={advisorProfiles.map(({ slug, name, nameKo, title, org, areas, specialties }) => ({ slug, name, nameKo, title, org, areas, specialties }))}
+          />
+        </div>
+      </SectionContainer>
     </>
   );
 }
