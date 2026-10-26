@@ -112,7 +112,38 @@ export default async function AcademyPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer tone="mist" containerClassName="grid items-center gap-10 md:grid-cols-[240px,1fr]">
+      <SectionContainer tone="mist">
+        <Reveal>
+          <SectionHeading title={page.universityTitle}>{page.universityDescription}</SectionHeading>
+        </Reveal>
+        <div className="mt-10 overflow-hidden rounded-lg border border-line bg-white shadow-card">
+          <table className="w-full text-left text-sm sm:text-base">
+            <thead className="bg-navy text-white">
+              <tr>
+                <th scope="col" className="hidden px-5 py-3 font-semibold sm:table-cell">{page.universityLabels.week}</th>
+                <th scope="col" className="px-5 py-3 font-semibold">{page.universityLabels.date}</th>
+                <th scope="col" className="px-5 py-3 font-semibold">{page.universityLabels.topic}</th>
+                <th scope="col" className="hidden px-5 py-3 font-semibold md:table-cell">{page.universityLabels.instructor}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-line">
+              {page.universityLectures.map((lecture) => (
+                <tr key={lecture.week}>
+                  <td className="hidden px-5 py-3 text-muted sm:table-cell">{lecture.week}</td>
+                  <td className="whitespace-nowrap px-5 py-3 font-medium text-brand-blue">{lecture.date}</td>
+                  <td className="px-5 py-3 text-navy">
+                    {lecture.topic}
+                    <span className="mt-0.5 block text-sm text-muted md:hidden">{lecture.instructor}</span>
+                  </td>
+                  <td className="hidden px-5 py-3 text-muted md:table-cell">{lecture.instructor}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </SectionContainer>
+
+      <SectionContainer containerClassName="grid items-center gap-10 md:grid-cols-[240px,1fr]">
         {instructorPhoto ? (
           <Image
             src={instructorPhoto.src}

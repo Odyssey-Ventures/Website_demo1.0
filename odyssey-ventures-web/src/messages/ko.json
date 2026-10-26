@@ -381,7 +381,7 @@
   },
   "advisors": {
     "title": "1:1 미팅 자문단",
-    "description": "법률부터 선배 창업가까지 7개 분야, 실리콘밸리 현지 전문가 52명입니다. 이름을 누르면 약력을 보고 바로 1:1 미팅을 신청할 수 있습니다.",
+    "description": "법률부터 선배 창업가까지 7개 분야, 실리콘밸리 현지 전문가 52명입니다. 이름을 누르면 약력을 보고 바로 1:1 미팅을 신청할 수 있습니다. 2025년에는 KSC 실리콘밸리와 함께 20여 명의 전문가가 1:1 자문을 제공했습니다.",
     "searchPlaceholder": "이름, 소속, 전문 분야로 검색",
     "all": "전체",
     "empty": "검색 결과가 없습니다. 다른 단어로 찾아보시거나 분야를 '전체'로 바꿔 보세요.",
@@ -556,6 +556,88 @@
         ]
       }
     ],
+    "universityTitle": "대학 강의 실적",
+    "universityDescription": "한양대학교 ERICA 소프트웨어중심대학의 2025년 2학기 Startup Design 강의(1학점)에서 실리콘밸리 트렌드와 글로벌 스타트업에 필요한 커리큘럼을 맡았습니다.",
+    "universityLabels": {
+      "week": "주차",
+      "date": "일시",
+      "topic": "주제",
+      "instructor": "강사"
+    },
+    "universityLectures": [
+      {
+        "week": "2",
+        "date": "09.08",
+        "topic": "실리콘밸리 기술 트렌드 – AI & Metaverse",
+        "instructor": "Kevin Kim, CEO, 오디세이 벤처스"
+      },
+      {
+        "week": "4",
+        "date": "09.15",
+        "topic": "실리콘밸리에서의 생활",
+        "instructor": "Kevin Park, (전) 애플·테슬라 구매 담당"
+      },
+      {
+        "week": "5",
+        "date": "09.22",
+        "topic": "실리콘밸리 기술 트렌드 – AI & Machine Learning",
+        "instructor": "Ryan Kim, ML Engineer, Applied Materials"
+      },
+      {
+        "week": "6",
+        "date": "09.29",
+        "topic": "실리콘밸리 엔지니어들",
+        "instructor": "Jaehyun Yeom, 수석 소프트웨어 개발자, Bear Robotics"
+      },
+      {
+        "week": "7",
+        "date": "10.13",
+        "topic": "Problem & Founder Fit",
+        "instructor": "Kevin Kim, CEO, 오디세이 벤처스"
+      },
+      {
+        "week": "8",
+        "date": "10.20",
+        "topic": "Design Thinking 1",
+        "instructor": "Okkeun Lee, 스탠포드 기계공학 박사"
+      },
+      {
+        "week": "10",
+        "date": "11.03",
+        "topic": "Design Thinking 2",
+        "instructor": "Okkeun Lee, 스탠포드 기계공학 박사"
+      },
+      {
+        "week": "11",
+        "date": "11.10",
+        "topic": "Product Management 1",
+        "instructor": "Kevin Kim, CEO, 오디세이 벤처스"
+      },
+      {
+        "week": "12",
+        "date": "11.17",
+        "topic": "Product Management 2",
+        "instructor": "Kevin Kim, CEO, 오디세이 벤처스"
+      },
+      {
+        "week": "13",
+        "date": "11.24",
+        "topic": "Program Management 1",
+        "instructor": "Eric Na, Google 프로그램 매니저"
+      },
+      {
+        "week": "14",
+        "date": "12.01",
+        "topic": "Program Management 2",
+        "instructor": "Eric Na, Google 프로그램 매니저"
+      },
+      {
+        "week": "15",
+        "date": "12.08",
+        "topic": "Product Market Fit",
+        "instructor": "Baron Chang, XPath 대표"
+      }
+    ],
     "instructorTitle": "강사",
     "labels": {
       "date": "일시",
@@ -709,6 +791,52 @@
           "스타트업 역량 강화 교육",
           "스탠포드·UC 버클리 탐방, 기업 탐방, 글로벌 스타트업 실행 역량 교육"
         ]
+      }
+    ],
+    "galleryTitle": "프로그램 현장",
+    "galleryDescription": "최근 운영한 프로그램과 밋업의 현장 모습입니다.",
+    "gallery": [
+      {
+        "date": "2025.08",
+        "title": "로봇 스타트업 글로벌 프로그램",
+        "description": "6일간 실리콘밸리에서 Plug and Play VC의 IR 피칭 멘토링, Aurora·스탠포드 탐방, 현지 기업 미팅, KOTRA 미팅을 진행했습니다.",
+        "image": "/images/programs/robot-startup-2025.webp"
+      },
+      {
+        "date": "2025",
+        "title": "실험실 창업 글로벌 프로그램",
+        "description": "실험실 창업팀과 함께 실리콘밸리 기업 탐방, 전문가 멘토링, 현지 네트워킹을 진행했습니다.",
+        "image": "/images/programs/lab-startup-2025.webp"
+      },
+      {
+        "date": "2024",
+        "title": "테크 스타트업 글로벌 액셀러레이팅 프로그램",
+        "description": "테크 스타트업의 현지 기업 방문과 1:1 멘토링, 네트워킹 행사를 운영했습니다.",
+        "image": "/images/programs/tech-startup-2024.webp"
+      },
+      {
+        "date": "2025",
+        "title": "KIC DC Tech Frontier_Startup Talk & Mixer",
+        "description": "KIC DC와 함께 스타트업 토크와 패널 토론, 네트워킹 행사를 운영했습니다.",
+        "image": "/images/programs/kic-dc-tech-frontier-2025.webp"
+      },
+      {
+        "date": "2025",
+        "title": "2025 Mobility Matters",
+        "description": "모빌리티 비즈니스 밋업을 기획·운영하고 로봇 스타트업 IR 피칭 무대를 마련했습니다.",
+        "image": "/images/programs/mobility-matters-2025.webp"
+      },
+      {
+        "date": "2025.01",
+        "title": "Odyssey Startup Talk & Mixer",
+        "description": "글로벌 진출을 준비하는 창업가와 현지 전문가가 만나는 오디세이 정기 밋업입니다.",
+        "image": "/images/programs/talk-mixer-silicon-valley-2025.webp"
+      },
+      {
+        "date": "2025.02",
+        "title": "Odyssey Startup Talk & Mixer in Seoul",
+        "description": "서울 역삼동 MARU360에서 미국 시장 진출을 준비하는 창업가를 위한 밋업을 열었습니다.",
+        "image": "/images/programs/talk-mixer-seoul-2025.webp"
       }
     ],
     "recordTitle": "주요 프로그램 실적",

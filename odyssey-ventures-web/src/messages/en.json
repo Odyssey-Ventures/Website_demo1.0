@@ -381,7 +381,7 @@
   },
   "advisors": {
     "title": "1:1 meeting advisors",
-    "description": "52 Silicon Valley experts across seven areas, from legal to experienced founders. Select a name to read their profile and request a 1:1 meeting.",
+    "description": "52 Silicon Valley experts across seven areas, from legal to experienced founders. Select a name to read their profile and request a 1:1 meeting. In 2025, around 20 experts provided 1:1 advisory together with KSC Silicon Valley.",
     "searchPlaceholder": "Search by name, company or specialty",
     "all": "All",
     "empty": "No advisors match. Try another word or switch the area to All.",
@@ -556,6 +556,88 @@
         ]
       }
     ],
+    "universityTitle": "University courses",
+    "universityDescription": "For Hanyang University ERICA's Software-Centered University program, we taught the Fall 2025 Startup Design course (1 credit), covering Silicon Valley trends and a curriculum for global startups.",
+    "universityLabels": {
+      "week": "Week",
+      "date": "Date",
+      "topic": "Topic",
+      "instructor": "Instructor"
+    },
+    "universityLectures": [
+      {
+        "week": "2",
+        "date": "Sep 8",
+        "topic": "Silicon Valley tech trends – AI & Metaverse",
+        "instructor": "Kevin Kim, CEO, Odyssey Ventures"
+      },
+      {
+        "week": "4",
+        "date": "Sep 15",
+        "topic": "Living in Silicon Valley",
+        "instructor": "Kevin Park, former procurement at Apple and Tesla"
+      },
+      {
+        "week": "5",
+        "date": "Sep 22",
+        "topic": "Silicon Valley tech trends – AI & Machine Learning",
+        "instructor": "Ryan Kim, ML Engineer, Applied Materials"
+      },
+      {
+        "week": "6",
+        "date": "Sep 29",
+        "topic": "Silicon Valley engineers",
+        "instructor": "Jaehyun Yeom, Principal Software Engineer, Bear Robotics"
+      },
+      {
+        "week": "7",
+        "date": "Oct 13",
+        "topic": "Problem & Founder Fit",
+        "instructor": "Kevin Kim, CEO, Odyssey Ventures"
+      },
+      {
+        "week": "8",
+        "date": "Oct 20",
+        "topic": "Design Thinking 1",
+        "instructor": "Okkeun Lee, Ph.D. in Mechanical Engineering, Stanford"
+      },
+      {
+        "week": "10",
+        "date": "Nov 3",
+        "topic": "Design Thinking 2",
+        "instructor": "Okkeun Lee, Ph.D. in Mechanical Engineering, Stanford"
+      },
+      {
+        "week": "11",
+        "date": "Nov 10",
+        "topic": "Product Management 1",
+        "instructor": "Kevin Kim, CEO, Odyssey Ventures"
+      },
+      {
+        "week": "12",
+        "date": "Nov 17",
+        "topic": "Product Management 2",
+        "instructor": "Kevin Kim, CEO, Odyssey Ventures"
+      },
+      {
+        "week": "13",
+        "date": "Nov 24",
+        "topic": "Program Management 1",
+        "instructor": "Eric Na, Program Manager, Google"
+      },
+      {
+        "week": "14",
+        "date": "Dec 1",
+        "topic": "Program Management 2",
+        "instructor": "Eric Na, Program Manager, Google"
+      },
+      {
+        "week": "15",
+        "date": "Dec 8",
+        "topic": "Product Market Fit",
+        "instructor": "Baron Chang, CEO, XPath"
+      }
+    ],
     "instructorTitle": "Instructor",
     "labels": {
       "date": "Date",
@@ -709,6 +791,52 @@
           "Startup capability training",
           "Visits to Stanford, UC Berkeley and companies; global startup execution training"
         ]
+      }
+    ],
+    "galleryTitle": "On the ground",
+    "galleryDescription": "Scenes from recent programs and meetups.",
+    "gallery": [
+      {
+        "date": "Aug 2025",
+        "title": "Robotics Startup Global Program",
+        "description": "Six days in Silicon Valley: IR pitch mentoring with Plug and Play VC, visits to Aurora and Stanford, company meetings and a KOTRA meeting.",
+        "image": "/images/programs/robot-startup-2025.webp"
+      },
+      {
+        "date": "2025",
+        "title": "Lab Startup Global Program",
+        "description": "Company visits, expert mentoring and local networking in Silicon Valley for university lab startups.",
+        "image": "/images/programs/lab-startup-2025.webp"
+      },
+      {
+        "date": "2024",
+        "title": "Tech Startup Global Acceleration Program",
+        "description": "Company visits, 1:1 mentoring and networking events for tech startups.",
+        "image": "/images/programs/tech-startup-2024.webp"
+      },
+      {
+        "date": "2025",
+        "title": "KIC DC Tech Frontier_Startup Talk & Mixer",
+        "description": "Startup talks, a panel and networking, run with KIC DC.",
+        "image": "/images/programs/kic-dc-tech-frontier-2025.webp"
+      },
+      {
+        "date": "2025",
+        "title": "2025 Mobility Matters",
+        "description": "A mobility business meetup we planned and ran, including a robotics startup pitch session.",
+        "image": "/images/programs/mobility-matters-2025.webp"
+      },
+      {
+        "date": "Jan 2025",
+        "title": "Odyssey Startup Talk & Mixer",
+        "description": "Odyssey's regular meetup bringing founders going global together with local experts.",
+        "image": "/images/programs/talk-mixer-silicon-valley-2025.webp"
+      },
+      {
+        "date": "Feb 2025",
+        "title": "Odyssey Startup Talk & Mixer in Seoul",
+        "description": "A meetup at MARU360 in Yeoksam-dong, Seoul, for founders preparing to enter the U.S. market.",
+        "image": "/images/programs/talk-mixer-seoul-2025.webp"
       }
     ],
     "recordTitle": "Program track record",
