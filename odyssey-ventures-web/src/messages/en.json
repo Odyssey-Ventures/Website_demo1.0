@@ -1,0 +1,427 @@
+{
+  "meta": {
+    "title": "Odyssey Ventures",
+    "description": "Site description placeholder.",
+    "pages": {
+      "about": {
+        "title": "About Us",
+        "description": "Odyssey Ventures is a Silicon Valley-based education, consulting and startup accelerator company."
+      },
+      "academy": {
+        "title": "Academy",
+        "description": "Academy page description placeholder."
+      },
+      "accelerator": {
+        "title": "Accelerator",
+        "description": "Accelerator page description placeholder."
+      },
+      "advisory": {
+        "title": "Advisory",
+        "description": "Advisory page description placeholder."
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "homeAria": "Odyssey Ventures, home",
+    "learnMore": "Learn more",
+    "contactUs": "Contact us",
+    "placeholderTag": "Placeholder"
+  },
+  "nav": {
+    "about": "About Us",
+    "academy": "Academy",
+    "accelerator": "Accelerator",
+    "advisory": "Advisory",
+    "contact": "Contact",
+    "main": "Main",
+    "mobile": "Mobile",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "aboutSections": {
+      "overview": "Company Overview",
+      "history": "History",
+      "experts": "Experts",
+      "team": "Team"
+    }
+  },
+  "language": {
+    "label": "Language",
+    "switchToKo": "Switch to Korean",
+    "switchToEn": "Switch to English"
+  },
+  "hero": {
+    "title": "Let's get ready for the global market",
+    "description": "Silicon Valley-based education, consulting and startup acceleration for companies going global.",
+    "primaryCta": "Explore our services",
+    "secondaryCta": "Contact us"
+  },
+  "focus": {
+    "items": [
+      {
+        "title": "Focus area 1",
+        "text": "Short description placeholder."
+      },
+      {
+        "title": "Focus area 2",
+        "text": "Short description placeholder."
+      },
+      {
+        "title": "Focus area 3",
+        "text": "Short description placeholder."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "description": "About Us description placeholder. Add the company introduction here.",
+    "imageAlt": "About Us image",
+    "points": [
+      "Point 1 placeholder",
+      "Point 2 placeholder",
+      "Point 3 placeholder"
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Services description placeholder.",
+    "cards": {
+      "academy": {
+        "description": "Short description placeholder."
+      },
+      "accelerator": {
+        "description": "Short description placeholder."
+      },
+      "advisory": {
+        "description": "Short description placeholder."
+      }
+    }
+  },
+  "additional": {
+    "title": "Additional section title placeholder",
+    "description": "Reusable section for programs, partnerships or results.",
+    "items": [
+      {
+        "title": "Content block 1",
+        "text": "Placeholder text. Replace this in src/messages/en.json."
+      },
+      {
+        "title": "Content block 2",
+        "text": "Placeholder text. Replace this in src/messages/en.json."
+      },
+      {
+        "title": "Content block 3",
+        "text": "Placeholder text. Replace this in src/messages/en.json."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonials section title placeholder",
+    "startup": "Startup",
+    "partner": "Partner",
+    "partnersTitle": "Partners"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Contact description placeholder.",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "interest": "I am interested in",
+      "message": "How can we help?",
+      "submit": "Send by email",
+      "statusIdle": "This opens your email app with your message ready to send.",
+      "statusSent": "Your email app should now be open with your message. Press send there to finish.",
+      "subjectPrefix": "Inquiry",
+      "interests": {
+        "academy": "Academy",
+        "accelerator": "Accelerator",
+        "advisory": "Advisory",
+        "other": "Something else"
+      }
+    }
+  },
+  "pages": {
+    "academy": {
+      "heroDescription": "Academy page banner description placeholder.",
+      "introTitle": "Introduction title placeholder",
+      "introText": "Placeholder text. Replace this in src/messages/en.json.",
+      "contentTitle": "Content section title placeholder",
+      "contentDescription": "Content section description placeholder.",
+      "contentItems": [
+        {
+          "title": "Content block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 3",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "additionalTitle": "Additional section title placeholder",
+      "additionalDescription": "Additional section description placeholder.",
+      "additionalItems": [
+        {
+          "title": "Additional block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Additional block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "ctaTitle": "Contact call-to-action title placeholder",
+      "ctaDescription": "Contact call-to-action description placeholder."
+    },
+    "accelerator": {
+      "heroDescription": "Accelerator page banner description placeholder.",
+      "introTitle": "Introduction title placeholder",
+      "introText": "Placeholder text. Replace this in src/messages/en.json.",
+      "contentTitle": "Content section title placeholder",
+      "contentDescription": "Content section description placeholder.",
+      "contentItems": [
+        {
+          "title": "Content block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 3",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "additionalTitle": "Additional section title placeholder",
+      "additionalDescription": "Additional section description placeholder.",
+      "additionalItems": [
+        {
+          "title": "Additional block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Additional block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "ctaTitle": "Contact call-to-action title placeholder",
+      "ctaDescription": "Contact call-to-action description placeholder."
+    },
+    "advisory": {
+      "heroDescription": "Advisory page banner description placeholder.",
+      "introTitle": "Introduction title placeholder",
+      "introText": "Placeholder text. Replace this in src/messages/en.json.",
+      "contentTitle": "Content section title placeholder",
+      "contentDescription": "Content section description placeholder.",
+      "contentItems": [
+        {
+          "title": "Content block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Content block 3",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "additionalTitle": "Additional section title placeholder",
+      "additionalDescription": "Additional section description placeholder.",
+      "additionalItems": [
+        {
+          "title": "Additional block 1",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        },
+        {
+          "title": "Additional block 2",
+          "text": "Placeholder text. Replace this in src/messages/en.json."
+        }
+      ],
+      "ctaTitle": "Contact call-to-action title placeholder",
+      "ctaDescription": "Contact call-to-action description placeholder."
+    }
+  },
+  "aboutPage": {
+    "sectionsLabel": "About Us sections",
+    "overview": {
+      "lead": "Global capability building and startup acceleration, from Silicon Valley",
+      "paragraphs": [
+        "Headquartered in Silicon Valley, Odyssey Ventures, LLC was founded in 2018 as a specialist in capability-building education for global markets and startup acceleration. We design and run hands-on education programs for public institutions, startups and universities, along with acceleration programs that help startups expand globally, providing practical and structured solutions for entering overseas markets and strengthening global competitiveness.",
+        "Odyssey Ventures launched its startup acceleration business in earnest in 2024. Building on our founder's and team's years of experience mentoring and growing startups, and on our wide network across Silicon Valley, we run both partner programs and our own programs."
+      ],
+      "capabilitiesTitle": "What we strengthen",
+      "capabilities": [
+        "Product capability",
+        "Sales capability",
+        "Fundraising capability"
+      ],
+      "capabilitiesResult": "Entry into the U.S. market",
+      "facts": [
+        {
+          "label": "Company",
+          "value": "Odyssey Ventures, LLC"
+        },
+        {
+          "label": "Founded",
+          "value": "March 2018"
+        },
+        {
+          "label": "Headquarters",
+          "value": "San Jose, California (Silicon Valley)"
+        },
+        {
+          "label": "Business",
+          "value": "Startup acceleration, corporate education and consulting"
+        },
+        {
+          "label": "CEO",
+          "value": "Kevin Kim"
+        }
+      ]
+    },
+    "history": [
+      {
+        "year": "2018–2023",
+        "items": [
+          "Founded GlobalLeadersCamp, LLC (San Jose, CA), starting as a corporate leadership consulting company",
+          "Corporate advisory and startup mentoring"
+        ]
+      },
+      {
+        "year": "2024",
+        "items": [
+          "Renamed to Odyssey Ventures, LLC and launched the startup acceleration business in earnest",
+          "Ran the Global Product Academy (Design Thinking, Product Management, Program Management)",
+          "Planned and ran the Hanyang University global meetup program"
+        ]
+      },
+      {
+        "year": "2025",
+        "items": [
+          "Hosted the Odyssey Startup Meetup",
+          "Ran the 2025 Odyssey Spring Batch",
+          "Ran the KIC DC Tech Frontier_Startup Talk & Mixer program",
+          "Ran the KIRO robot startup global meetup program",
+          "Ran the Silicon Valley Accelerator Around-X Program & K-Global Program Networking Event",
+          "Planned and ran the Mobility Matters business meetup",
+          "Delivered the 2025 KSC Silicon Valley onlanding program brokerage service"
+        ]
+      },
+      {
+        "year": "2026",
+        "items": [
+          "Recruiting the first cohort of the 2026 Odyssey U.S. Expansion Support Program"
+        ]
+      }
+    ],
+    "expertsDescription": "Odyssey Ventures brings together experts with deep hands-on experience in product design, product management, program management and marketing in Silicon Valley.",
+    "team": [
+      {
+        "name": "Kevin Kim",
+        "role": "CEO · Program Lead",
+        "bio": [
+          "Founder of NEXED Inc.",
+          "Co-founder of WiderThan (Korea; NASDAQ listing in 2005)",
+          "Former Director of Product Management at Samsung Electronics America; former Senior Director at RealNetworks",
+          "Former PM for wireless internet at SK Telecom; Head of International Product & Business Development at WiderThan",
+          "B.S. in Electronic Engineering, Hanyang University; M.S., Carnegie Mellon University",
+          "12 years of startup mentoring and consulting; 3 years of acceleration"
+        ]
+      },
+      {
+        "name": "Juye Kim",
+        "role": "Program Director",
+        "bio": [
+          "Program Director, Odyssey Ventures",
+          "Enviropreneur Fellow, Hoover Institution, Stanford University",
+          "Former U.S. Country Manager, Synergy Inc",
+          "Former Technology Strategy Lead and Business Development Manager, Qcells North America",
+          "M.S. in Building Management, Carnegie Mellon University",
+          "Startup mentoring, consulting and acceleration experience"
+        ]
+      },
+      {
+        "name": "Yoomi Yi",
+        "role": "Operation Director",
+        "bio": [
+          "Former Program Manager, KIC (Korea Innovation Center)",
+          "Ran the KIC Startup Acceleration Program and TRT program (2020, 2021)",
+          "Ran many events, including the K-Global Startup Pitch Competition"
+        ]
+      },
+      {
+        "name": "Juna Lee",
+        "role": "Operation Manager",
+        "bio": [
+          "Extensive experience running startup events in Silicon Valley",
+          "Extensive communication with experts and investors for startup mentoring and events"
+        ]
+      },
+      {
+        "name": "Seunghoon Baek",
+        "role": "Operation Manager",
+        "bio": [
+          "Extensive experience running startup events in Silicon Valley"
+        ]
+      }
+    ]
+  },
+  "advisoryBoard": {
+    "title": "Odyssey Advisory Board",
+    "description": "Beyond our own mentors, we work with partners across the U.S. market — law firms, accountants, marketers, investors and technologists — so startups can enter the market with less risk and reach early customers faster.",
+    "hint": "Tap a card to see the advisor's area of expertise.",
+    "jump": "Jump to a field",
+    "specialty": "Expertise",
+    "field": "Field",
+    "noSpecialty": "Details to be added",
+    "groups": {
+      "business": {
+        "title": "Business experts",
+        "note": "* Odyssey Ventures works with more than 100 business partners for advisory and consulting."
+      },
+      "tech": {
+        "title": "Technology experts",
+        "note": "* We also have a wide personal network built directly and indirectly over the years."
+      }
+    },
+    "categories": {
+      "legal": "Legal",
+      "finance": "Finance & Accounting",
+      "marketing": "Marketing",
+      "fundraising": "Fundraising",
+      "hr": "HR",
+      "interpretation": "Interpretation",
+      "internet": "Internet",
+      "ai": "AI",
+      "mobility": "Mobility",
+      "robots": "Robotics",
+      "energy": "Energy",
+      "bio": "Bio",
+      "semiconductor": "Semiconductors",
+      "kbeauty": "K-Beauty / K-Food"
+    }
+  },
+  "footer": {
+    "navTitle": "Navigation",
+    "navLabel": "Footer",
+    "companyInfo": "Company information placeholder.",
+    "contactTitle": "Contact",
+    "contactInfo": "Contact details placeholder.",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has moved.",
+    "backHome": "Back to home"
+  }
+}

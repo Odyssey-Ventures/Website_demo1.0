@@ -2,110 +2,86 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { Logo } from "@/components/layout/Logo";
+import { Navigation } from "@/components/layout/Navigation";
 import { Container } from "@/components/ui/Container";
-import { contactHref, mainNav } from "@/config/navigation";
-import { cn } from "@/lib/utils";
+import { contactPath } from "@/config/navigation";
+import { localizedHref, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-export function Header() {
+interface HeaderProps {
+  lang: Locale;
+  dict: Pick<Dictionary, "common" | "nav" | "language">;
+}
+
+export function Header({ lang, dict }: HeaderProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
 
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  // Close the mobile menu after any navigation, including a language switch.
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // Escape closes the menu and returns focus to the menu button.
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  const closeMenu = () => setOpen(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between md:h-[72px]">
-        <Logo />
+      <Container className="flex h-16 items-center justify-between gap-6 md:h-20">
+        <Logo lang={lang} label={dict.common.homeAria} priority />
 
-        <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
-          {mainNav.map((item) => (
-            <div key={item.href} className="group relative">
-              <Link
-                href={item.href}
-                aria-current={isActive(item.href) ? "page" : undefined}
-                className={cn(
-                  "inline-block border-b-2 py-1 text-[15px] font-medium transition-colors duration-200",
-                  isActive(item.href)
-                    ? "border-navy text-navy"
-                    : "border-transparent text-muted hover:text-navy"
-                )}
-              >
-                {item.label}
-              </Link>
-              {item.children ? (
-                <div className="invisible absolute -left-4 top-full z-50 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                  <ul className="min-w-48 rounded-md border border-line bg-white py-2 shadow-lg">
-                    {item.children.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          className="block whitespace-nowrap px-4 py-2 text-[15px] text-muted transition-colors hover:bg-mist hover:text-navy"
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
-          ))}
-        </nav>
+        <div className="hidden items-center gap-10 md:flex">
+          <Navigation lang={lang} dict={dict.nav} />
+          <LanguageSwitcher lang={lang} dict={dict.language} />
+        </div>
 
         <button
+          ref={menuButton}
           type="button"
-          className="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded text-navy md:hidden"
+          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded text-navy md:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? dict.nav.closeMenu : dict.nav.openMenu}
           onClick={() => setOpen((value) => !value)}
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            )}
+            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
         </button>
       </Container>
 
       {open ? (
-        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-line bg-white md:hidden">
-          <Container className="flex flex-col py-3">
-            {mainNav.map((item) => (
-              <div key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  aria-current={isActive(item.href) ? "page" : undefined}
-                  className={cn(
-                    "block border-b border-line py-4 text-lg font-medium",
-                    isActive(item.href) ? "text-navy" : "text-muted"
-                  )}
-                >
-                  {item.label}
-                </Link>
-                {item.children ? (
-                  <ul className="border-b border-line py-2 pl-4">
-                    {item.children.map((child) => (
-                      <li key={child.href}>
-                        <Link href={child.href} onClick={() => setOpen(false)} className="block py-2 text-base text-muted">
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-            ))}
-            <Link href={contactHref} onClick={() => setOpen(false)} className="py-4 text-lg font-medium text-navy">
-              Contact us
+        <div id="mobile-menu" className="border-t border-line bg-white md:hidden">
+          <Container className="flex flex-col py-2">
+            <Navigation lang={lang} dict={dict.nav} variant="mobile" onNavigate={closeMenu} />
+            <Link
+              href={localizedHref(lang, contactPath)}
+              onClick={closeMenu}
+              className="border-b border-line py-4 text-lg font-medium text-navy"
+            >
+              {dict.nav.contact}
             </Link>
+            <div className="py-5">
+              <LanguageSwitcher lang={lang} dict={dict.language} onNavigate={closeMenu} />
+            </div>
           </Container>
-        </nav>
+        </div>
       ) : null}
     </header>
   );

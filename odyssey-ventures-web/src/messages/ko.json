@@ -1,0 +1,427 @@
+{
+  "meta": {
+    "title": "Odyssey Ventures",
+    "description": "사이트 설명 Placeholder입니다.",
+    "pages": {
+      "about": {
+        "title": "회사 소개",
+        "description": "Odyssey Ventures는 실리콘밸리에 기반을 둔 교육, 컨설팅, 스타트업 액셀러레이터 기업입니다."
+      },
+      "academy": {
+        "title": "아카데미",
+        "description": "아카데미 페이지 설명 Placeholder입니다."
+      },
+      "accelerator": {
+        "title": "액셀러레이터",
+        "description": "액셀러레이터 페이지 설명 Placeholder입니다."
+      },
+      "advisory": {
+        "title": "어드바이저리",
+        "description": "어드바이저리 페이지 설명 Placeholder입니다."
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "본문으로 건너뛰기",
+    "homeAria": "Odyssey Ventures 홈",
+    "learnMore": "자세히 보기",
+    "contactUs": "문의하기",
+    "placeholderTag": "Placeholder"
+  },
+  "nav": {
+    "about": "회사 소개",
+    "academy": "아카데미",
+    "accelerator": "액셀러레이터",
+    "advisory": "어드바이저리",
+    "contact": "문의",
+    "main": "주요 메뉴",
+    "mobile": "모바일 메뉴",
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기",
+    "aboutSections": {
+      "overview": "회사 개요",
+      "history": "연혁",
+      "experts": "전문가",
+      "team": "팀"
+    }
+  },
+  "language": {
+    "label": "언어",
+    "switchToKo": "한국어로 전환",
+    "switchToEn": "영어로 전환"
+  },
+  "hero": {
+    "title": "글로벌 시장, 오디세이 벤처스와 함께 준비하세요",
+    "description": "실리콘밸리에서 기업 교육·컨설팅과 스타트업 액셀러레이팅으로 글로벌 진출을 돕습니다.",
+    "primaryCta": "서비스 살펴보기",
+    "secondaryCta": "문의하기"
+  },
+  "focus": {
+    "items": [
+      {
+        "title": "핵심 영역 1",
+        "text": "간단한 설명 Placeholder입니다."
+      },
+      {
+        "title": "핵심 영역 2",
+        "text": "간단한 설명 Placeholder입니다."
+      },
+      {
+        "title": "핵심 영역 3",
+        "text": "간단한 설명 Placeholder입니다."
+      }
+    ]
+  },
+  "about": {
+    "title": "회사 소개",
+    "description": "회사 소개 설명 Placeholder입니다. 이곳에 회사 소개를 추가하세요.",
+    "imageAlt": "회사 소개 이미지",
+    "points": [
+      "항목 1 Placeholder",
+      "항목 2 Placeholder",
+      "항목 3 Placeholder"
+    ]
+  },
+  "services": {
+    "title": "서비스",
+    "description": "서비스 설명 Placeholder입니다.",
+    "cards": {
+      "academy": {
+        "description": "간단한 설명 Placeholder입니다."
+      },
+      "accelerator": {
+        "description": "간단한 설명 Placeholder입니다."
+      },
+      "advisory": {
+        "description": "간단한 설명 Placeholder입니다."
+      }
+    }
+  },
+  "additional": {
+    "title": "추가 섹션 제목 Placeholder",
+    "description": "프로그램, 파트너십, 성과 등에 사용할 수 있는 재사용 섹션입니다.",
+    "items": [
+      {
+        "title": "콘텐츠 블록 1",
+        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+      },
+      {
+        "title": "콘텐츠 블록 2",
+        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+      },
+      {
+        "title": "콘텐츠 블록 3",
+        "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "후기 섹션 제목 Placeholder",
+    "startup": "스타트업",
+    "partner": "파트너",
+    "partnersTitle": "파트너"
+  },
+  "contact": {
+    "title": "문의하기",
+    "description": "문의 안내 Placeholder입니다.",
+    "emailLabel": "이메일",
+    "locationLabel": "위치",
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "company": "회사명",
+      "interest": "관심 분야",
+      "message": "문의 내용",
+      "submit": "이메일로 보내기",
+      "statusIdle": "이메일 앱이 열리고 작성한 내용이 입력된 상태로 표시됩니다.",
+      "statusSent": "이메일 앱이 열렸을 것입니다. 앱에서 전송을 눌러 문의를 완료해 주세요.",
+      "subjectPrefix": "문의",
+      "interests": {
+        "academy": "아카데미",
+        "accelerator": "액셀러레이터",
+        "advisory": "어드바이저리",
+        "other": "기타"
+      }
+    }
+  },
+  "pages": {
+    "academy": {
+      "heroDescription": "아카데미 페이지 배너 설명 Placeholder입니다.",
+      "introTitle": "소개 제목 Placeholder",
+      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
+      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
+      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
+      "contentItems": [
+        {
+          "title": "콘텐츠 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 3",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "additionalTitle": "추가 섹션 제목 Placeholder",
+      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
+      "additionalItems": [
+        {
+          "title": "추가 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "추가 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "ctaTitle": "문의 안내 제목 Placeholder",
+      "ctaDescription": "문의 안내 설명 Placeholder입니다."
+    },
+    "accelerator": {
+      "heroDescription": "액셀러레이터 페이지 배너 설명 Placeholder입니다.",
+      "introTitle": "소개 제목 Placeholder",
+      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
+      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
+      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
+      "contentItems": [
+        {
+          "title": "콘텐츠 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 3",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "additionalTitle": "추가 섹션 제목 Placeholder",
+      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
+      "additionalItems": [
+        {
+          "title": "추가 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "추가 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "ctaTitle": "문의 안내 제목 Placeholder",
+      "ctaDescription": "문의 안내 설명 Placeholder입니다."
+    },
+    "advisory": {
+      "heroDescription": "어드바이저리 페이지 배너 설명 Placeholder입니다.",
+      "introTitle": "소개 제목 Placeholder",
+      "introText": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요.",
+      "contentTitle": "콘텐츠 섹션 제목 Placeholder",
+      "contentDescription": "콘텐츠 섹션 설명 Placeholder입니다.",
+      "contentItems": [
+        {
+          "title": "콘텐츠 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "콘텐츠 블록 3",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "additionalTitle": "추가 섹션 제목 Placeholder",
+      "additionalDescription": "추가 섹션 설명 Placeholder입니다.",
+      "additionalItems": [
+        {
+          "title": "추가 블록 1",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        },
+        {
+          "title": "추가 블록 2",
+          "text": "개발용 Placeholder 텍스트입니다. src/messages/ko.json에서 교체해 주세요."
+        }
+      ],
+      "ctaTitle": "문의 안내 제목 Placeholder",
+      "ctaDescription": "문의 안내 설명 Placeholder입니다."
+    }
+  },
+  "aboutPage": {
+    "sectionsLabel": "회사 소개 섹션",
+    "overview": {
+      "lead": "실리콘밸리 기반 글로벌 역량 강화 교육 및 스타트업 액셀러레이팅 전문 기관",
+      "paragraphs": [
+        "미국 실리콘밸리에 본사를 둔 오디세이 벤처스(Odyssey Ventures, LLC)는 2018년에 설립된 글로벌 시장 맞춤형 역량 강화 교육 및 스타트업 액셀러레이팅 전문 기관입니다. 공공기관, 스타트업, 대학 등을 대상으로 실무 중심의 교육 프로그램과 스타트업 글로벌 진출을 지원하는 액셀러레이팅 프로그램을 기획·운영하며, 해외 시장 진출 및 글로벌 경쟁력 강화를 위한 실질적이고 체계적인 솔루션을 제공합니다.",
+        "오디세이 벤처스는 2024년부터 스타트업 액셀러레이팅 사업을 본격적으로 시작하였으며, 대표 및 팀원들의 다년간의 스타트업 멘토링 및 육성 경험, 그리고 실리콘밸리 내의 다양한 네트워크를 토대로 외부 협력 프로그램들과 자체 프로그램을 운영해 가고 있습니다."
+      ],
+      "capabilitiesTitle": "오디세이가 강화하는 역량",
+      "capabilities": [
+        "상품 역량",
+        "세일즈 역량",
+        "투자 유치 역량"
+      ],
+      "capabilitiesResult": "미국 시장 진출",
+      "facts": [
+        {
+          "label": "회사명",
+          "value": "Odyssey Ventures, LLC (오디세이 벤처스)"
+        },
+        {
+          "label": "설립",
+          "value": "2018년 3월"
+        },
+        {
+          "label": "본사",
+          "value": "미국 캘리포니아주 산호세 (실리콘밸리)"
+        },
+        {
+          "label": "업종",
+          "value": "스타트업 액셀러레이팅, 기업 교육 및 컨설팅"
+        },
+        {
+          "label": "대표",
+          "value": "Kevin Kim (김태훈)"
+        }
+      ]
+    },
+    "history": [
+      {
+        "year": "2018–2023",
+        "items": [
+          "GlobalLeadersCamp, LLC 설립 (San Jose, CA). 기업 리더십 컨설팅 기업으로 출발",
+          "기업 자문, 스타트업 멘토링"
+        ]
+      },
+      {
+        "year": "2024",
+        "items": [
+          "Odyssey Ventures, LLC로 기업명 변경. 스타트업 액셀러레이팅 사업 본격 시작",
+          "글로벌 Product Academy 운영 (Design Thinking, Product Management, Program Management)",
+          "한양대 글로벌 밋업 프로그램 기획·운영"
+        ]
+      },
+      {
+        "year": "2025",
+        "items": [
+          "오디세이 스타트업 밋업 개최",
+          "2025 오디세이 스프링배치 수행",
+          "KIC DC Tech Frontier_Startup Talk & Mixer 프로그램 운영",
+          "KIRO 로봇 스타트업 글로벌 밋업 프로그램 운영",
+          "Silicon Valley Accelerator Around-X Program & K-Global Program Networking Event 프로그램 운영",
+          "Mobility Matters 비즈니스 밋업 기획·운영",
+          "25년 KSC 실리콘밸리 온랜딩 프로그램 중계 용역 수행"
+        ]
+      },
+      {
+        "year": "2026",
+        "items": [
+          "2026 오디세이 미국진출 지원 프로그램 1기 참가기업 모집"
+        ]
+      }
+    ],
+    "expertsDescription": "오디세이 벤처스는 실리콘밸리의 product design, product management, program management, marketing에 대한 실전 경험이 풍부한 전문가들로 구성되어 있습니다.",
+    "team": [
+      {
+        "name": "Kevin Kim (김태훈)",
+        "role": "대표 · 사업관리자(PM)",
+        "bio": [
+          "NEXED Inc. 창업",
+          "WiderThan 공동 창업 (한국; 2005년 나스닥 상장)",
+          "(전) 삼성전자 미주법인 상품관리 디렉터, RealNetworks 시니어 디렉터",
+          "(전) SK텔레콤 무선인터넷 PM, WiderThan 해외 상품·사업개발 헤드",
+          "한양대 전자공학 학사, 카네기멜론대(CMU) 석사",
+          "스타트업 멘토링·컨설팅 12년, 액셀러레이팅 경력 3년"
+        ]
+      },
+      {
+        "name": "Juye Kim (김주예)",
+        "role": "운영 책임자 · Program Director",
+        "bio": [
+          "Odyssey Ventures Program Director",
+          "Stanford University Hoover 연구소 Enviropreneur Fellow",
+          "(전) Synergy Inc 미국 법인장",
+          "(전) Qcells North America 기술 전략 리드, Business Development Manager",
+          "카네기멜론대 빌딩관리 석사",
+          "스타트업 멘토링·컨설팅 및 액셀러레이팅 경험"
+        ]
+      },
+      {
+        "name": "Yoomi Yi (이유미)",
+        "role": "운영 팀원 · Operation Director",
+        "bio": [
+          "(전) KIC(Korea Innovation Center) Program Manager",
+          "KIC Startup Acceleration Program 및 TRT 프로그램 진행 (2020, 2021)",
+          "K-Global 스타트업 Pitch Competition 등 행사 진행 경험 다수"
+        ]
+      },
+      {
+        "name": "Juna Lee (이준아)",
+        "role": "운영 팀원 · Operation Manager",
+        "bio": [
+          "실리콘밸리에서 스타트업 행사 운영 경험 다수",
+          "스타트업 멘토링 및 스타트업 행사를 위한 전문가, 투자자들과의 커뮤니케이션 경험 다수"
+        ]
+      },
+      {
+        "name": "Seunghoon Baek (백승훈)",
+        "role": "운영 팀원 · Operation Manager",
+        "bio": [
+          "실리콘밸리에서 스타트업 행사 운영 경험 다수"
+        ]
+      }
+    ]
+  },
+  "advisoryBoard": {
+    "title": "오디세이 자문단",
+    "description": "전문가로 구성된 멘토링 그룹 이외에도 법률, 회계, 마케팅, 투자, 기술 등 미국 시장 진출에 필요한 다양한 분야의 파트너들과 협력 체계를 구축해, 스타트업이 사업적인 리스크를 최소화하면서 효과적으로 초기 고객을 확보할 수 있도록 돕습니다.",
+    "hint": "카드를 누르면 자문위원의 전문 분야를 볼 수 있습니다.",
+    "jump": "분야 바로가기",
+    "specialty": "전문 분야",
+    "field": "분야",
+    "noSpecialty": "추가 예정",
+    "groups": {
+      "business": {
+        "title": "비즈니스 전문가",
+        "note": "* 오디세이 벤처스는 비즈니스 자문 및 컨설팅을 위해 100여 명의 다양한 비즈니스 파트너를 보유하고 있습니다."
+      },
+      "tech": {
+        "title": "기술 전문가",
+        "note": "* 이외에도 직·간접적으로 축적된 다양한 인적 네트워크를 보유하고 있습니다."
+      }
+    },
+    "categories": {
+      "legal": "법무",
+      "finance": "재무/회계",
+      "marketing": "마케팅",
+      "fundraising": "투자 유치",
+      "hr": "HR",
+      "interpretation": "통역",
+      "internet": "인터넷",
+      "ai": "AI",
+      "mobility": "모빌리티",
+      "robots": "로봇",
+      "energy": "에너지",
+      "bio": "바이오",
+      "semiconductor": "반도체",
+      "kbeauty": "K-Beauty / K-Food"
+    }
+  },
+  "footer": {
+    "navTitle": "메뉴",
+    "navLabel": "푸터",
+    "companyInfo": "회사 정보 Placeholder입니다.",
+    "contactTitle": "문의",
+    "contactInfo": "연락처 정보 Placeholder입니다.",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "페이지를 찾을 수 없습니다",
+    "description": "찾으시는 페이지가 없거나 이동되었습니다.",
+    "backHome": "홈으로 돌아가기"
+  }
+}

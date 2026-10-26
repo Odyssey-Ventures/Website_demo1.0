@@ -2,12 +2,8 @@ export type ServiceSlug = "academy" | "accelerator" | "advisory";
 
 export interface Service {
   slug: ServiceSlug;
-  name: string;
-  tagline: string;
-  summary: string;
-  /** Short list shown on the Home page. Full detail belongs on the service page. */
-  highlights: string[];
-  href: string;
+  /** Path without a language prefix. Use localizedHref() to build the link. */
+  path: string;
 }
 
 export interface Testimonial {

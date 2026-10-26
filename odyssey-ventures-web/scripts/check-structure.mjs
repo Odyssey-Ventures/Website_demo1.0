@@ -43,8 +43,39 @@ if (!existsSync(join(root, "src", "app")) && !existsSync(join(root, "app"))) {
   errors.push("No app directory found. Expected src/app/ with layout.tsx and page.tsx.");
 }
 const appDir = existsSync(join(root, "src", "app")) ? join(root, "src", "app") : join(root, "app");
+// With language routing, the root layout and Home page live in app/[lang]/.
+const pageDir = existsSync(join(appDir, "[lang]")) ? join(appDir, "[lang]") : appDir;
 for (const file of ["layout.tsx", "page.tsx"]) {
-  if (!existsExact(join(appDir, file))) errors.push(`Missing ${relative(root, join(appDir, file))}`);
+  if (!existsExact(join(pageDir, file))) errors.push(`Missing ${relative(root, join(pageDir, file))}`);
+}
+
+// 2b. Language files: en.json and ko.json must exist and have exactly the same keys.
+function flattenKeys(value, prefix = "") {
+  if (Array.isArray(value)) {
+    return [`${prefix}[${value.length}]`, ...value.flatMap((item, i) => flattenKeys(item, `${prefix}[${i}]`))];
+  }
+  if (value && typeof value === "object") {
+    return Object.entries(value).flatMap(([key, child]) => flattenKeys(child, prefix ? `${prefix}.${key}` : key));
+  }
+  return [prefix];
+}
+const messageFiles = { en: join(root, "src", "messages", "en.json"), ko: join(root, "src", "messages", "ko.json") };
+if (Object.values(messageFiles).every((file) => existsSync(file))) {
+  try {
+    const en = new Set(flattenKeys(JSON.parse(readFileSync(messageFiles.en, "utf8"))));
+    const ko = new Set(flattenKeys(JSON.parse(readFileSync(messageFiles.ko, "utf8"))));
+    for (const key of en) if (!ko.has(key)) errors.push(`ko.json is missing "${key}" (present in en.json)`);
+    for (const key of ko) if (!en.has(key)) errors.push(`en.json is missing "${key}" (present in ko.json)`);
+  } catch (error) {
+    errors.push(`Could not read src/messages/*.json: ${error.message}`);
+  }
+} else {
+  errors.push("Missing src/messages/en.json or src/messages/ko.json");
+}
+
+// 2c. Official logo must be in public/images (case-sensitive, like Vercel).
+if (!existsExact(join(root, "public", "images", "OdysseyVentures_logo.webp"))) {
+  errors.push("Missing public/images/OdysseyVentures_logo.webp");
 }
 
 // 3. Import resolution

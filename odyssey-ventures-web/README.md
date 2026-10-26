@@ -4,9 +4,9 @@ Redesigned website for Odyssey Ventures, a Silicon Valley-based company supporti
 
 **Stack:** Next.js 15 (App Router) · TypeScript · Tailwind CSS 3 · React 19 · Vercel · Supabase (later)
 
-**Design status:** Layout order, navigation, footer and photos follow the live site. Colors (`tailwind.config.ts`), font (Inter, `src/app/layout.tsx`), spacing and the scroll fade-in are NOT verified against the live site; they are set in those files so they can be matched once exact values are known.
+**Design status:** Brand colors are in `tailwind.config.ts`: blue `#3129F2`, green `#29F27C`, navy `#0B1F44` (confirmed by the owner). Fonts: Inter for Latin and Noto Sans KR for Korean (`src/app/[lang]/layout.tsx`). Spacing and the scroll fade-in are not verified against the live site.
 
-**Status:** Home page complete. Academy, Accelerator and Advisory have working routes with short placeholder content; the full pages are built next.
+**Status:** Bilingual design framework (English `/en`, Korean `/ko`) with the official logo. Home, Academy, Accelerator and Advisory show development placeholders only; real content is added later by editing the language files.
 
 > This project does not touch the live site (odysseyventures.llc) or its domain settings. Search engines are blocked by default until you launch (see "Going live").
 
@@ -37,35 +37,39 @@ The first `npm install` creates `package-lock.json`. Commit it so everyone insta
 ## Project structure
 
 ```
+public/images/            OdysseyVentures_logo.webp (official logo, do not edit)
 src/
-  app/                    Routes (App Router), metadata, robots, sitemap
-    page.tsx              Home
-    academy/ accelerator/ advisory/
+  middleware.ts           "/" and any path without a language -> /en/...
+  app/
+    [lang]/               Root layout and all pages, for /en and /ko
+      layout.tsx          <html lang>, fonts, Header, Footer, metadata
+      page.tsx            Home
+      academy/ accelerator/ advisory/
+      not-found.tsx       Language-aware 404 (used through [...rest])
+    icon.png apple-icon.png   Favicons made from the logo symbol
+    robots.ts sitemap.ts      sitemap lists every page in both languages
+  i18n/                   config (languages, link helpers), dictionaries, LocaleProvider
+  messages/               en.json and ko.json  <- all visible text
   components/
-    layout/               Header, Footer, Logo
-    ui/                   Button, Container, SectionHeading, Reveal (scroll fade-in)
-    home/                 Hero, Focus, About, Services, Testimonials, Contact, Banner
-    shared/               PlaceholderPage (temporary)
-  config/                 site.ts (name, email, URL), navigation.ts, images.ts (photos)
-  data/                   services.ts, testimonials.ts, partners.ts  <- edit content here
-  types/                  Shared TypeScript types
-  lib/                    Small helpers
-.github/                  CI workflow and pull request template
+    layout/               Header, Navigation, LanguageSwitcher, Logo, Footer
+    ui/                   Button, Container, SectionContainer, SectionHeading, PageHero,
+                          ServiceCard, PlaceholderSection, Reveal
+    home/                 Hero, Focus, About, Services, Testimonials, Contact, ContactForm, Banner
+    shared/               PlaceholderPage (body of the three service pages)
+  config/                 site.ts (name, email, URL), navigation.ts, images.ts (logo and photos)
+  data/                   services.ts, testimonials.ts, partners.ts
+  types/ lib/
+docs/original-english-content.md   Backup of the English copy used before the redesign
 ```
 
-## Editing content
+## Languages
 
-| What | File |
-| --- | --- |
-| Company name, email, location | `src/config/site.ts` |
-| Navigation links | `src/config/navigation.ts` |
-| Academy / Accelerator / Advisory summaries | `src/data/services.ts` |
-| Testimonials (needs 5 or more) | `src/data/testimonials.ts` |
-| Partner logos (files go in `public/logos`) | `src/data/partners.ts` |
-
-Rules for content: only verified facts. Do not add client names, testimonials, results, statistics, team members or partnerships unless they are real and approved. Use clearly labeled placeholders otherwise.
-
-Company facts on the Home page come from the current live site, translated from Korean. Have a native speaker review the wording.
+- URLs: `/en`, `/en/academy`, `/en/accelerator`, `/en/advisory` and the same under `/ko`. Opening `/` goes to `/en`.
+- Visible text lives in `src/messages/en.json` and `src/messages/ko.json`. English and Korean are edited independently, but both files must have the same keys: `npm run build` (through `npm run verify`) and TypeScript fail if one is missing a key.
+- Internal links are built with `localizedHref(lang, path)` from `src/i18n/config.ts`. Never hard-code `/academy`.
+- To add real content, replace the placeholder strings in both JSON files. For a new kind of block, add a key to `en.json` first, then to `ko.json`.
+- The language switcher keeps the current page (`/en/academy` -> `/ko/academy`).
+- The previous English copy is in `docs/original-english-content.md` and in Git history.
 
 ## Contact form
 
@@ -127,7 +131,8 @@ The current site is hosted separately (Framer). Do not add `odysseyventures.llc`
 
 ## Still to do
 
-- Full Academy, Accelerator and Advisory pages
+- Real content for Home, Academy, Accelerator and Advisory (English and Korean)
 - Team / About page (the live site has one; team details must come from the company)
 - Open Graph image (`src/app/opengraph-image.png`)
-- Verified testimonials, partner logos, and a Korean-language version if wanted
+- Verified testimonials and partner logos
+- Optional: download the Hero, About and Banner photos into `public/images` so the site no longer depends on framerusercontent.com
