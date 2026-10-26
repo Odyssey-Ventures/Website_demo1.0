@@ -168,10 +168,45 @@
     }
   },
   "testimonials": {
-    "title": "What clients say",
+    "eyebrow": "Testimonials",
+    "title": "Stories from those we've worked with",
+    "description": "Founders, partner companies and institutions on building in Silicon Valley with Odyssey Ventures.",
     "startup": "Startup",
     "partner": "Partner",
-    "partnersTitle": "Partners"
+    "partnersTitle": "Partners",
+    "sampleNotice": "Sample testimonials. They are not shown on the live site and are replaced by real quotes added to src/data/testimonials.ts.",
+    "samples": [
+      {
+        "quote": "(Sample) With local connections and 1:1 advisory, we went from U.S. incorporation to our first customer meetings in a few months.",
+        "name": "Jane Doe",
+        "role": "CEO",
+        "company": "Sample Startup"
+      },
+      {
+        "quote": "(Sample) The program was run with real structure, and our participating companies were very satisfied.",
+        "name": "Alex Kim",
+        "role": "Team Lead",
+        "company": "Sample Institution"
+      },
+      {
+        "quote": "(Sample) The feedback before our investor pitch made a real difference in the room.",
+        "name": "Sam Lee",
+        "role": "Co-founder",
+        "company": "Sample Tech"
+      },
+      {
+        "quote": "(Sample) A partner we trust to prepare Korean companies for Silicon Valley.",
+        "name": "Chris Park",
+        "role": "Director",
+        "company": "Sample Partners"
+      },
+      {
+        "quote": "(Sample) The Academy sessions were practical enough to apply right away.",
+        "name": "Jordan Choi",
+        "role": "CTO",
+        "company": "Sample Labs"
+      }
+    ]
   },
   "contact": {
     "title": "Contact us",
