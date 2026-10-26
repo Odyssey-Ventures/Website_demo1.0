@@ -130,7 +130,7 @@ export default async function AdvisorPage({ params }: AdvisorParams) {
         </Link>
 
         <header className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center">
-          <AdvisorAvatar name={advisor.name} size="lg" />
+          <AdvisorAvatar advisor={advisor} size="lg" />
           <div className="min-w-0">
             <h1 className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
               {advisor.name}

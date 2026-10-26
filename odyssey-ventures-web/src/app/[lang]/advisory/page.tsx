@@ -80,7 +80,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
           <AdvisorDirectory
             lang={lang}
             dict={dict.advisors}
-            advisors={advisorProfiles.map(({ slug, name, nameKo, title, org, areas, specialties }) => ({ slug, name, nameKo, title, org, areas, specialties }))}
+            advisors={advisorProfiles.map(({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }) => ({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }))}
           />
         </div>
       </SectionContainer>

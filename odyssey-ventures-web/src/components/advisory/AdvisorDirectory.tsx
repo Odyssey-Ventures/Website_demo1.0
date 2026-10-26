@@ -9,7 +9,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
 
 /** What a card needs; the page passes only this, so full bios stay out of the browser bundle. */
-export type AdvisorCard = Pick<AdvisorProfile, "slug" | "name" | "nameKo" | "title" | "org" | "areas" | "specialties">;
+export type AdvisorCard = Pick<AdvisorProfile, "slug" | "name" | "nameKo" | "title" | "org" | "logo" | "logoDomain" | "areas" | "specialties">;
 
 /** Area tabs, a search box and one card per advisor, each linking to the advisor's page. */
 export function AdvisorDirectory({ lang, dict, advisors: all }: { lang: Locale; dict: Dictionary["advisors"]; advisors: readonly AdvisorCard[] }) {
@@ -71,7 +71,7 @@ export function AdvisorDirectory({ lang, dict, advisors: all }: { lang: Locale; 
                 className="group flex h-full flex-col rounded-lg border border-line bg-white p-5 shadow-card transition-colors hover:border-brand-blue"
               >
                 <span className="flex items-center gap-4">
-                  <AdvisorAvatar name={advisor.name} />
+                  <AdvisorAvatar advisor={advisor} />
                   <span className="min-w-0">
                     <span className="block text-lg font-semibold leading-snug text-navy group-hover:text-brand-blue">
                       {advisor.name}
