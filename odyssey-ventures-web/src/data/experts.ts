@@ -5,7 +5,7 @@ export const experts = [
   { name: "Haley Park", photo: "/images/experts/haley-park.webp" },
   { name: "James Lee", photo: "/images/experts/james-lee.webp" },
   { name: "Kevin Kim", photo: "/images/experts/kevin-kim.webp" },
-  { name: "Jeong Vogel", photo: "/images/experts/jeong-vogel.webp" },
+  { name: "Jaehyun Yeom", photo: "/images/experts/jaehyun-yeom.webp" },
   { name: "Kevin Park", photo: "/images/experts/kevin-park.webp" },
   { name: "Baron Chang", photo: "/images/experts/baron-chang.webp" },
 ] as const;
