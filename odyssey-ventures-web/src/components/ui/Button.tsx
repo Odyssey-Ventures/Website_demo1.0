@@ -11,6 +11,7 @@ interface ButtonProps {
   type?: "button" | "submit";
   variant?: Variant;
   className?: string;
+  disabled?: boolean;
 }
 
 const base =
@@ -26,7 +27,7 @@ const variants: Record<Variant, string> = {
   outlineInverse: "border border-white text-white hover:bg-white hover:text-navy",
 };
 
-export function Button({ children, href, type = "button", variant = "primary", className }: ButtonProps) {
+export function Button({ children, href, type = "button", variant = "primary", className, disabled }: ButtonProps) {
   const classes = cn(base, variants[variant], className);
 
   if (href) {
@@ -38,7 +39,7 @@ export function Button({ children, href, type = "button", variant = "primary", c
   }
 
   return (
-    <button type={type} className={classes}>
+    <button type={type} className={cn(classes, "disabled:cursor-not-allowed disabled:opacity-60")} disabled={disabled}>
       {children}
     </button>
   );

@@ -79,7 +79,7 @@ export default async function RootLayout({
           {dict.common.skipToContent}
         </a>
         <LocaleProvider value={{ lang, notFound: dict.notFound }}>
-          <Header lang={lang} dict={{ common: dict.common, nav: dict.nav, language: dict.language }} />
+          <Header lang={lang} dict={{ common: dict.common, nav: dict.nav, language: dict.language, auth: dict.auth }} />
           <main id="main">{children}</main>
           <Footer
             lang={lang}
