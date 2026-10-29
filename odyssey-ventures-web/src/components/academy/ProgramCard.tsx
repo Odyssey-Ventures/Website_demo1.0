@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { localizedHref, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { formatProgramDate, formatProgramTime } from "@/lib/programs";
+import { formatProgramDate, formatProgramPrice, formatProgramTime } from "@/lib/programs";
 import { cn } from "@/lib/utils";
 import type { Program } from "@/types";
 
@@ -25,6 +25,7 @@ export function ProgramCard({ program, lang, labels, past }: ProgramCardProps) {
       <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
         <span className="rounded bg-brand-blue-tint px-2 py-1 text-brand-blue-dark">{labels[program.type]}</span>
         {program.format ? <span className="rounded bg-mist px-2 py-1 text-muted">{program.format}</span> : null}
+        {program.price ? <span className="rounded bg-mist px-2 py-1 text-muted">{formatProgramPrice(program.price, lang)}</span> : null}
       </div>
       <p className="mt-4 text-sm font-semibold text-navy-600">
         {formatProgramDate(program.date, lang)}

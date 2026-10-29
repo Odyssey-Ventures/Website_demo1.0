@@ -640,6 +640,7 @@
       "instructor": "Instructor",
       "capacity": "Seats",
       "capacityUnit": "",
+      "price": "Fee",
       "webinar": "Webinar",
       "course": "Course",
       "details": "Details",
@@ -654,12 +655,18 @@
       "email": "Email",
       "company": "Company or organization",
       "question": "A question for the instructor (optional)",
+      "fee": "Fee",
       "status": {
         "submit": "Register",
         "sending": "Registering…",
         "saved": "You're registered. We'll email the joining details before the session.",
         "emailFallback": "Your email app opened. Press send there to complete your registration.",
         "error": "We couldn't register you. Please try again shortly or email us at"
+      },
+      "payment": {
+        "note": "Selecting Register takes you to a Stripe payment page. Your registration is confirmed once payment is complete, and we email you a confirmation.",
+        "pendingNote": "We will email you payment details after you register.",
+        "redirecting": "Registration received. Taking you to payment…"
       },
       "subjectPrefix": "Registration",
       "closedNote": "Registration for this session is closed."

@@ -13,13 +13,18 @@ interface Options {
   emailSubject: (fields: Record<string, string>) => string;
   /** Field labels for the fallback email body, in display order. */
   labels: Record<string, string>;
+  /**
+   * Runs after the form is saved instead of clearing it, e.g. to send the visitor on to a payment page.
+   * Also runs when the sheet is not connected yet (503), since the payment page then records the visitor.
+   */
+  afterSubmit?: (fields: Record<string, string>) => void;
 }
 
 /**
  * Sends a form to /api/submit. If the site is not connected to the operations sheet yet (503),
  * it opens the visitor's email app with the same content, so no inquiry is lost.
  */
-export function useSubmission({ kind, lang, emailSubject, labels }: Options) {
+export function useSubmission({ kind, lang, emailSubject, labels, afterSubmit }: Options) {
   const [status, setStatus] = useState<SubmissionStatus>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -37,6 +42,11 @@ export function useSubmission({ kind, lang, emailSubject, labels }: Options) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ kind, lang, page: window.location.pathname, fields, website }),
       });
+      if (afterSubmit && (response.ok || response.status === 503)) {
+        setStatus("saved");
+        afterSubmit(fields);
+        return;
+      }
       if (response.ok) {
         setStatus("saved");
         form.reset();

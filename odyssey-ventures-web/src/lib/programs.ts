@@ -22,6 +22,8 @@ function toProgram(row: Record<string, string>): Program | null {
     instructor: row.instructor ?? "",
     format: row.format ?? "",
     capacity: row.capacity ?? "",
+    price: Number((row.price ?? "").replace(/[^0-9]/g, "")) || undefined,
+    paymentUrl: row.payment_url || undefined,
     registrationOpen: (row.registration_open ?? "").toUpperCase() !== "FALSE",
   };
 }
@@ -84,6 +86,11 @@ export function formatProgramDate(date: string, lang: Locale): string {
     weekday: "short",
     timeZone: "UTC",
   }).format(utc);
+}
+
+/** "20,000원" or "₩20,000". */
+export function formatProgramPrice(price: number, lang: Locale): string {
+  return lang === "ko" ? `${price.toLocaleString("ko-KR")}원` : `₩${price.toLocaleString("en-US")}`;
 }
 
 export function formatProgramTime(program: Program): string {

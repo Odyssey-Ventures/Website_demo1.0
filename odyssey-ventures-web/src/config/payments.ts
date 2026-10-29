@@ -45,3 +45,27 @@ export function paymentHref(url: string, advisorSlug: string): string {
   if (link.hostname.endsWith("stripe.com")) link.searchParams.set("client_reference_id", advisorSlug);
   return link.toString();
 }
+
+/** Only https links are used, so a mistyped sheet value can never send a visitor somewhere unsafe. */
+export function safePaymentUrl(value: string | undefined): string | undefined {
+  return httpsUrl(value?.trim());
+}
+
+/** The payment page for a paid session, or undefined for a free one or when no link is set yet. */
+export function getAcademyPaymentUrl(program: { price?: number; paymentUrl?: string }): string | undefined {
+  if (!program.price) return undefined;
+  return safePaymentUrl(program.paymentUrl) ?? safePaymentUrl(process.env.ACADEMY_PAYMENT_URL);
+}
+
+/**
+ * Payment page for a paid Academy session: the session's own link (Programs sheet "payment_url"),
+ * else ACADEMY_PAYMENT_URL for every paid session. Stripe links get the session id and the visitor's email prefilled.
+ */
+export function academyPaymentHref(url: string, programId: string, email?: string): string {
+  const link = new URL(url);
+  if (link.hostname.endsWith("stripe.com")) {
+    link.searchParams.set("client_reference_id", programId);
+    if (email) link.searchParams.set("prefilled_email", email);
+  }
+  return link.toString();
+}

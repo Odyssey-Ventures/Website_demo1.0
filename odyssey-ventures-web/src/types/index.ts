@@ -47,5 +47,9 @@ export interface Program {
   /** e.g. "Zoom" or "Google Meet" */
   format: string;
   capacity: string;
+  /** Fee in Korean won. Missing or 0 means free; a paid session opens the payment window on registration. */
+  price?: number;
+  /** Payment page for a paid session, e.g. a Stripe Payment Link. Falls back to ACADEMY_PAYMENT_URL. */
+  paymentUrl?: string;
   registrationOpen: boolean;
 }

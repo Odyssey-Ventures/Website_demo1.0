@@ -73,6 +73,8 @@
 | `instructor` | 강사 이름 | `Okkeun Lee` |
 | `format` | 진행 방식 | `Zoom` |
 | `capacity` | 정원 (숫자만, 비워도 됨) | `50` |
+| `price` | 참가비(원, 숫자만). 비우거나 0이면 무료 | `20000` |
+| `payment_url` | 유료 강의 결제 링크(Stripe Payment Link). 비우면 `ACADEMY_PAYMENT_URL` 사용 | `https://buy.stripe.com/...` |
 | `summary_ko`, `summary_en` | 목록에 보이는 한두 줄 소개 | |
 | `description_ko`, `description_en` | 상세 설명. 셀 안 줄바꿈(Ctrl+Enter / ⌘+Enter)이 문단 나눔 | |
 | `registration_open` | 신청을 막으려면 `FALSE` | `TRUE` |
@@ -152,6 +154,19 @@
 - Stripe 링크에는 자문위원 주소(예: `andrew-y-jin`)가 `client_reference_id`로 붙어서, Stripe 결제 내역에서 어느 자문위원 미팅인지 알 수 있습니다.
 - 지금은 회원 등급을 사이트에서 확인하지 않습니다. 회원용 결제가 들어오면 신청자가 회원인지 확인한 뒤 일정을 확정해 주세요.
 - 결제는 일정 확정 후 받는 것이 원칙입니다(사이트 안내 문구 기준). 확정 메일에도 같은 결제 링크를 넣어 주세요.
+
+### 유료 강의·웨비나 결제
+
+`price`가 있는 강의는 목록과 상세 페이지에 참가비가 보이고, **신청하기**를 누르면 신청이 `Registrations` 탭에 저장된 뒤 Stripe 결제 페이지로 이동합니다.
+
+1. Stripe 대시보드 → **Payment Links**에서 강의별 링크를 만듭니다. 통화 **KRW**, 금액은 시트의 `price`와 같게 합니다.
+   - 링크 설정 **결제 후 → 확인 페이지**에 "신청이 확정되었습니다" 같은 문구를 넣거나, 강의 페이지로 돌아오게 설정합니다.
+2. 시트의 `payment_url`에 링크를 붙여 넣습니다. 모든 유료 강의에 같은 링크를 쓰려면 Vercel 환경 변수 `ACADEMY_PAYMENT_URL`에 넣어도 됩니다.
+3. 결제 내역의 `client_reference_id`에 강의 `id`가 붙고, 이메일은 신청서에 적은 주소로 미리 채워집니다. Stripe 결제 내역과 `Registrations` 탭을 이메일로 맞춰 본 뒤 접속 링크를 보내 주세요.
+
+- 결제 링크가 없으면 참가비만 보이고 신청은 그대로 받습니다. 결제 방법은 이메일로 안내하라는 문구가 나옵니다.
+- 사이트에 보이는 금액과 Stripe 링크 금액은 자동으로 맞춰지지 않습니다. 가격을 바꾸면 두 곳 모두 고쳐 주세요.
+- 신청 후 결제를 하지 않고 나가는 경우가 있으니, Stripe에 결제가 없는 신청은 `status`를 `unpaid`로 표시해 두세요.
 
 ## 7. 문제가 생겼을 때
 

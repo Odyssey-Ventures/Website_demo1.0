@@ -28,6 +28,7 @@ export const programs: Program[] = [
     instructor: "Okkeun Lee",
     format: "Zoom",
     capacity: "50",
+    price: 20000,
     registrationOpen: true,
   },
 ];
