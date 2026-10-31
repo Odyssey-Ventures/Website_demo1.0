@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ProgramCard } from "@/components/academy/ProgramCard";
-import { Contact } from "@/components/home/Contact";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -53,14 +52,13 @@ export default async function AcademyPage({ params }: LangParams) {
               </li>
             ))}
           </ul>
-        ) : (
-          <div className="mt-5 flex flex-col gap-4 rounded-lg border border-dashed border-navy/25 p-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-muted">{page.empty}</p>
-            <Button href={localizedHref(lang, "/contact")} variant="secondary" className="shrink-0">
-              {page.emptyCta}
-            </Button>
-          </div>
-        )}
+        ) : null}
+        <div className="mt-6 flex flex-col gap-4 rounded-lg border border-dashed border-navy/25 p-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-muted">{upcoming.length > 0 ? page.notify : page.empty}</p>
+          <Button href={localizedHref(lang, "/contact")} variant="secondary" className="shrink-0">
+            {page.emptyCta}
+          </Button>
+        </div>
 
         {past.length > 0 ? (
           <>
@@ -76,9 +74,7 @@ export default async function AcademyPage({ params }: LangParams) {
         ) : null}
       </SectionContainer>
 
-      <Contact dict={dict.contact} lang={lang} defaultInterest="academy" />
-
-      <SectionContainer>
+      <SectionContainer tone="mist">
         <Reveal>
           <SectionHeading title={page.curriculumTitle}>{page.curriculumDescription}</SectionHeading>
         </Reveal>
@@ -93,7 +89,7 @@ export default async function AcademyPage({ params }: LangParams) {
         </ol>
       </SectionContainer>
 
-      <SectionContainer tone="mist">
+      <SectionContainer>
         <Reveal>
           <SectionHeading title={page.coursesTitle} />
         </Reveal>
@@ -115,7 +111,7 @@ export default async function AcademyPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer>
+      <SectionContainer tone="mist">
         <Reveal>
           <SectionHeading title={page.universityTitle}>{page.universityDescription}</SectionHeading>
         </Reveal>
@@ -146,7 +142,7 @@ export default async function AcademyPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer tone="mist" containerClassName="grid items-center gap-10 md:grid-cols-[240px,1fr]">
+      <SectionContainer containerClassName="grid items-center gap-10 md:grid-cols-[240px,1fr]">
         {instructorPhoto ? (
           <Image
             src={instructorPhoto.src}
