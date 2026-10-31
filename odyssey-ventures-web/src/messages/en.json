@@ -307,6 +307,58 @@
       }
     ],
     "expertsDescription": "Odyssey Ventures brings together experts with deep hands-on experience in product design, product management, program management and marketing in Silicon Valley.",
+    "experts": {
+      "okkeun-lee": {
+        "credentials": [
+          "Postdoc, Stanford University"
+        ]
+      },
+      "jinwon-lee": {
+        "credentials": [
+          "Architect, UX research & design",
+          "Human&Space",
+          "University of Michigan"
+        ]
+      },
+      "haley-park": {
+        "credentials": [
+          "EdTech UX Designer",
+          "Bay Area K-Group"
+        ]
+      },
+      "james-lee": {
+        "credentials": [
+          "VP of Product Experience, Aeris",
+          "ex Microsoft · Samsung · Lucid Motors · GE · Paramount"
+        ]
+      },
+      "kevin-kim": {
+        "credentials": [
+          "CEO, Odyssey Ventures",
+          "Startup accelerator & mentor",
+          "Carnegie Mellon University"
+        ]
+      },
+      "jaehyun-yeom": {
+        "credentials": [
+          "Principal Software Engineer, Bear Robotics",
+          "Seoul National University"
+        ]
+      },
+      "kevin-park": {
+        "credentials": [
+          "Strategic Sourcing & Supply Chain Leader, Sesame",
+          "Yale School of Management"
+        ]
+      },
+      "baron-chang": {
+        "credentials": [
+          "CEO, BaronGlobal & XPath",
+          "Global business enabler for tech startups",
+          "Hanyang University"
+        ]
+      }
+    },
     "teamDescription": "Our programs are run by Silicon Valley instructors with deep academic and field expertise, together with partners who bring years of startup mentoring and consulting experience built on successful business and startup careers in global markets.",
     "linkedinLabel": "LinkedIn profile",
     "team": {

@@ -133,6 +133,14 @@ export default async function AboutPage({ params }: LangParams) {
                 className="mx-auto aspect-square w-full max-w-40 rounded-full object-cover"
               />
               <p className="mt-4 text-lg font-semibold text-navy">{expert.name}</p>
+              <ul className="mx-auto mt-3 max-w-56 space-y-1.5 border-t border-line pt-3 text-left">
+                {page.experts[expert.id].credentials.map((line) => (
+                  <li key={line} className="flex gap-2 text-xs leading-relaxed text-muted sm:text-sm">
+                    <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-green" />
+                    {line}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
