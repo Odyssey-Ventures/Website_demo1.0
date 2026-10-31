@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ProgramCard } from "@/components/academy/ProgramCard";
+import { Contact } from "@/components/home/Contact";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -75,7 +76,9 @@ export default async function AcademyPage({ params }: LangParams) {
         ) : null}
       </SectionContainer>
 
-      <SectionContainer tone="mist">
+      <Contact dict={dict.contact} lang={lang} defaultInterest="academy" />
+
+      <SectionContainer>
         <Reveal>
           <SectionHeading title={page.curriculumTitle}>{page.curriculumDescription}</SectionHeading>
         </Reveal>
@@ -90,7 +93,7 @@ export default async function AcademyPage({ params }: LangParams) {
         </ol>
       </SectionContainer>
 
-      <SectionContainer>
+      <SectionContainer tone="mist">
         <Reveal>
           <SectionHeading title={page.coursesTitle} />
         </Reveal>
@@ -112,7 +115,7 @@ export default async function AcademyPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer tone="mist">
+      <SectionContainer>
         <Reveal>
           <SectionHeading title={page.universityTitle}>{page.universityDescription}</SectionHeading>
         </Reveal>
@@ -143,7 +146,7 @@ export default async function AcademyPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer containerClassName="grid items-center gap-10 md:grid-cols-[240px,1fr]">
+      <SectionContainer tone="mist" containerClassName="grid items-center gap-10 md:grid-cols-[240px,1fr]">
         {instructorPhoto ? (
           <Image
             src={instructorPhoto.src}
