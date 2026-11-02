@@ -18,8 +18,16 @@ export const team: readonly TeamMember[] = [
     photo: { src: "/images/team/okkeun-lee.webp", width: 640, height: 726 },
     linkedin: "https://www.linkedin.com/in/okkeun-lee-67784696/",
   },
-  { id: "juye-kim", linkedin: "https://www.linkedin.com/in/juyekim/" },
-  { id: "yoomi-yi" },
+  {
+    id: "juye-kim",
+    photo: { src: "/images/team/juye-kim.webp", width: 400, height: 400 },
+    linkedin: "https://www.linkedin.com/in/juyekim/",
+  },
+  {
+    id: "yoomi-yi",
+    photo: { src: "/images/team/yoomi-yi.webp", width: 400, height: 400 },
+    linkedin: "https://www.linkedin.com/in/yoomibayarea/",
+  },
   {
     id: "juna-lee",
     photo: { src: "/images/team/juna-lee.webp", width: 413, height: 531 },
