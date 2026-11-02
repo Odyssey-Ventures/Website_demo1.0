@@ -123,26 +123,75 @@
     ],
     "linkLabel": "More about us"
   },
-  "highlights": {
-    "title": "Odyssey in numbers",
-    "items": [
+  "partners": {
+    "title": "Trusted Partners & Network",
+    "description": "Organizations we have worked with on programs, education and advisory.",
+    "listLabel": "Partner logos",
+    "placeholderNotice": "Preview only: logo slots. Add real logo files to src/data/partners.ts and they replace these; the live site hides this section until then.",
+    "placeholderSlot": "Logo"
+  },
+  "impact": {
+    "eyebrow": "Our Impact",
+    "title": "Our Impact",
+    "description": "Each figure is counted on its own basis.",
+    "pendingTitle": "Needs verification (preview only)",
+    "pendingNotice": "These figures are not shown on the live site. Confirm each one and its basis in src/data/impact.ts, then set verified: true.",
+    "pendingBadge": "Unverified"
+  },
+  "successStories": {
+    "eyebrow": "Success Stories",
+    "title": "Success Stories",
+    "description": "Companies that prepared for global markets with Odyssey Ventures.",
+    "programLabel": "Program",
+    "supportLabel": "Our support",
+    "outcomesLabel": "Key outcomes",
+    "readMore": "Read the story",
+    "comingSoon": "Full story coming soon",
+    "back": "Back to Home",
+    "sampleNotice": "Sample cards. They are not shown on the live site; add real, approved stories to src/data/success-stories.ts to replace them.",
+    "samples": [
       {
-        "value": "2018",
-        "label": "Founded in Silicon Valley"
+        "company": "(Sample) Startup A",
+        "year": "2025",
+        "program": "(Sample) Global acceleration program",
+        "support": [
+          "IR pitch mentoring",
+          "Silicon Valley company visits"
+        ],
+        "outcomes": [
+          "(Sample) Enter only verified, approved outcomes"
+        ]
       },
       {
-        "value": "100+",
-        "label": "Business and technology experts in our network"
+        "company": "(Sample) Startup B",
+        "year": "2025",
+        "program": "(Sample) U.S. market entry support",
+        "support": [
+          "1:1 expert advisory",
+          "Customer meeting setup"
+        ],
+        "outcomes": [
+          "(Sample) Enter only verified, approved outcomes"
+        ]
       },
       {
-        "value": "7",
-        "label": "Programs run or organized in 2025"
-      },
-      {
-        "value": "12 yrs",
-        "label": "Our CEO's startup mentoring and consulting experience"
+        "company": "(Sample) Startup C",
+        "year": "2024",
+        "program": "(Sample) Academy course",
+        "support": [
+          "Product and GTM strategy course"
+        ],
+        "outcomes": [
+          "(Sample) Enter only verified, approved outcomes"
+        ]
       }
     ]
+  },
+  "events": {
+    "eyebrow": "Events & Highlights",
+    "title": "Events & Highlights",
+    "description": "Scenes from programs and meetups we have run in Silicon Valley and Seoul.",
+    "viewAll": "See all programs"
   },
   "services": {
     "title": "Services",
@@ -168,7 +217,6 @@
     "description": "Founders, partner companies and institutions on building in Silicon Valley with Odyssey Ventures.",
     "startup": "Startup",
     "partner": "Partner",
-    "partnersTitle": "Partners",
     "sampleNotice": "Sample testimonials. They are not shown on the live site and are replaced by real quotes added to src/data/testimonials.ts.",
     "samples": [
       {
@@ -645,7 +693,8 @@
       "details": "Details",
       "register": "Register",
       "closed": "Registration closed",
-      "back": "Back to the schedule"
+      "back": "Back to the schedule",
+      "speaker": "Speaker"
     },
     "register": {
       "title": "Register",

@@ -45,7 +45,7 @@ export default async function AcademyPage({ params }: LangParams) {
 
         <h3 className="mt-12 text-sm font-semibold uppercase tracking-widest text-brand-blue">{page.upcoming}</h3>
         {upcoming.length > 0 ? (
-          <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {upcoming.map((program) => (
               <li key={program.id}>
                 <ProgramCard program={program} lang={lang} labels={page.labels} />
@@ -64,7 +64,7 @@ export default async function AcademyPage({ params }: LangParams) {
         {past.length > 0 ? (
           <>
             <h3 className="mt-14 text-sm font-semibold uppercase tracking-widest text-muted">{page.past}</h3>
-            <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {past.map((program) => (
                 <li key={program.id}>
                   <ProgramCard program={program} lang={lang} labels={page.labels} past />

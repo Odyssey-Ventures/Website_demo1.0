@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { advisorProfiles } from "@/data/advisor-profiles";
+import { successStories } from "@/data/success-stories";
 import { locales } from "@/i18n/config";
 
 const paths = [
@@ -17,6 +18,7 @@ const paths = [
   "/support",
   "/membership",
   "/contact",
+  ...successStories.map((story) => `/success-stories/${story.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

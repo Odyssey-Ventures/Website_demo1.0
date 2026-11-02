@@ -56,7 +56,7 @@ export default async function AcceleratorPage({ params }: LangParams) {
         </ol>
       </SectionContainer>
 
-      <SectionContainer tone="mist">
+      <SectionContainer id="gallery" tone="mist">
         <Reveal>
           <SectionHeading title={page.galleryTitle}>{page.galleryDescription}</SectionHeading>
         </Reveal>
