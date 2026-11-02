@@ -18,7 +18,7 @@ export const team: readonly TeamMember[] = [
     photo: { src: "/images/team/okkeun-lee.webp", width: 640, height: 726 },
     linkedin: "https://www.linkedin.com/in/okkeun-lee-67784696/",
   },
-  { id: "juye-kim" },
+  { id: "juye-kim", linkedin: "https://www.linkedin.com/in/juyekim/" },
   { id: "yoomi-yi" },
   {
     id: "juna-lee",
