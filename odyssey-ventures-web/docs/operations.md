@@ -114,6 +114,8 @@
 
 ### 5-1. 처음 한 번만: 연결
 
+> **현재 상태 (2026-11-04)**: 프로젝트 `odyssey-ventures-web`(ref `eotwfhmktbcrfnumddov`, West US)를 만들었고, 아래 2번 SQL과 `0002_harden_function_privileges.sql`도 적용했습니다. 사이트 코드(`src/lib/supabase/config.ts`)에 주소와 공개 키를 기본값으로 넣어 두었으므로 5번은 필요 없습니다. 남은 일은 3번(URL 설정)과 4번(SMTP)입니다.
+
 1. [supabase.com](https://supabase.com)에서 회사 계정으로 새 프로젝트를 만듭니다 (리전은 West US 권장).
 2. **SQL Editor**에서 `supabase/migrations/0001_newsroom_and_support.sql` 내용을 붙여 넣고 실행합니다. 여러 번 실행해도 안전합니다.
 3. **Authentication → URL Configuration**
