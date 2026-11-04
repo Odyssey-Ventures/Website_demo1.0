@@ -80,7 +80,7 @@ export default async function MembershipPage({ params, searchParams }: Membershi
 
   return (
     <>
-      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="blue" />
+      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="blue" photo="goldenGate" />
 
       <SectionContainer>
         {justPaid ? (
