@@ -95,6 +95,7 @@ html[lang="ko"] h3 {
   }
 
   .marquee-track > [aria-hidden="true"],
+  .marquee-item[data-repeat],
   .marquee-fade {
     display: none;
   }
