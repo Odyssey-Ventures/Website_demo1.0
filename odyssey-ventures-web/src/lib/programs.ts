@@ -23,6 +23,8 @@ function toProgram(row: Record<string, string>): Program | null {
     format: row.format ?? "",
     capacity: row.capacity ?? "",
     registrationOpen: (row.registration_open ?? "").toUpperCase() !== "FALSE",
+    image: row.image_url || undefined,
+    instructorTitle: row.instructor_title || undefined,
   };
 }
 

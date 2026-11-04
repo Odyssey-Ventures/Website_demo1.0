@@ -68,3 +68,43 @@ html[lang="ko"] h3 {
     transition: none;
   }
 }
+
+/* Logo marquee (src/components/ui/LogoMarquee.tsx): two identical lists slide left by one list width, then repeat. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    width: 100%;
+  }
+
+  .marquee-track > [aria-hidden="true"],
+  .marquee-fade {
+    display: none;
+  }
+
+  .marquee-list {
+    flex-shrink: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.5rem;
+    padding-right: 0;
+  }
+}

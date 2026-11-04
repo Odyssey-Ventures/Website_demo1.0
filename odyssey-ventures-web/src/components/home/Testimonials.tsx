@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { partners } from "@/data/partners";
 import { testimonials } from "@/data/testimonials";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
@@ -13,13 +12,14 @@ import type { Testimonial } from "@/types";
  * The first quote is featured; the rest sit in a grid beside and below it.
  * While the list is empty, labeled sample cards are shown everywhere except the production site,
  * where the section is hidden until real quotes are added.
+ * Partner logos moved to the "Trusted Partners & Network" slider under the Hero (Partners.tsx).
  */
 export function Testimonials({ dict }: { dict: Dictionary["testimonials"] }) {
   const isSample = testimonials.length === 0 && process.env.VERCEL_ENV !== "production";
   const items: Testimonial[] = isSample
     ? dict.samples.map((sample, index) => ({ id: `sample-${index}`, ...sample, category: index % 2 === 0 ? "startup" : "partner" }))
     : testimonials;
-  if (items.length === 0 && partners.length === 0) return null;
+  if (items.length === 0) return null;
 
   const [featured, ...rest] = items;
   const categoryLabel = (item: Testimonial) => (item.category === "startup" ? dict.startup : dict.partner);
@@ -63,29 +63,6 @@ export function Testimonials({ dict }: { dict: Dictionary["testimonials"] }) {
         </div>
       ) : null}
 
-      {partners.length > 0 ? (
-        <div className="mt-16 border-t border-line pt-10">
-          <h3 className="text-sm font-semibold uppercase tracking-widest text-muted">{dict.partnersTitle}</h3>
-          <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {partners.map((partner) => {
-              const logo = (
-                <Image src={partner.logoSrc} alt={partner.name} width={140} height={48} className="max-h-12 w-auto object-contain" />
-              );
-              return (
-                <li key={partner.name} className="flex h-24 items-center justify-center rounded-lg border border-line bg-white p-4">
-                  {partner.href ? (
-                    <a href={partner.href} target="_blank" rel="noopener noreferrer">
-                      {logo}
-                    </a>
-                  ) : (
-                    logo
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      ) : null}
     </SectionContainer>
   );
 }

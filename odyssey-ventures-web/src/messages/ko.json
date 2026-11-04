@@ -123,26 +123,75 @@
     ],
     "linkLabel": "회사 소개 자세히 보기"
   },
-  "highlights": {
-    "title": "숫자로 보는 오디세이",
-    "items": [
+  "partners": {
+    "title": "Trusted Partners & Network",
+    "description": "프로그램·교육·자문을 함께해 온 기관과 기업입니다.",
+    "listLabel": "파트너 로고",
+    "placeholderNotice": "미리보기 전용 로고 자리입니다. src/data/partners.ts에 실제 로고 파일을 넣으면 대체되며, 그전까지 실제 사이트에서는 이 섹션이 숨겨집니다.",
+    "placeholderSlot": "로고"
+  },
+  "impact": {
+    "eyebrow": "Our Impact",
+    "title": "Our Impact",
+    "description": "각 수치는 서로 다른 기준으로 집계했습니다.",
+    "pendingTitle": "검증 필요 지표 (미리보기 전용)",
+    "pendingNotice": "아래 수치는 실제 사이트에 표시되지 않습니다. src/data/impact.ts에서 수치와 집계 기준을 확인한 뒤 verified: true로 바꾸면 게시됩니다.",
+    "pendingBadge": "검증 전"
+  },
+  "successStories": {
+    "eyebrow": "Success Stories",
+    "title": "Success Stories",
+    "description": "오디세이 벤처스와 함께 글로벌 시장을 준비한 기업들의 이야기입니다.",
+    "programLabel": "참여 프로그램",
+    "supportLabel": "지원 내용",
+    "outcomesLabel": "주요 성과",
+    "readMore": "사례 자세히 보기",
+    "comingSoon": "상세 사례 준비 중",
+    "back": "홈으로 돌아가기",
+    "sampleNotice": "예시 카드입니다. 실제 사이트에는 표시되지 않으며, src/data/success-stories.ts에 기업의 승인을 받은 실제 사례를 넣으면 대체됩니다.",
+    "samples": [
       {
-        "value": "2018",
-        "label": "실리콘밸리에서 설립"
+        "company": "(예시) 스타트업 A",
+        "year": "2025",
+        "program": "(예시) 글로벌 액셀러레이팅 프로그램",
+        "support": [
+          "IR 피칭 멘토링",
+          "실리콘밸리 기업 탐방"
+        ],
+        "outcomes": [
+          "(예시) 검증·승인된 성과만 입력합니다"
+        ]
       },
       {
-        "value": "100+",
-        "label": "비즈니스·기술 전문가 네트워크"
+        "company": "(예시) 스타트업 B",
+        "year": "2025",
+        "program": "(예시) 미국 시장 진출 지원",
+        "support": [
+          "전문가 1:1 자문",
+          "잠재 고객 미팅 연결"
+        ],
+        "outcomes": [
+          "(예시) 검증·승인된 성과만 입력합니다"
+        ]
       },
       {
-        "value": "7",
-        "label": "2025년 운영·기획한 프로그램"
-      },
-      {
-        "value": "12년",
-        "label": "대표의 스타트업 멘토링·컨설팅 경력"
+        "company": "(예시) 스타트업 C",
+        "year": "2024",
+        "program": "(예시) 아카데미 강의",
+        "support": [
+          "Product·GTM 전략 강의"
+        ],
+        "outcomes": [
+          "(예시) 검증·승인된 성과만 입력합니다"
+        ]
       }
     ]
+  },
+  "events": {
+    "eyebrow": "Events & Highlights",
+    "title": "Events & Highlights",
+    "description": "실리콘밸리와 서울에서 운영한 프로그램과 밋업 현장입니다.",
+    "viewAll": "전체 프로그램 보기"
   },
   "services": {
     "title": "서비스",
@@ -168,7 +217,6 @@
     "description": "오디세이 벤처스와 실리콘밸리 진출을 함께한 창업가, 파트너 기업과 기관이 남긴 이야기입니다.",
     "startup": "스타트업",
     "partner": "파트너",
-    "partnersTitle": "파트너",
     "sampleNotice": "예시 후기입니다. 실제 사이트에는 표시되지 않으며, src/data/testimonials.ts에 실제 후기를 넣으면 대체됩니다.",
     "samples": [
       {
@@ -645,7 +693,8 @@
       "details": "자세히 보기",
       "register": "참가 신청",
       "closed": "신청 마감",
-      "back": "전체 일정으로"
+      "back": "전체 일정으로",
+      "speaker": "연사"
     },
     "register": {
       "title": "참가 신청",

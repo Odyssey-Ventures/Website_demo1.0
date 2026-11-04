@@ -71,6 +71,8 @@
 | `start_time`, `end_time` | 24시간 형식 | `17:00` |
 | `timezone` | 시간 옆에 표시할 글자 | `PT` 또는 `KST` |
 | `instructor` | 강사 이름 | `Okkeun Lee` |
+| `instructor_title` | (선택) 강사 직책. 카드에서 이름 아래에 표시 | `CEO, Odyssey Ventures` |
+| `image_url` | (선택) 카드 썸네일. `/images/...` 경로(사이트 public 폴더) 또는 https 주소. 비우면 날짜가 들어간 기본 패널이 보임. 16:9 권장 | `/images/programs/pm-webinar.webp` |
 | `format` | 진행 방식 | `Zoom` |
 | `capacity` | 정원 (숫자만, 비워도 됨) | `50` |
 | `summary_ko`, `summary_en` | 목록에 보이는 한두 줄 소개 | |
