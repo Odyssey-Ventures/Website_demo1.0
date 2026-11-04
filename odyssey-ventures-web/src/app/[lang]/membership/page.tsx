@@ -26,7 +26,7 @@ export default async function MembershipPage({ params }: LangParams) {
 
   return (
     <>
-      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="blue" />
+      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="blue" photo="goldenGate" />
 
       <SectionContainer>
         <SectionHeading title={page.tiersTitle} />

@@ -33,7 +33,7 @@ export default async function AboutPage({ params }: LangParams) {
 
   return (
     <>
-      <PageHero title={dict.nav.about} description={page.overview.lead} accent="navy" />
+      <PageHero title={dict.nav.about} description={page.overview.lead} accent="navy" photo="coitTowerView" />
 
       <div className="border-b border-line bg-white">
         <Container>
