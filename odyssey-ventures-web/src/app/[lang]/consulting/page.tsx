@@ -79,7 +79,7 @@ export default async function ConsultingPage({ params }: LangParams) {
         </ul>
       </SectionContainer>
 
-      <SectionContainer tone="navy">
+      <SectionContainer tone="navy" photo="goldenGate">
         <SectionHeading title={page.processTitle} inverse />
         <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {page.process.map((step, index) => (

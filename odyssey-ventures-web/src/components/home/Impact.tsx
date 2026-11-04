@@ -18,7 +18,7 @@ export function Impact({ lang, dict }: { lang: Locale; dict: Dictionary["impact"
   if (verified.length === 0 && pending.length === 0) return null;
 
   return (
-    <SectionContainer tone="navy">
+    <SectionContainer tone="navy" photo="coitTowerView">
       <Reveal className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <h2 className="flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-brand-green">
           <span aria-hidden="true" className="h-0.5 w-8 rounded-full bg-brand-green" />
