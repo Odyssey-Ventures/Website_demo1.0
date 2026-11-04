@@ -157,7 +157,20 @@
 - 지금은 회원 등급을 사이트에서 확인하지 않습니다. 회원용 결제가 들어오면 신청자가 회원인지 확인한 뒤 일정을 확정해 주세요.
 - 결제는 일정 확정 후 받는 것이 원칙입니다(사이트 안내 문구 기준). 확정 메일에도 같은 결제 링크를 넣어 주세요.
 
-## 7. 문제가 생겼을 때
+## 7. 멤버십 (Free / Basic / Pro / Enterprise)
+
+- 플랜 내용과 가격 표시는 `src/messages/ko.json`·`en.json`의 `membershipPage.tiers`에서 바꿉니다. 실제 청구 금액은 Stripe 가격(Price)에서 정해집니다.
+- Basic($29/월)·Pro($99/월)는 Stripe Payment Link로 결제합니다. 테스트 모드 상품·링크는 이미 만들어져 있어 미리보기 배포에서는 바로 시험할 수 있습니다(카드 4242 4242 4242 4242).
+- 실제 사이트(Production)는 아래 환경 변수가 있을 때만 결제 버튼을 보여 줍니다. 없으면 "결제 준비 중"으로 나옵니다.
+  - `MEMBERSHIP_PAYMENT_URL_BASIC`, `MEMBERSHIP_PAYMENT_URL_PRO`: Live 모드 Payment Link 주소. 링크의 메타데이터와 구독 메타데이터에 `tier`=`basic`/`pro`를 넣고, 결제 후 이동 주소를 `https://<사이트>/membership?checkout=success`로 설정합니다.
+- 결제한 사람의 플랜을 사이트에 반영하려면 (한 번만):
+  1. Stripe → Developers → Webhooks → Add endpoint. 주소 `https://<사이트>/api/stripe/webhook`, 이벤트 `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`.
+  2. 만든 endpoint의 Signing secret(`whsec_…`)을 Vercel 환경 변수 `STRIPE_WEBHOOK_SECRET`에 넣습니다.
+  3. Supabase → Project Settings → API Keys의 `service_role`(secret) 키를 Vercel 환경 변수 `SUPABASE_SERVICE_ROLE_KEY`에 넣습니다. `NEXT_PUBLIC_`을 붙이지 마세요. 이 키는 서버에서만 씁니다.
+  4. Vercel에서 다시 배포합니다.
+- 플랜 기록은 Supabase `memberships` 표에 있습니다. 본인과 직원만 읽을 수 있고, 웹훅만 쓸 수 있습니다. 해지 요청이 오면 Stripe에서 구독을 취소하면 자동으로 Free로 돌아갑니다. Enterprise는 계약 후 직원이 Supabase 표에서 `tier`를 `enterprise`로 바꿉니다.
+
+## 8. 문제가 생겼을 때
 
 | 증상 | 확인할 것 |
 | --- | --- |

@@ -29,7 +29,7 @@
       },
       "membership": {
         "title": "Membership",
-        "description": "Odyssey Ventures membership"
+        "description": "Odyssey Ventures membership plans: Free, Basic, Pro and Enterprise."
       },
       "contact": {
         "title": "Contact",
@@ -935,29 +935,71 @@
   },
   "membershipPage": {
     "eyebrow": "Membership",
-    "title": "Membership is coming",
-    "description": "Anyone can explore Odyssey Ventures; members will get access to the services and benefits themselves. We are preparing it now.",
-    "tiersTitle": "Visitors and members",
+    "title": "Choose your membership",
+    "description": "Start free, and move up when you want more from Odyssey Ventures' advisors and programs.",
+    "tiersTitle": "Plans",
+    "perMonth": "/ month",
+    "popular": "Recommended",
+    "current": "Your plan",
     "tiers": [
       {
-        "title": "Visitors",
+        "id": "free",
+        "name": "Free",
+        "price": "$0",
+        "summary": "For anyone getting started with Odyssey Ventures.",
         "items": [
-          "Company and service information",
-          "Register for public courses and webinars",
-          "Request 1:1 advisory"
+          "Register for webinars",
+          "See your applications in one place",
+          "Comment in the Newsroom",
+          "Customer Support"
         ]
       },
       {
-        "title": "Members (coming soon)",
+        "id": "basic",
+        "name": "Basic",
+        "price": "$29",
+        "summary": "For founders who meet our advisors regularly.",
         "items": [
-          "Member-only services and benefits",
-          "All your requests in one account",
-          "Details at launch"
+          "Everything in Free",
+          "Member price on 1:1 advisory",
+          "Materials from past webinars"
+        ]
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "price": "$99",
+        "summary": "For teams that want ongoing advice.",
+        "items": [
+          "Everything in Basic",
+          "One 1:1 advisory request a month, no payment needed",
+          "Early notice of new programs"
+        ]
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": "By inquiry",
+        "summary": "For companies and institutions.",
+        "items": [
+          "Custom programs for your organization",
+          "A dedicated manager"
         ]
       }
     ],
-    "contactTitle": "Get notified",
-    "contactDescription": "Leave your name and email and we'll tell you first when membership opens."
+    "cta": {
+      "free": "Sign up free",
+      "subscribe": "Subscribe",
+      "signInToSubscribe": "Sign in to subscribe",
+      "enterprise": "Contact us",
+      "soon": "Payment opening soon"
+    },
+    "testNotice": "Preview: payments run in Stripe test mode. Use card 4242 4242 4242 4242 with any future date and CVC.",
+    "successTitle": "Thank you for subscribing",
+    "successText": "Your payment went through. Your plan will show here within a few minutes.",
+    "manageNote": "To change or cancel your plan, contact Customer Support or contact@odysseyventures.llc. Cancellation takes effect at the end of the current billing month.",
+    "contactTitle": "Ask about Enterprise",
+    "contactDescription": "Tell us about your organization and we'll put together a program for you."
   },
   "contactPage": {
     "eyebrow": "Contact"
@@ -1114,8 +1156,8 @@
       },
       {
         "category": "account",
-        "q": "When does membership start?",
-        "a": "It is in preparation. Sign up for launch news on the Membership page and we'll tell you first."
+        "q": "How does membership work?",
+        "a": "There are four plans: Free, Basic ($29/month), Pro ($99/month) and Enterprise (by inquiry). Sign in, choose a plan on the Membership page and pay monthly by card. You can cancel any time through Customer Support."
       }
     ]
   },
