@@ -27,7 +27,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
 
   return (
     <>
-      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="navy" />
+      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="navy" photo="coitTowerView" />
 
       <SectionContainer>
         <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -53,7 +53,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer tone="navy">
+      <SectionContainer tone="navy" photo="skylineHill">
         <SectionHeading title={page.processTitle} inverse>
           {page.processDescription}
         </SectionHeading>
