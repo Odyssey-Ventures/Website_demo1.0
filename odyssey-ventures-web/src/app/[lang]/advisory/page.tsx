@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AdvisorDirectory } from "@/components/advisory/AdvisorDirectory";
 import { advisorProfiles } from "@/data/advisor-profiles";
+import { localizeAdvisor } from "@/data/advisor-profiles-ko";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -80,7 +81,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
           <AdvisorDirectory
             lang={lang}
             dict={dict.advisors}
-            advisors={advisorProfiles.map(({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }) => ({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }))}
+            advisors={advisorProfiles.map((advisor) => localizeAdvisor(advisor, lang)).map(({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }) => ({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }))}
           />
         </div>
       </SectionContainer>
