@@ -53,7 +53,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer tone="navy">
+      <SectionContainer tone="navy" photo="skylineHill">
         <SectionHeading title={page.processTitle} inverse>
           {page.processDescription}
         </SectionHeading>
