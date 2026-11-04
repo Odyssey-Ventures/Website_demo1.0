@@ -5,6 +5,8 @@ import type { ImpactMetric } from "@/types";
  *
  * - Only `verified: true` figures appear on the production site (website-demo12.vercel.app).
  *   Previews also show unverified figures, each with a "needs verification" label.
+ * - Sources: company profile 2026 and track-record deck v1.3. The 25 / 59 / 16 example figures were removed:
+ *   neither deck contains them and their basis is unknown.
  * - Every figure is counted on its own basis. Do not add them up or present them as a company-wide total.
  * - Three or four verified figures fit the row best.
  */
@@ -36,28 +38,5 @@ export const impactMetrics: ImpactMetric[] = [
     suffix: { ko: "년", en: " yrs" },
     label: { ko: "대표의 스타트업 멘토링·컨설팅 경력", en: "Our CEO's startup mentoring and consulting experience" },
     verified: true,
-  },
-
-  // Figures from a past project, given as examples. Confirm each one and its basis, then set verified: true.
-  {
-    id: "startups-supported",
-    value: 25,
-    label: { ko: "지원 스타트업", en: "Startups supported" },
-    basis: { ko: "집계 기준·기간 확인 필요", en: "Basis and period to be confirmed" },
-    verified: false,
-  },
-  {
-    id: "advisory-sessions",
-    value: 59,
-    label: { ko: "자문 세션", en: "Advisory sessions" },
-    basis: { ko: "집계 기준·기간 확인 필요", en: "Basis and period to be confirmed" },
-    verified: false,
-  },
-  {
-    id: "program-participants",
-    value: 16,
-    label: { ko: "프로그램 참가자", en: "Program participants" },
-    basis: { ko: "집계 기준·기간 확인 필요", en: "Basis and period to be confirmed" },
-    verified: false,
   },
 ];

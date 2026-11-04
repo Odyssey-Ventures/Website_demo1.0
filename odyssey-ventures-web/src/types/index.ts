@@ -19,8 +19,8 @@ export interface Testimonial {
 
 export interface Partner {
   name: string;
-  /** Path inside /public, e.g. "/logos/partner.svg" */
-  logoSrc: string;
+  /** Path inside /public, e.g. "/images/partners/partner.svg". Without one, the name is shown as a text wordmark. */
+  logoSrc?: string;
   href?: string;
 }
 

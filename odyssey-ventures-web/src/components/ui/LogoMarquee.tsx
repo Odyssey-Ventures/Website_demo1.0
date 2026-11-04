@@ -14,9 +14,15 @@ interface LogoMarqueeProps {
  * pauses on hover and keyboard focus, and becomes a static, wrapping row under prefers-reduced-motion.
  * The list is rendered twice so the loop is seamless; the copy is hidden from assistive technology.
  */
+/** Each half of the track holds at least this many items, so a short list still fills wide screens. */
+const MIN_ITEMS_PER_HALF = 10;
+
 export function LogoMarquee({ partners, label, secondsPerLogo = 4 }: LogoMarqueeProps) {
   if (partners.length === 0) return null;
-  const duration = `${Math.max(partners.length * secondsPerLogo, 20)}s`;
+  // Two identical halves; each half repeats the list enough times to be wider than the viewport.
+  const repeats = Math.ceil(MIN_ITEMS_PER_HALF / partners.length);
+  const half = Array.from({ length: repeats }, () => partners).flat();
+  const duration = `${Math.max(half.length * secondsPerLogo, 20)}s`;
 
   return (
     <div className="marquee group relative overflow-hidden" style={{ ["--marquee-duration" as string]: duration }}>
@@ -31,11 +37,20 @@ export function LogoMarquee({ partners, label, secondsPerLogo = 4 }: LogoMarquee
             aria-hidden={copy === 1 ? true : undefined}
             className="marquee-list flex shrink-0 items-center gap-12 pr-12 sm:gap-16 sm:pr-16"
           >
-            {partners.map((partner) => (
-              <li key={`${copy}-${partner.name}`} className="flex h-10 shrink-0 items-center sm:h-12">
-                <PartnerLogo partner={partner} hidden={copy === 1} />
-              </li>
-            ))}
+            {half.map((partner, index) => {
+              // Only the first pass of the first half is read out; the repeats are visual only.
+              const hidden = copy === 1 || index >= partners.length;
+              return (
+                <li
+                  key={`${copy}-${index}`}
+                  aria-hidden={hidden && copy === 0 ? true : undefined}
+                  className="marquee-item flex h-10 shrink-0 items-center sm:h-12"
+                  data-repeat={index >= partners.length ? "" : undefined}
+                >
+                  <PartnerLogo partner={partner} hidden={hidden} />
+                </li>
+              );
+            })}
           </ul>
         ))}
       </div>
@@ -44,7 +59,12 @@ export function LogoMarquee({ partners, label, secondsPerLogo = 4 }: LogoMarquee
 }
 
 function PartnerLogo({ partner, hidden }: { partner: Partner; hidden: boolean }) {
-  const logo = (
+  const logo = !partner.logoSrc ? (
+    // Text wordmark until an approved logo file is added.
+    <span className="whitespace-nowrap text-lg font-semibold tracking-tight text-navy/45 transition-colors duration-300 hover:text-navy sm:text-xl">
+      {partner.name}
+    </span>
+  ) : (
     <Image
       src={partner.logoSrc}
       alt={hidden ? "" : partner.name}
