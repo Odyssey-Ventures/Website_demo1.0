@@ -18,6 +18,8 @@ const paths = [
   "/support",
   "/membership",
   "/contact",
+  "/terms",
+  "/privacy",
   ...successStories.map((story) => `/success-stories/${story.slug}`),
 ];
 

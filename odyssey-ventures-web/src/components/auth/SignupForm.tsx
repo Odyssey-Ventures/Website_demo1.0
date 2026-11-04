@@ -74,7 +74,22 @@ export function SignupForm({ dict, next, lang }: { dict: Dictionary["auth"]; nex
         </Field>
         <label className="flex items-start gap-3 text-sm leading-relaxed text-navy">
           <input name="agree" type="checkbox" required className="mt-1 h-4 w-4 shrink-0 accent-brand-blue" />
-          {dict.agree}
+          <span>
+            {dict.agree.split(/(\{terms\}|\{privacy\})/).map((part, i) =>
+              part === "{terms}" || part === "{privacy}" ? (
+                <Link
+                  key={i}
+                  href={localizedHref(lang, part === "{terms}" ? "/terms" : "/privacy")}
+                  target="_blank"
+                  className="font-semibold text-brand-blue underline-offset-2 hover:underline"
+                >
+                  {part === "{terms}" ? dict.termsLink : dict.privacyLink}
+                </Link>
+              ) : (
+                part
+              )
+            )}
+          </span>
         </label>
         <Button type="submit" className="w-full" disabled={status === "sending"}>
           {status === "sending" ? dict.creating : dict.createAccount}

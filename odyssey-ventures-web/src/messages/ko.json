@@ -58,6 +58,14 @@
       "resetPassword": {
         "title": "비밀번호 재설정",
         "description": "오디세이 벤처스 계정의 비밀번호를 새로 정합니다."
+      },
+      "terms": {
+        "title": "이용약관",
+        "description": "Odyssey Ventures 웹사이트와 서비스를 이용할 때 적용되는 약관입니다."
+      },
+      "privacy": {
+        "title": "개인정보 처리방침",
+        "description": "Odyssey Ventures가 개인정보를 수집·이용·보호하는 방법입니다."
       }
     }
   },
@@ -1199,7 +1207,9 @@
     "password": "비밀번호",
     "passwordHint": "8자 이상 입력해 주세요.",
     "passwordConfirm": "비밀번호 확인",
-    "agree": "이용약관과 개인정보 처리방침에 동의합니다.",
+    "agree": "{terms}과 {privacy}에 동의합니다.",
+    "termsLink": "이용약관",
+    "privacyLink": "개인정보 처리방침",
     "createAccount": "가입하기",
     "creating": "가입 중…",
     "signupSent": "거의 다 됐습니다. 보내 드린 확인 메일의 링크를 누르면 가입이 완료됩니다. 메일이 보이지 않으면 스팸함도 확인해 주세요.",
@@ -1233,7 +1243,17 @@
     "companyInfo": "실리콘밸리 기반 글로벌 역량 강화 교육·컨설팅 및 스타트업 액셀러레이팅 기업",
     "contactTitle": "문의",
     "contactInfo": "contact@odysseyventures.llc\nSan Jose, California",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "legalLabel": "법적 고지",
+    "terms": "이용약관",
+    "privacy": "개인정보 처리방침"
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "effective": "시행일",
+    "draftNotice": "법률 검토 전 초안입니다. 이 안내는 미리보기 배포에서만 보입니다.",
+    "otherTerms": "이용약관 보기",
+    "otherPrivacy": "개인정보 처리방침 보기"
   },
   "notFound": {
     "title": "페이지를 찾을 수 없습니다",

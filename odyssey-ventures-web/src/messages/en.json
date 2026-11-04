@@ -58,6 +58,14 @@
       "resetPassword": {
         "title": "Reset password",
         "description": "Set a new password for your Odyssey Ventures account."
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "description": "The terms that apply when you use the Odyssey Ventures website and services."
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "How Odyssey Ventures collects, uses and protects your personal information."
       }
     }
   },
@@ -1199,7 +1207,9 @@
     "password": "Password",
     "passwordHint": "At least 8 characters.",
     "passwordConfirm": "Confirm password",
-    "agree": "I agree to the Terms of Service and Privacy Policy.",
+    "agree": "I agree to the {terms} and {privacy}.",
+    "termsLink": "Terms of Service",
+    "privacyLink": "Privacy Policy",
     "createAccount": "Create account",
     "creating": "Creating…",
     "signupSent": "Almost done. We emailed you a confirmation link; open it to finish signing up. Check your spam folder if you don't see it.",
@@ -1233,7 +1243,17 @@
     "companyInfo": "Silicon Valley-based global capability training, consulting and startup acceleration",
     "contactTitle": "Contact",
     "contactInfo": "contact@odysseyventures.llc\nSan Jose, California",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "legalLabel": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "effective": "Effective date",
+    "draftNotice": "Draft before legal review. This notice appears only on preview deployments.",
+    "otherTerms": "Read the Terms of Service",
+    "otherPrivacy": "Read the Privacy Policy"
   },
   "notFound": {
     "title": "Page not found",
