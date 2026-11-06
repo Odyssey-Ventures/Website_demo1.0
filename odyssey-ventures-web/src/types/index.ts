@@ -52,6 +52,10 @@ export interface Program {
   image?: string;
   /** Optional speaker title shown under the name, e.g. "CEO, Odyssey Ventures" */
   instructorTitle?: string;
+  /** Optional fee as display text, e.g. "$20". The charge itself is set on the payment page. */
+  price?: string;
+  /** Optional https payment page, e.g. a Stripe Payment Link. Shows a "Pay" button on the program page. */
+  paymentUrl?: string;
 }
 
 /** One figure in the Home "Our Impact" section. Managed in src/data/impact.ts. */

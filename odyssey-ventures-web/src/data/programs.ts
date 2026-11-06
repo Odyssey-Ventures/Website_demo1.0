@@ -31,5 +31,8 @@ export const samplePrograms: Program[] = [
     format: "Zoom",
     capacity: "50",
     registrationOpen: true,
+    // Stripe test mode (sandbox): no real charge. Pay with card 4242 4242 4242 4242.
+    price: "$20",
+    paymentUrl: "https://buy.stripe.com/test_aFa8wR1OKfz3gHn61j2wU02",
   },
 ];

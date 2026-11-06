@@ -72,6 +72,8 @@
 | `timezone` | 시간 옆에 표시할 글자 | `PT` 또는 `KST` |
 | `instructor` | 강사 이름 | `Okkeun Lee` |
 | `instructor_title` | (선택) 강사 직책. 카드에서 이름 아래에 표시 | `CEO, Odyssey Ventures` |
+| `price` | (선택) 참가비. 쓴 그대로 표시 | `$20` |
+| `payment_url` | (선택) 결제 페이지 주소(https). 있으면 상세 페이지 신청서 아래에 "결제하기" 버튼이 생깁니다. Stripe Payment Link를 쓰면 결제 내역에 강의 `id`가 함께 기록됩니다 | `https://buy.stripe.com/...` |
 | `image_url` | (선택) 카드 썸네일. `/images/...` 경로(사이트 public 폴더) 또는 https 주소. 비우면 날짜가 들어간 기본 패널이 보임. 16:9 권장 | `/images/programs/pm-webinar.webp` |
 | `format` | 진행 방식 | `Zoom` |
 | `capacity` | 정원 (숫자만, 비워도 됨) | `50` |

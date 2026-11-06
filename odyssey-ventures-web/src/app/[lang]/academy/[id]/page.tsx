@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ProgramPayment } from "@/components/academy/ProgramPayment";
 import { RegistrationForm } from "@/components/academy/RegistrationForm";
 import { Container } from "@/components/ui/Container";
 import { isLocale, localizedHref } from "@/i18n/config";
@@ -48,6 +49,7 @@ export default async function ProgramPage({ params }: ProgramParams) {
     { label: page.labels.format, value: program.format },
     { label: page.labels.instructor, value: program.instructor },
     { label: page.labels.capacity, value: program.capacity ? `${program.capacity}${page.labels.capacityUnit}` : "" },
+    { label: page.payment.priceLabel, value: program.price ?? "" },
   ].filter((fact) => fact.value);
 
   return (
@@ -98,6 +100,9 @@ export default async function ProgramPage({ params }: ProgramParams) {
                       program={{ id: program.id, title: program.title[lang], date: program.date }}
                     />
                   </div>
+                  {program.paymentUrl ? (
+                    <ProgramPayment programId={program.id} price={program.price} paymentUrl={program.paymentUrl} dict={page.payment} />
+                  ) : null}
                 </>
               ) : (
                 <p className="mt-3 text-muted">{page.register.closedNote}</p>

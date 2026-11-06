@@ -728,6 +728,14 @@
       },
       "subjectPrefix": "Registration",
       "closedNote": "Registration for this session is closed."
+    },
+    "payment": {
+      "priceLabel": "Fee",
+      "title": "Registration fee",
+      "description": "After sending the registration form, pay the fee with the button below. Payment opens on a Stripe payment page in a new window.",
+      "pay": "Pay now",
+      "testNotice": "This is a test payment: nothing is charged. Use card 4242 4242 4242 4242, any future expiry date and any 3-digit CVC.",
+      "success": "Payment complete. We will match it to your registration and email you the joining details."
     }
   },
   "advisoryPage": {
