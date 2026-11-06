@@ -745,11 +745,6 @@
       "confirmed": "The minimum is reached: this session is confirmed.",
       "full": "All seats are taken. Registration is closed.",
       "refund": "If the minimum is not reached, the session is canceled and everyone is refunded in full."
-    },
-    "instructors": {
-      "title": "Webinar instructors",
-      "description": "Experts working in Silicon Valley lead the Academy webinars.",
-      "linkedin": "LinkedIn profile"
     }
   },
   "advisoryPage": {
