@@ -36,6 +36,7 @@ function toProgram(row: Record<string, string>): Program | null {
     instructorTitle: row.instructor_title || undefined,
     price: row.price || undefined,
     paymentUrl: httpsUrl(row.payment_url),
+    minParticipants: Number.parseInt(row.min_participants ?? "", 10) || undefined,
   };
 }
 

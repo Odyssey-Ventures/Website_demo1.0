@@ -54,8 +54,10 @@ export interface Program {
   instructorTitle?: string;
   /** Optional fee as display text, e.g. "$20". The charge itself is set on the payment page. */
   price?: string;
-  /** Optional https payment page, e.g. a Stripe Payment Link. Shows a "Pay" button on the program page. */
+  /** Optional https payment page, e.g. a Stripe Payment Link. Registering sends the person there to pay. */
   paymentUrl?: string;
+  /** Optional minimum number of paid registrations for the session to go ahead. Below it, everyone is refunded. */
+  minParticipants?: number;
 }
 
 /** One figure in the Home "Our Impact" section. Managed in src/data/impact.ts. */

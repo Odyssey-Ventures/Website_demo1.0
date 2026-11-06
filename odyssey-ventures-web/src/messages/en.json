@@ -93,7 +93,6 @@
     "aboutSections": {
       "overview": "Company Overview",
       "history": "History",
-      "experts": "Experts",
       "team": "Team"
     },
     "newsSections": {
@@ -370,7 +369,6 @@
         ]
       }
     ],
-    "expertsDescription": "Odyssey Ventures brings together experts with deep hands-on experience in product design, product management, program management and marketing in Silicon Valley.",
     "teamDescription": "Our programs are run by Silicon Valley instructors with deep academic and field expertise, together with partners who bring years of startup mentoring and consulting experience built on successful business and startup careers in global markets.",
     "linkedinLabel": "LinkedIn profile",
     "team": {
@@ -714,28 +712,44 @@
     },
     "register": {
       "title": "Register",
-      "description": "We confirm your registration by email and send the joining link before the session.",
+      "description": "Enter your company, name and email, then pay to complete your registration. We email the joining link before the session.",
+      "company": "Company or organization",
       "name": "Name",
       "email": "Email",
-      "company": "Company or organization",
-      "question": "A question for the instructor (optional)",
+      "payAndRegister": "Pay and register",
+      "payNote": "You will go to a Stripe payment page.",
+      "redirecting": "Opening the payment page…",
+      "paidNotice": "Payment complete and you are registered. We will email the joining link before the session.",
       "status": {
         "submit": "Register",
-        "sending": "Registering…",
-        "saved": "You're registered. We'll email the joining details before the session.",
-        "emailFallback": "Your email app opened. Press send there to complete your registration.",
-        "error": "We couldn't register you. Please try again shortly or email us at"
+        "sending": "Processing…",
+        "saved": "You are registered. We will email the joining details before the session.",
+        "emailFallback": "Your email app has opened. Press send there to complete your registration.",
+        "error": "We could not register you. Please try again shortly or email us:"
       },
       "subjectPrefix": "Registration",
       "closedNote": "Registration for this session is closed."
     },
     "payment": {
       "priceLabel": "Fee",
-      "title": "Registration fee",
-      "description": "After sending the registration form, pay the fee with the button below. Payment opens on a Stripe payment page in a new window.",
-      "pay": "Pay now",
-      "testNotice": "This is a test payment: nothing is charged. Use card 4242 4242 4242 4242, any future expiry date and any 3-digit CVC.",
-      "success": "Payment complete. We will match it to your registration and email you the joining details."
+      "testNotice": "This is a test payment: nothing is charged. Use card 4242 4242 4242 4242, any future expiry date and any 3-digit CVC."
+    },
+    "status": {
+      "title": "Registrations",
+      "live": "Live",
+      "count": "{count} registered",
+      "capacity": "{capacity} seats",
+      "minimumLabel": "Goes ahead with",
+      "minimum": "At least {min} registrations",
+      "recruiting": "The session goes ahead with at least {min} registrations. {left} more needed.",
+      "confirmed": "The minimum is reached: this session is confirmed.",
+      "full": "All seats are taken. Registration is closed.",
+      "refund": "If the minimum is not reached, the session is canceled and everyone is refunded in full."
+    },
+    "instructors": {
+      "title": "Webinar instructors",
+      "description": "Experts working in Silicon Valley lead the Academy webinars.",
+      "linkedin": "LinkedIn profile"
     }
   },
   "advisoryPage": {

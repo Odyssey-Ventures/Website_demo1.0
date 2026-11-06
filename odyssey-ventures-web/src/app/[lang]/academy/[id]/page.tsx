@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ProgramPayment } from "@/components/academy/ProgramPayment";
 import { RegistrationForm } from "@/components/academy/RegistrationForm";
 import { Container } from "@/components/ui/Container";
 import { isLocale, localizedHref } from "@/i18n/config";
@@ -50,6 +49,10 @@ export default async function ProgramPage({ params }: ProgramParams) {
     { label: page.labels.instructor, value: program.instructor },
     { label: page.labels.capacity, value: program.capacity ? `${program.capacity}${page.labels.capacityUnit}` : "" },
     { label: page.payment.priceLabel, value: program.price ?? "" },
+    {
+      label: page.status.minimumLabel,
+      value: program.minParticipants ? page.status.minimum.replace("{min}", String(program.minParticipants)) : "",
+    },
   ].filter((fact) => fact.value);
 
   return (
@@ -96,13 +99,18 @@ export default async function ProgramPage({ params }: ProgramParams) {
                   <div className="mt-6">
                     <RegistrationForm
                       lang={lang}
-                      dict={page.register}
-                      program={{ id: program.id, title: program.title[lang], date: program.date }}
+                      dict={page}
+                      program={{
+                        id: program.id,
+                        title: program.title[lang],
+                        date: program.date,
+                        price: program.price,
+                        paymentUrl: program.paymentUrl,
+                        capacity: Number.parseInt(program.capacity, 10) || undefined,
+                        minParticipants: program.minParticipants,
+                      }}
                     />
                   </div>
-                  {program.paymentUrl ? (
-                    <ProgramPayment programId={program.id} price={program.price} paymentUrl={program.paymentUrl} dict={page.payment} />
-                  ) : null}
                 </>
               ) : (
                 <p className="mt-3 text-muted">{page.register.closedNote}</p>

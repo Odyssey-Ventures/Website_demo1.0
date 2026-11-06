@@ -7,7 +7,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { aboutSections } from "@/config/navigation";
-import { experts } from "@/data/experts";
 import { team } from "@/data/team";
 import { alternatesFor, isLocale, type LangParams } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -23,7 +22,7 @@ export async function generateMetadata({ params }: LangParams): Promise<Metadata
   };
 }
 
-/** Company overview, history, experts and team. Content comes from the 2026 company profile. */
+/** Company overview, history and team. Content comes from the 2026 company profile. */
 export default async function AboutPage({ params }: LangParams) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
@@ -115,27 +114,6 @@ export default async function AboutPage({ params }: LangParams) {
             </li>
           ))}
         </ol>
-      </SectionContainer>
-
-      <SectionContainer id="experts">
-        <Reveal>
-          <SectionHeading title={titles.experts}>{page.expertsDescription}</SectionHeading>
-        </Reveal>
-        <ul className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
-          {experts.map((expert) => (
-            <li key={expert.name} className="text-center">
-              <Image
-                src={expert.photo}
-                alt={expert.name}
-                width={304}
-                height={304}
-                sizes="(min-width: 640px) 160px, 40vw"
-                className="mx-auto aspect-square w-full max-w-40 rounded-full object-cover"
-              />
-              <p className="mt-4 text-lg font-semibold text-navy">{expert.name}</p>
-            </li>
-          ))}
-        </ul>
       </SectionContainer>
 
       <SectionContainer id="team" className="border-t border-line">

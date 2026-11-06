@@ -73,7 +73,8 @@
 | `instructor` | 강사 이름 | `Okkeun Lee` |
 | `instructor_title` | (선택) 강사 직책. 카드에서 이름 아래에 표시 | `CEO, Odyssey Ventures` |
 | `price` | (선택) 참가비. 쓴 그대로 표시 | `$20` |
-| `payment_url` | (선택) 결제 페이지 주소(https). 있으면 상세 페이지 신청서 아래에 "결제하기" 버튼이 생깁니다. Stripe Payment Link를 쓰면 결제 내역에 강의 `id`가 함께 기록됩니다 | `https://buy.stripe.com/...` |
+| `payment_url` | (선택) 결제 페이지 주소(https). 있으면 신청 버튼이 "결제하고 신청하기"가 되어, 소속·이름·이메일을 받은 뒤 바로 결제 페이지로 보냅니다. Stripe Payment Link의 메타데이터에 `program_id`=강의 `id`를 넣어야 신청 현황에 집계됩니다 | `https://buy.stripe.com/...` |
+| `min_participants` | (선택) 최소 진행 인원. 있으면 상세 페이지에 실시간 신청 현황과 "미달 시 전액 환불" 안내가 표시됩니다 | `10` |
 | `image_url` | (선택) 카드 썸네일. `/images/...` 경로(사이트 public 폴더) 또는 https 주소. 비우면 날짜가 들어간 기본 패널이 보임. 16:9 권장 | `/images/programs/pm-webinar.webp` |
 | `format` | 진행 방식 | `Zoom` |
 | `capacity` | 정원 (숫자만, 비워도 됨) | `50` |
@@ -172,7 +173,15 @@
   4. Vercel에서 다시 배포합니다.
 - 플랜 기록은 Supabase `memberships` 표에 있습니다. 본인과 직원만 읽을 수 있고, 웹훅만 쓸 수 있습니다. 해지 요청이 오면 Stripe에서 구독을 취소하면 자동으로 Free로 돌아갑니다. Enterprise는 계약 후 직원이 Supabase 표에서 `tier`를 `enterprise`로 바꿉니다.
 
-## 8. 문제가 생겼을 때
+## 8. 강의 신청 현황과 환불 (Supabase `program_registrations`)
+
+- 신청하면 소속·이름·이메일이 `program_registrations` 표에 **pending**으로 저장되고(운영 시트 `Registrations` 탭에도 한 줄), 바로 Stripe 결제로 넘어갑니다.
+- 결제가 끝나면 Stripe 웹훅이 그 신청을 **paid**로 바꿉니다. 상세 페이지의 "신청 현황" 숫자는 **paid** 신청만 세며, 20초마다 새로 읽습니다. 이름과 이메일은 직원만 볼 수 있습니다.
+- 웹훅이 동작하려면 7장의 `STRIPE_WEBHOOK_SECRET`, `SUPABASE_SERVICE_ROLE_KEY` 설정이 필요합니다. 그전에는 결제가 되어도 숫자가 오르지 않으니, Supabase 표에서 `status`를 직접 `paid`로 바꿔 주세요.
+- 최소 인원에 못 미쳐 취소할 때: Stripe → Payments에서 해당 강의 결제를 각각 **Refund**하고, Supabase 표의 `status`를 `refunded`로 바꿉니다. 신청자 이메일은 표에 있습니다.
+- 표 만들기(한 번만): `supabase/migrations/0004_program_registrations.sql`을 SQL Editor에서 실행합니다. (현재 연결된 프로젝트에는 이미 적용되어 있습니다.)
+
+## 9. 문제가 생겼을 때
 
 | 증상 | 확인할 것 |
 | --- | --- |

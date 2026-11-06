@@ -4,7 +4,7 @@ import { isMembershipTier } from "@/config/membership";
 import { supabaseUrl } from "@/lib/supabase/config";
 
 /**
- * Stripe → Supabase membership sync.
+ * Stripe → Supabase sync: membership tiers, and paid Academy registrations (program_registrations).
  * Needs STRIPE_WEBHOOK_SECRET and SUPABASE_SERVICE_ROLE_KEY in Vercel (server-only, never NEXT_PUBLIC_).
  * Events: checkout.session.completed, customer.subscription.updated, customer.subscription.deleted.
  */
@@ -27,7 +27,11 @@ function verify(payload: string, header: string | null, secret: string): boolean
 }
 
 async function writeMembership(serviceKey: string, query: string, row: Record<string, unknown>, upsert: boolean) {
-  const url = `${supabaseUrl}/rest/v1/memberships${query}`;
+  await writeRow(serviceKey, "memberships", query, row, upsert);
+}
+
+async function writeRow(serviceKey: string, table: string, query: string, row: Record<string, unknown>, upsert: boolean) {
+  const url = `${supabaseUrl}/rest/v1/${table}${query}`;
   const response = await fetch(url, {
     method: upsert ? "POST" : "PATCH",
     headers: {
@@ -57,7 +61,20 @@ export async function POST(request: Request) {
   const object = event.data.object;
 
   try {
-    if (event.type === "checkout.session.completed") {
+    const programId = object.metadata?.program_id;
+    if (event.type === "checkout.session.completed" && typeof programId === "string") {
+      // Academy registration: the payment link carries program_id, client_reference_id is the registration id.
+      const registrationId = object.client_reference_id;
+      if (object.payment_status === "paid" && typeof registrationId === "string" && /^[0-9a-f-]{36}$/i.test(registrationId)) {
+        await writeRow(
+          serviceKey,
+          "program_registrations",
+          `?id=eq.${registrationId}&program_id=eq.${encodeURIComponent(programId)}`,
+          { status: "paid", paid_at: new Date().toISOString(), stripe_session_id: object.id },
+          false
+        );
+      }
+    } else if (event.type === "checkout.session.completed") {
       const userId = object.client_reference_id;
       const tier = object.metadata?.tier;
       if (typeof userId === "string" && /^[0-9a-f-]{36}$/i.test(userId) && isMembershipTier(tier)) {

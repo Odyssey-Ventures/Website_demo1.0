@@ -1,6 +1,6 @@
 import type { ServiceSlug } from "@/types";
 
-export type AboutSectionKey = "overview" | "history" | "experts" | "team";
+export type AboutSectionKey = "overview" | "history" | "team";
 
 export type NewsSectionKey = "newsroom" | "faq" | "support";
 
@@ -23,7 +23,6 @@ export interface MainNavItem {
 export const aboutSections = [
   { group: "about", key: "overview", path: "/about#overview" },
   { group: "about", key: "history", path: "/about#history" },
-  { group: "about", key: "experts", path: "/about#experts" },
   { group: "about", key: "team", path: "/about#team" },
 ] as const satisfies readonly NavChild[];
 

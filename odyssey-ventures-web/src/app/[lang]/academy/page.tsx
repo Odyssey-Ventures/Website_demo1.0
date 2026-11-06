@@ -7,6 +7,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { instructors } from "@/data/instructors";
 import { team } from "@/data/team";
 import { alternatesFor, isLocale, localizedHref, type LangParams } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -167,6 +168,44 @@ export default async function AcademyPage({ params }: LangParams) {
             ))}
           </ul>
         </div>
+      </SectionContainer>
+
+      <SectionContainer id="instructors" tone="mist">
+        <Reveal>
+          <SectionHeading title={page.instructors.title}>{page.instructors.description}</SectionHeading>
+        </Reveal>
+        <ul className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          {instructors.map((person) => (
+            <li key={person.id} className="flex flex-col items-center rounded-lg border border-line bg-white p-5 text-center shadow-card">
+              {person.photo ? (
+                <Image
+                  src={person.photo}
+                  alt={person.name}
+                  width={304}
+                  height={304}
+                  sizes="128px"
+                  className="aspect-square w-full max-w-32 rounded-full object-cover"
+                />
+              ) : (
+                <span aria-hidden="true" className="flex aspect-square w-full max-w-32 items-center justify-center rounded-full bg-navy text-3xl font-semibold text-white">
+                  {person.name
+                    .split(" ")
+                    .map((part) => part[0])
+                    .join("")}
+                </span>
+              )}
+              <p className="mt-4 text-lg font-semibold text-navy">{person.name}</p>
+              <a
+                href={person.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 text-sm font-medium text-brand-blue hover:text-brand-blue-dark"
+              >
+                {page.instructors.linkedin} ↗
+              </a>
+            </li>
+          ))}
+        </ul>
       </SectionContainer>
     </>
   );
