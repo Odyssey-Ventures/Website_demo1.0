@@ -10,6 +10,8 @@
 
   body {
     @apply bg-white font-sans text-navy antialiased;
+    /* Decorative glows in page banners must never cause sideways scrolling. */
+    overflow-x: clip;
   }
 
   :focus-visible {
