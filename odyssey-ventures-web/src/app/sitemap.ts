@@ -1,8 +1,27 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
+import { advisorProfiles } from "@/data/advisor-profiles";
+import { successStories } from "@/data/success-stories";
 import { locales } from "@/i18n/config";
 
-const paths = ["", "/about", "/academy", "/accelerator", "/advisory"];
+const paths = [
+  "",
+  "/about",
+  "/academy",
+  "/advisory",
+  "/advisory/request",
+  ...advisorProfiles.map((advisor) => `/advisory/${advisor.slug}`),
+  "/accelerator",
+  "/consulting",
+  "/news",
+  "/faq",
+  "/support",
+  "/membership",
+  "/contact",
+  "/terms",
+  "/privacy",
+  ...successStories.map((story) => `/success-stories/${story.slug}`),
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
