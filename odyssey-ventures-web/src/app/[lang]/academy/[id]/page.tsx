@@ -3,10 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { RegistrationForm } from "@/components/academy/RegistrationForm";
 import { Container } from "@/components/ui/Container";
-import { getAcademyPaymentUrl } from "@/config/payments";
 import { isLocale, localizedHref } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
-import { formatProgramDate, formatProgramPrice, formatProgramTime, getProgram, isUpcoming } from "@/lib/programs";
+import { formatProgramDate, formatProgramTime, getProgram, isUpcoming } from "@/lib/programs";
 
 /** Re-read the Programs sheet at most every 5 minutes. */
 export const revalidate = 300;
@@ -43,14 +42,17 @@ export default async function ProgramPage({ params }: ProgramParams) {
   const page = dict.academyPage;
   const open = program.registrationOpen && isUpcoming(program);
   const time = formatProgramTime(program);
-  const price = program.price ? formatProgramPrice(program.price, lang) : "";
 
   const facts = [
     { label: page.labels.date, value: `${formatProgramDate(program.date, lang)}${time ? ` · ${time}` : ""}` },
     { label: page.labels.format, value: program.format },
     { label: page.labels.instructor, value: program.instructor },
     { label: page.labels.capacity, value: program.capacity ? `${program.capacity}${page.labels.capacityUnit}` : "" },
-    { label: page.labels.price, value: price },
+    { label: page.payment.priceLabel, value: program.price ?? "" },
+    {
+      label: page.status.minimumLabel,
+      value: program.minParticipants ? page.status.minimum.replace("{min}", String(program.minParticipants)) : "",
+    },
   ].filter((fact) => fact.value);
 
   return (
@@ -97,10 +99,16 @@ export default async function ProgramPage({ params }: ProgramParams) {
                   <div className="mt-6">
                     <RegistrationForm
                       lang={lang}
-                      dict={page.register}
-                      program={{ id: program.id, title: program.title[lang], date: program.date }}
-                      price={price || undefined}
-                      paymentUrl={getAcademyPaymentUrl(program)}
+                      dict={page}
+                      program={{
+                        id: program.id,
+                        title: program.title[lang],
+                        date: program.date,
+                        price: program.price,
+                        paymentUrl: program.paymentUrl,
+                        capacity: Number.parseInt(program.capacity, 10) || undefined,
+                        minParticipants: program.minParticipants,
+                      }}
                     />
                   </div>
                 </>

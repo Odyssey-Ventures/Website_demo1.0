@@ -5,31 +5,33 @@ import type { Program } from "@/types";
  * Anything added here is used only when the sheet is not connected.
  */
 export const programs: Program[] = [
-  // Sample webinar for reviewing the schedule layout. Replace or remove before launch.
   {
-    id: "us-market-entry-webinar",
+    id: "us-market-webinar-2026-12",
     type: "webinar",
     title: {
-      ko: "[샘플] 실리콘밸리에서 본 미국 시장 진출 첫걸음",
-      en: "[Sample] First steps into the U.S. market, from Silicon Valley",
+      ko: "미국 시장 진출 첫걸음: 실리콘밸리 Go-To-Market 웨비나",
+      en: "First steps into the U.S. market: a Silicon Valley go-to-market webinar",
     },
     summary: {
-      ko: "미국 진출을 준비하는 스타트업을 위해 현지 시장 검증, 세일즈 전략, 투자 유치 흐름을 1시간 동안 정리합니다.",
-      en: "A one-hour overview of market validation, sales strategy and fundraising for startups preparing to enter the U.S.",
+      ko: "미국 진출을 준비하는 스타트업과 기업을 위해, 실리콘밸리 현지 시장 진입 전략의 기본을 짚어 드립니다.",
+      en: "For startups and companies preparing to enter the U.S., the basics of a Silicon Valley go-to-market strategy.",
     },
     description: {
-      ko: "미국 시장에 처음 진출하려는 스타트업이 가장 많이 묻는 질문을 중심으로 진행합니다.\n1부: 미국 고객과 시장을 검증하는 방법\n2부: 첫 현지 세일즈 파이프라인 만들기\n3부: 실리콘밸리 투자자가 보는 포인트와 Q&A",
-      en: "Built around the questions startups ask most before entering the U.S.\nPart 1: Validating U.S. customers and the market\nPart 2: Building a first local sales pipeline\nPart 3: What Silicon Valley investors look for, plus Q&A",
+      ko: "미국 시장 진출을 준비할 때 가장 먼저 점검해야 할 것들을 실리콘밸리 현장의 시각으로 정리합니다.\n강의 후 질의응답 시간이 있습니다.",
+      en: "What to check first when preparing for the U.S. market, from a Silicon Valley point of view.\nA Q&A follows the talk.",
     },
-    date: "2026-11-19",
+    date: "2026-12-10",
     startTime: "17:00",
     endTime: "18:00",
     timezone: "PT",
     instructor: "Okkeun Lee",
     format: "Zoom",
     capacity: "50",
-    price: 20000,
+    minParticipants: 10,
     registrationOpen: true,
+    price: "$20",
+    // Stripe test mode (sandbox) for now: no real charge. Replace with a live Payment Link before taking real payments.
+    paymentUrl: "https://buy.stripe.com/test_aFadRb9hc86B9eV3Tb2wU03",
   },
 ];
 
@@ -58,5 +60,9 @@ export const samplePrograms: Program[] = [
     format: "Zoom",
     capacity: "50",
     registrationOpen: true,
+    // Stripe test mode (sandbox): no real charge. Pay with card 4242 4242 4242 4242.
+    price: "$20",
+    paymentUrl: "https://buy.stripe.com/test_aFa8wR1OKfz3gHn61j2wU02",
+    minParticipants: 10,
   },
 ];

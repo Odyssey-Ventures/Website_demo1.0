@@ -54,7 +54,17 @@ export function Footer({ lang, dict }: FooterProps) {
           <p className="text-sm text-muted">
             &copy; {new Date().getFullYear()} {siteConfig.name}. {footer.rights}
           </p>
-          <LanguageSwitcher lang={lang} dict={dict.language} />
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <nav aria-label={footer.legalLabel} className="flex gap-5 text-sm">
+              <Link href={localizedHref(lang, "/terms")} className={linkClass}>
+                {footer.terms}
+              </Link>
+              <Link href={localizedHref(lang, "/privacy")} className={linkClass}>
+                {footer.privacy}
+              </Link>
+            </nav>
+            <LanguageSwitcher lang={lang} dict={dict.language} />
+          </div>
         </div>
       </Container>
     </footer>

@@ -15,7 +15,7 @@ interface AccountMenuProps {
   className?: string;
 }
 
-/** "Sign in" link, or the signed-in email with a sign-out button. Hidden until Supabase is configured. */
+/** "Sign in" and "Sign up" links, or the signed-in email with a sign-out button. Hidden until Supabase is configured. */
 export function AccountMenu({ lang, dict, className }: AccountMenuProps) {
   const pathname = usePathname();
   const [email, setEmail] = useState<string | null>(null);
@@ -31,13 +31,19 @@ export function AccountMenu({ lang, dict, className }: AccountMenuProps) {
   if (!isSupabaseConfigured) return null;
 
   if (!email) {
+    const next = `?next=${encodeURIComponent(pathname)}`;
     return (
-      <Link
-        href={`${localizedHref(lang, "/login")}?next=${encodeURIComponent(pathname)}`}
-        className={cn("text-sm font-medium text-muted transition-colors hover:text-navy", className)}
-      >
-        {dict.login}
-      </Link>
+      <span className={cn("flex items-center gap-4 text-sm font-medium", className)}>
+        <Link href={`${localizedHref(lang, "/login")}${next}`} className="text-muted transition-colors hover:text-navy">
+          {dict.login}
+        </Link>
+        <Link
+          href={`${localizedHref(lang, "/signup")}${next}`}
+          className="rounded-md border border-navy/15 px-3 py-1.5 text-navy transition-colors hover:border-navy hover:bg-navy hover:text-white"
+        >
+          {dict.signup}
+        </Link>
+      </span>
     );
   }
 

@@ -29,7 +29,7 @@
       },
       "membership": {
         "title": "Membership",
-        "description": "Odyssey Ventures membership"
+        "description": "Odyssey Ventures membership plans: Free, Basic, Pro and Enterprise."
       },
       "contact": {
         "title": "Contact",
@@ -49,7 +49,23 @@
       },
       "login": {
         "title": "Sign in",
-        "description": "Sign in with a link sent to your email."
+        "description": "Sign in to your Odyssey Ventures account."
+      },
+      "signup": {
+        "title": "Sign up",
+        "description": "Create an Odyssey Ventures account."
+      },
+      "resetPassword": {
+        "title": "Reset password",
+        "description": "Set a new password for your Odyssey Ventures account."
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "description": "The terms that apply when you use the Odyssey Ventures website and services."
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "How Odyssey Ventures collects, uses and protects your personal information."
       }
     }
   },
@@ -123,26 +139,75 @@
     ],
     "linkLabel": "More about us"
   },
-  "highlights": {
-    "title": "Odyssey in numbers",
-    "items": [
+  "partners": {
+    "title": "Trusted Partners & Network",
+    "description": "Organizations we have worked with on programs, education and advisory.",
+    "listLabel": "Partner logos",
+    "placeholderNotice": "Preview only: logo slots. Add real logo files to src/data/partners.ts and they replace these; the live site hides this section until then.",
+    "placeholderSlot": "Logo"
+  },
+  "impact": {
+    "eyebrow": "Our Impact",
+    "title": "Our Impact",
+    "description": "Each figure is counted on its own basis.",
+    "pendingTitle": "Needs verification (preview only)",
+    "pendingNotice": "These figures are not shown on the live site. Confirm each one and its basis in src/data/impact.ts, then set verified: true.",
+    "pendingBadge": "Unverified"
+  },
+  "successStories": {
+    "eyebrow": "Success Stories",
+    "title": "Success Stories",
+    "description": "Companies that prepared for global markets with Odyssey Ventures.",
+    "programLabel": "Program",
+    "supportLabel": "Our support",
+    "outcomesLabel": "Key outcomes",
+    "readMore": "Read the story",
+    "comingSoon": "Full story coming soon",
+    "back": "Back to Home",
+    "sampleNotice": "Sample cards. They are not shown on the live site; add real, approved stories to src/data/success-stories.ts to replace them.",
+    "samples": [
       {
-        "value": "2018",
-        "label": "Founded in Silicon Valley"
+        "company": "(Sample) Startup A",
+        "year": "2025",
+        "program": "(Sample) Global acceleration program",
+        "support": [
+          "IR pitch mentoring",
+          "Silicon Valley company visits"
+        ],
+        "outcomes": [
+          "(Sample) Enter only verified, approved outcomes"
+        ]
       },
       {
-        "value": "100+",
-        "label": "Business and technology experts in our network"
+        "company": "(Sample) Startup B",
+        "year": "2025",
+        "program": "(Sample) U.S. market entry support",
+        "support": [
+          "1:1 expert advisory",
+          "Customer meeting setup"
+        ],
+        "outcomes": [
+          "(Sample) Enter only verified, approved outcomes"
+        ]
       },
       {
-        "value": "7",
-        "label": "Programs run or organized in 2025"
-      },
-      {
-        "value": "12 yrs",
-        "label": "Our CEO's startup mentoring and consulting experience"
+        "company": "(Sample) Startup C",
+        "year": "2024",
+        "program": "(Sample) Academy course",
+        "support": [
+          "Product and GTM strategy course"
+        ],
+        "outcomes": [
+          "(Sample) Enter only verified, approved outcomes"
+        ]
       }
     ]
+  },
+  "events": {
+    "eyebrow": "Events & Highlights",
+    "title": "Events & Highlights",
+    "description": "Scenes from programs and meetups we have run in Silicon Valley and Seoul.",
+    "viewAll": "See all programs"
   },
   "services": {
     "title": "Services",
@@ -168,7 +233,6 @@
     "description": "Founders, partner companies and institutions on building in Silicon Valley with Odyssey Ventures.",
     "startup": "Startup",
     "partner": "Partner",
-    "partnersTitle": "Partners",
     "sampleNotice": "Sample testimonials. They are not shown on the live site and are replaced by real quotes added to src/data/testimonials.ts.",
     "samples": [
       {
@@ -699,30 +763,44 @@
       "details": "Details",
       "register": "Register",
       "closed": "Registration closed",
-      "back": "Back to the schedule"
+      "back": "Back to the schedule",
+      "speaker": "Speaker"
     },
     "register": {
       "title": "Register",
-      "description": "We confirm your registration by email and send the joining link before the session.",
+      "description": "Enter your company, name and email, then pay to complete your registration. We email the joining link before the session.",
+      "company": "Company or organization",
       "name": "Name",
       "email": "Email",
-      "company": "Company or organization",
-      "question": "A question for the instructor (optional)",
-      "fee": "Fee",
+      "payAndRegister": "Pay and register",
+      "payNote": "You will go to a Stripe payment page.",
+      "redirecting": "Opening the payment page…",
+      "paidNotice": "Payment complete and you are registered. We will email the joining link before the session.",
       "status": {
         "submit": "Register",
-        "sending": "Registering…",
-        "saved": "You're registered. We'll email the joining details before the session.",
-        "emailFallback": "Your email app opened. Press send there to complete your registration.",
-        "error": "We couldn't register you. Please try again shortly or email us at"
-      },
-      "payment": {
-        "note": "Selecting Register takes you to a Stripe payment page. Your registration is confirmed once payment is complete, and we email you a confirmation.",
-        "pendingNote": "We will email you payment details after you register.",
-        "redirecting": "Registration received. Taking you to payment…"
+        "sending": "Processing…",
+        "saved": "You are registered. We will email the joining details before the session.",
+        "emailFallback": "Your email app has opened. Press send there to complete your registration.",
+        "error": "We could not register you. Please try again shortly or email us:"
       },
       "subjectPrefix": "Registration",
       "closedNote": "Registration for this session is closed."
+    },
+    "payment": {
+      "priceLabel": "Fee",
+      "testNotice": "This is a test payment: nothing is charged. Use card 4242 4242 4242 4242, any future expiry date and any 3-digit CVC."
+    },
+    "status": {
+      "title": "Registrations",
+      "live": "Live",
+      "count": "{count} registered",
+      "capacity": "{capacity} seats",
+      "minimumLabel": "Goes ahead with",
+      "minimum": "At least {min} registrations",
+      "recruiting": "The session goes ahead with at least {min} registrations. {left} more needed.",
+      "confirmed": "The minimum is reached: this session is confirmed.",
+      "full": "All seats are taken. Registration is closed.",
+      "refund": "If the minimum is not reached, the session is canceled and everyone is refunded in full."
     }
   },
   "advisoryPage": {
@@ -930,29 +1008,71 @@
   },
   "membershipPage": {
     "eyebrow": "Membership",
-    "title": "Membership is coming",
-    "description": "Anyone can explore Odyssey Ventures; members will get access to the services and benefits themselves. We are preparing it now.",
-    "tiersTitle": "Visitors and members",
+    "title": "Choose your membership",
+    "description": "Start free, and move up when you want more from Odyssey Ventures' advisors and programs.",
+    "tiersTitle": "Plans",
+    "perMonth": "/ month",
+    "popular": "Recommended",
+    "current": "Your plan",
     "tiers": [
       {
-        "title": "Visitors",
+        "id": "free",
+        "name": "Free",
+        "price": "$0",
+        "summary": "For anyone getting started with Odyssey Ventures.",
         "items": [
-          "Company and service information",
-          "Register for public courses and webinars",
-          "Request 1:1 advisory"
+          "Register for webinars",
+          "See your applications in one place",
+          "Comment in the Newsroom",
+          "Customer Support"
         ]
       },
       {
-        "title": "Members (coming soon)",
+        "id": "basic",
+        "name": "Basic",
+        "price": "$29",
+        "summary": "For founders who meet our advisors regularly.",
         "items": [
-          "Member-only services and benefits",
-          "All your requests in one account",
-          "Details at launch"
+          "Everything in Free",
+          "Member price on 1:1 advisory",
+          "Materials from past webinars"
+        ]
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "price": "$99",
+        "summary": "For teams that want ongoing advice.",
+        "items": [
+          "Everything in Basic",
+          "One 1:1 advisory request a month, no payment needed",
+          "Early notice of new programs"
+        ]
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": "By inquiry",
+        "summary": "For companies and institutions.",
+        "items": [
+          "Custom programs for your organization",
+          "A dedicated manager"
         ]
       }
     ],
-    "contactTitle": "Get notified",
-    "contactDescription": "Leave your name and email and we'll tell you first when membership opens."
+    "cta": {
+      "free": "Sign up free",
+      "subscribe": "Subscribe",
+      "signInToSubscribe": "Sign in to subscribe",
+      "enterprise": "Contact us",
+      "soon": "Payment opening soon"
+    },
+    "testNotice": "Preview: payments run in Stripe test mode. Use card 4242 4242 4242 4242 with any future date and CVC.",
+    "successTitle": "Thank you for subscribing",
+    "successText": "Your payment went through. Your plan will show here within a few minutes.",
+    "manageNote": "To change or cancel your plan, contact Customer Support or contact@odysseyventures.llc. Cancellation takes effect at the end of the current billing month.",
+    "contactTitle": "Ask about Enterprise",
+    "contactDescription": "Tell us about your organization and we'll put together a program for you."
   },
   "contactPage": {
     "eyebrow": "Contact"
@@ -1109,8 +1229,8 @@
       },
       {
         "category": "account",
-        "q": "When does membership start?",
-        "a": "It is in preparation. Sign up for launch news on the Membership page and we'll tell you first."
+        "q": "How does membership work?",
+        "a": "There are four plans: Free, Basic ($29/month), Pro ($99/month) and Enterprise (by inquiry). Sign in, choose a plan on the Membership page and pay monthly by card. You can cancel any time through Customer Support."
       }
     ]
   },
@@ -1183,8 +1303,8 @@
     "login": "Sign in",
     "logout": "Sign out",
     "account": "Account",
-    "title": "Sign in with email",
-    "description": "No password: enter your email and open the sign-in link we send you.",
+    "title": "Sign in",
+    "description": "Sign in with your email and password, or get a one-time sign-in link.",
     "email": "Email",
     "send": "Email me a sign-in link",
     "sending": "Sending…",
@@ -1194,7 +1314,43 @@
     "staffHint": "Signing in with a company address (@odysseyventures.llc) lets you write Newsroom posts, moderate comments and answer support questions.",
     "signedInAs": "Signed in as",
     "staffBadge": "Staff",
-    "notConfigured": "Sign-in is coming soon. For anything urgent, please use the Contact page."
+    "notConfigured": "Sign-in is coming soon. For anything urgent, please use the Contact page.",
+    "signup": "Sign up",
+    "signupTitle": "Create your account",
+    "signupDescription": "Sign up with your email to track your applications and use member services.",
+    "name": "Name",
+    "password": "Password",
+    "passwordHint": "At least 8 characters.",
+    "passwordConfirm": "Confirm password",
+    "agree": "I agree to the {terms} and {privacy}.",
+    "termsLink": "Terms of Service",
+    "privacyLink": "Privacy Policy",
+    "createAccount": "Create account",
+    "creating": "Creating…",
+    "signupSent": "Almost done. We emailed you a confirmation link; open it to finish signing up. Check your spam folder if you don't see it.",
+    "signupError": "Could not create the account. If you already signed up, sign in instead.",
+    "passwordMismatch": "The two passwords do not match.",
+    "passwordTooShort": "Use at least 8 characters.",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…",
+    "signInError": "The email or password is incorrect, or the email is not confirmed yet.",
+    "usePassword": "Sign in with password",
+    "useLink": "Email me a sign-in link instead",
+    "noAccount": "New to Odyssey Ventures?",
+    "haveAccount": "Already have an account?",
+    "forgot": "Forgot your password?",
+    "resetTitle": "Reset your password",
+    "resetDescription": "Enter your account email and we will send you a link to set a new password.",
+    "resetSend": "Send reset link",
+    "resetSent": "Check your inbox. We sent you a link to set a new password.",
+    "newPasswordTitle": "Set a new password",
+    "newPassword": "New password",
+    "savePassword": "Save password",
+    "saving": "Saving…",
+    "passwordSaved": "Your password has been changed.",
+    "passwordSaveError": "Could not change the password. Open the reset link again.",
+    "backToLogin": "Back to sign in",
+    "goHome": "Go to Home"
   },
   "footer": {
     "navTitle": "Navigation",
@@ -1202,7 +1358,17 @@
     "companyInfo": "Silicon Valley-based global capability training, consulting and startup acceleration",
     "contactTitle": "Contact",
     "contactInfo": "contact@odysseyventures.llc\nSan Jose, California",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "legalLabel": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "effective": "Effective date",
+    "draftNotice": "Draft before legal review. This notice appears only on preview deployments.",
+    "otherTerms": "Read the Terms of Service",
+    "otherPrivacy": "Read the Privacy Policy"
   },
   "notFound": {
     "title": "Page not found",

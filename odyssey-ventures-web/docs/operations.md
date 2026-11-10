@@ -71,10 +71,13 @@
 | `start_time`, `end_time` | 24시간 형식 | `17:00` |
 | `timezone` | 시간 옆에 표시할 글자 | `PT` 또는 `KST` |
 | `instructor` | 강사 이름 | `Okkeun Lee` |
+| `instructor_title` | (선택) 강사 직책. 카드에서 이름 아래에 표시 | `CEO, Odyssey Ventures` |
+| `price` | (선택) 참가비. 쓴 그대로 표시 | `$20` |
+| `payment_url` | (선택) 결제 페이지 주소(https). 있으면 신청 버튼이 "결제하고 신청하기"가 되어, 소속·이름·이메일을 받은 뒤 바로 결제 페이지로 보냅니다. Stripe Payment Link의 메타데이터에 `program_id`=강의 `id`를 넣어야 신청 현황에 집계됩니다 | `https://buy.stripe.com/...` |
+| `min_participants` | (선택) 최소 진행 인원. 있으면 상세 페이지에 실시간 신청 현황과 "미달 시 전액 환불" 안내가 표시됩니다 | `10` |
+| `image_url` | (선택) 카드 썸네일. `/images/...` 경로(사이트 public 폴더) 또는 https 주소. 비우면 날짜가 들어간 기본 패널이 보임. 16:9 권장 | `/images/programs/pm-webinar.webp` |
 | `format` | 진행 방식 | `Zoom` |
 | `capacity` | 정원 (숫자만, 비워도 됨) | `50` |
-| `price` | 참가비(원, 숫자만). 비우거나 0이면 무료 | `20000` |
-| `payment_url` | 유료 강의 결제 링크(Stripe Payment Link). 비우면 `ACADEMY_PAYMENT_URL` 사용 | `https://buy.stripe.com/...` |
 | `summary_ko`, `summary_en` | 목록에 보이는 한두 줄 소개 | |
 | `description_ko`, `description_en` | 상세 설명. 셀 안 줄바꿈(Ctrl+Enter / ⌘+Enter)이 문단 나눔 | |
 | `registration_open` | 신청을 막으려면 `FALSE` | `TRUE` |
@@ -113,6 +116,8 @@
 이 규칙은 데이터베이스 자체(행 수준 보안)에 걸려 있어서, 화면을 우회해도 바뀌지 않습니다.
 
 ### 5-1. 처음 한 번만: 연결
+
+> **현재 상태 (2026-11-04)**: 프로젝트 `odyssey-ventures-web`(ref `eotwfhmktbcrfnumddov`, West US)를 만들었고, 아래 2번 SQL과 `0002_harden_function_privileges.sql`도 적용했습니다. 사이트 코드(`src/lib/supabase/config.ts`)에 주소와 공개 키를 기본값으로 넣어 두었으므로 5번은 필요 없습니다. 남은 일은 3번(URL 설정)과 4번(SMTP)입니다.
 
 1. [supabase.com](https://supabase.com)에서 회사 계정으로 새 프로젝트를 만듭니다 (리전은 West US 권장).
 2. **SQL Editor**에서 `supabase/migrations/0001_newsroom_and_support.sql` 내용을 붙여 넣고 실행합니다. 여러 번 실행해도 안전합니다.
@@ -155,20 +160,28 @@
 - 지금은 회원 등급을 사이트에서 확인하지 않습니다. 회원용 결제가 들어오면 신청자가 회원인지 확인한 뒤 일정을 확정해 주세요.
 - 결제는 일정 확정 후 받는 것이 원칙입니다(사이트 안내 문구 기준). 확정 메일에도 같은 결제 링크를 넣어 주세요.
 
-### 유료 강의·웨비나 결제
+## 7. 멤버십 (Free / Basic / Pro / Enterprise)
 
-`price`가 있는 강의는 목록과 상세 페이지에 참가비가 보이고, **신청하기**를 누르면 신청이 `Registrations` 탭에 저장된 뒤 Stripe 결제 페이지로 이동합니다.
+- 플랜 내용과 가격 표시는 `src/messages/ko.json`·`en.json`의 `membershipPage.tiers`에서 바꿉니다. 실제 청구 금액은 Stripe 가격(Price)에서 정해집니다.
+- Basic($29/월)·Pro($99/월)는 Stripe Payment Link로 결제합니다. 테스트 모드 상품·링크는 이미 만들어져 있어 미리보기 배포에서는 바로 시험할 수 있습니다(카드 4242 4242 4242 4242).
+- 실제 사이트(Production)는 아래 환경 변수가 있을 때만 결제 버튼을 보여 줍니다. 없으면 "결제 준비 중"으로 나옵니다.
+  - `MEMBERSHIP_PAYMENT_URL_BASIC`, `MEMBERSHIP_PAYMENT_URL_PRO`: Live 모드 Payment Link 주소. 링크의 메타데이터와 구독 메타데이터에 `tier`=`basic`/`pro`를 넣고, 결제 후 이동 주소를 `https://<사이트>/membership?checkout=success`로 설정합니다.
+- 결제한 사람의 플랜을 사이트에 반영하려면 (한 번만):
+  1. Stripe → Developers → Webhooks → Add endpoint. 주소 `https://<사이트>/api/stripe/webhook`, 이벤트 `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`.
+  2. 만든 endpoint의 Signing secret(`whsec_…`)을 Vercel 환경 변수 `STRIPE_WEBHOOK_SECRET`에 넣습니다.
+  3. Supabase → Project Settings → API Keys의 `service_role`(secret) 키를 Vercel 환경 변수 `SUPABASE_SERVICE_ROLE_KEY`에 넣습니다. `NEXT_PUBLIC_`을 붙이지 마세요. 이 키는 서버에서만 씁니다.
+  4. Vercel에서 다시 배포합니다.
+- 플랜 기록은 Supabase `memberships` 표에 있습니다. 본인과 직원만 읽을 수 있고, 웹훅만 쓸 수 있습니다. 해지 요청이 오면 Stripe에서 구독을 취소하면 자동으로 Free로 돌아갑니다. Enterprise는 계약 후 직원이 Supabase 표에서 `tier`를 `enterprise`로 바꿉니다.
 
-1. Stripe 대시보드 → **Payment Links**에서 강의별 링크를 만듭니다. 통화 **KRW**, 금액은 시트의 `price`와 같게 합니다.
-   - 링크 설정 **결제 후 → 확인 페이지**에 "신청이 확정되었습니다" 같은 문구를 넣거나, 강의 페이지로 돌아오게 설정합니다.
-2. 시트의 `payment_url`에 링크를 붙여 넣습니다. 모든 유료 강의에 같은 링크를 쓰려면 Vercel 환경 변수 `ACADEMY_PAYMENT_URL`에 넣어도 됩니다.
-3. 결제 내역의 `client_reference_id`에 강의 `id`가 붙고, 이메일은 신청서에 적은 주소로 미리 채워집니다. Stripe 결제 내역과 `Registrations` 탭을 이메일로 맞춰 본 뒤 접속 링크를 보내 주세요.
+## 8. 강의 신청 현황과 환불 (Supabase `program_registrations`)
 
-- 결제 링크가 없으면 참가비만 보이고 신청은 그대로 받습니다. 결제 방법은 이메일로 안내하라는 문구가 나옵니다.
-- 사이트에 보이는 금액과 Stripe 링크 금액은 자동으로 맞춰지지 않습니다. 가격을 바꾸면 두 곳 모두 고쳐 주세요.
-- 신청 후 결제를 하지 않고 나가는 경우가 있으니, Stripe에 결제가 없는 신청은 `status`를 `unpaid`로 표시해 두세요.
+- 신청하면 소속·이름·이메일이 `program_registrations` 표에 **pending**으로 저장되고(운영 시트 `Registrations` 탭에도 한 줄), 바로 Stripe 결제로 넘어갑니다.
+- 결제가 끝나면 Stripe 웹훅이 그 신청을 **paid**로 바꿉니다. 상세 페이지의 "신청 현황" 숫자는 **paid** 신청만 세며, 20초마다 새로 읽습니다. 이름과 이메일은 직원만 볼 수 있습니다.
+- 웹훅이 동작하려면 7장의 `STRIPE_WEBHOOK_SECRET`, `SUPABASE_SERVICE_ROLE_KEY` 설정이 필요합니다. 그전에는 결제가 되어도 숫자가 오르지 않으니, Supabase 표에서 `status`를 직접 `paid`로 바꿔 주세요.
+- 최소 인원에 못 미쳐 취소할 때: Stripe → Payments에서 해당 강의 결제를 각각 **Refund**하고, Supabase 표의 `status`를 `refunded`로 바꿉니다. 신청자 이메일은 표에 있습니다.
+- 표 만들기(한 번만): `supabase/migrations/0004_program_registrations.sql`을 SQL Editor에서 실행합니다. (현재 연결된 프로젝트에는 이미 적용되어 있습니다.)
 
-## 7. 문제가 생겼을 때
+## 9. 문제가 생겼을 때
 
 | 증상 | 확인할 것 |
 | --- | --- |

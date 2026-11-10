@@ -7,6 +7,7 @@ import { AdvisorTabs } from "@/components/advisory/AdvisorTabs";
 import { PaymentOptions } from "@/components/advisory/PaymentOptions";
 import { Container } from "@/components/ui/Container";
 import { advisorProfiles, getAdvisorProfile } from "@/data/advisor-profiles";
+import { localizeAdvisor } from "@/data/advisor-profiles-ko";
 import { alternatesFor, isLocale, locales, localizedHref } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -22,8 +23,9 @@ export const dynamicParams = false;
 
 export async function generateMetadata({ params }: AdvisorParams): Promise<Metadata> {
   const { lang, slug } = await params;
-  const advisor = getAdvisorProfile(slug);
-  if (!isLocale(lang) || !advisor) return {};
+  const found = getAdvisorProfile(slug);
+  if (!isLocale(lang) || !found) return {};
+  const advisor = localizeAdvisor(found, lang);
   const role = [advisor.title, advisor.org].filter(Boolean).join(", ");
   return {
     title: `${advisor.name} | ${getDictionary(lang).meta.pages.advisory.title}`,
@@ -35,8 +37,9 @@ export async function generateMetadata({ params }: AdvisorParams): Promise<Metad
 /** One advisor: profile tab (bio, history, education) and a meeting-request tab with payment buttons. */
 export default async function AdvisorPage({ params }: AdvisorParams) {
   const { lang, slug } = await params;
-  const advisor = getAdvisorProfile(slug);
-  if (!isLocale(lang) || !advisor) notFound();
+  const found = getAdvisorProfile(slug);
+  if (!isLocale(lang) || !found) notFound();
+  const advisor = localizeAdvisor(found, lang);
   const dict = getDictionary(lang);
   const page = dict.advisors;
   const labels = page.profile;

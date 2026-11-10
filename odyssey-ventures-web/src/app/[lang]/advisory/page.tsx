@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AdvisorDirectory } from "@/components/advisory/AdvisorDirectory";
 import { advisorProfiles } from "@/data/advisor-profiles";
+import { localizeAdvisor } from "@/data/advisor-profiles-ko";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -27,7 +28,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
 
   return (
     <>
-      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="navy" />
+      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="navy" photo="coitTowerView" />
 
       <SectionContainer>
         <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -53,7 +54,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer tone="navy">
+      <SectionContainer tone="navy" photo="skylineHill">
         <SectionHeading title={page.processTitle} inverse>
           {page.processDescription}
         </SectionHeading>
@@ -80,7 +81,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
           <AdvisorDirectory
             lang={lang}
             dict={dict.advisors}
-            advisors={advisorProfiles.map(({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }) => ({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }))}
+            advisors={advisorProfiles.map((advisor) => localizeAdvisor(advisor, lang)).map(({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }) => ({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }))}
           />
         </div>
       </SectionContainer>

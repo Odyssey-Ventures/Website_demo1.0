@@ -16,7 +16,7 @@ export interface AdvisorProfile {
   org: string;
   /** Website domain of the org; its icon is shown as the advisor's logo. Leave out when unsure. */
   logoDomain?: string;
-  /** Logo file in /public (e.g. "/images/advisors/xl8.png"); takes precedence over logoDomain. */
+  /** Logo image (a file in /public or the org's own logo URL); tried before the logoDomain icon. */
   logo?: string;
   linkedin?: string;
   /** An advisor can appear in more than one area. */
@@ -30,7 +30,7 @@ export interface AdvisorProfile {
 
 /**
  * 1:1 meeting advisors from the 2026 Advisor Brochure (KSC Silicon Valley U.S. on-landing program, 2026-07-01).
- * Profiles are kept in English as in the brochure. Meeting weeks in the brochure were for June–July 2026
+ * Profiles are in English as in the brochure (Korean versions in advisor-profiles-ko.ts). Meeting weeks in the brochure were for June–July 2026
  * and are not shown; the meeting format (in person or online only) is.
  */
 export const advisorProfiles: readonly AdvisorProfile[] = [
@@ -59,6 +59,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     name: "Deborah Le",
     nameKo: "이연수",
     org: "DLG Law Corporation",
+    logoDomain: "dlglaw.co.kr",
     linkedin: "https://www.linkedin.com/in/dlysl/",
     areas: ["legal"],
     meeting: "inPerson",
@@ -169,6 +170,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     nameKo: "안드레 김",
     title: "Tax Attorney",
     org: "GridSquare Legal and Consulting",
+    logoDomain: "gridsquarelegal.com",
     linkedin: "https://www.linkedin.com/in/andrejunkim/",
     areas: ["tax"],
     meeting: "inPerson",
@@ -190,6 +192,8 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     nameKo: "제이미 최",
     title: "CEO",
     org: "Numeri Consulting",
+    logoDomain: "numericonsulting.com",
+    logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop/AE0a5yw7qEF6WK7B/numeri-main-charcoal-AwvDa0zJjzfOXOkq.png",
     linkedin: "https://www.linkedin.com/in/jamie-choi-2476914",
     areas: ["tax"],
     meeting: "inPerson",
@@ -284,6 +288,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     nameKo: "찰리 허",
     title: "CEO",
     org: "TitanSim",
+    logoDomain: "titansim.com",
     linkedin: "https://www.linkedin.com/in/charlie-huh-37838516/",
     areas: ["sales"],
     meeting: "inPerson",
@@ -394,6 +399,8 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     nameKo: "이수용",
     title: "CEO",
     org: "Offer Squirrel Inc.",
+    logoDomain: "offersquirrel.com",
+    logo: "https://offersquirrel.com/assets/images/offer-squirrel-logo-brand-tight.png",
     linkedin: "https://www.linkedin.com/in/kennethyrhee/",
     areas: ["hr"],
     meeting: "inPerson",
@@ -454,6 +461,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     nameKo: "오성한",
     title: "CEO / Co-Founder",
     org: "EASE MusE",
+    logoDomain: "easemuse.com",
     linkedin: "https://www.linkedin.com/in/sunghan-oh-3426681b/",
     areas: ["hr"],
     meeting: "tbc",
@@ -647,6 +655,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     name: "Andy Youngwook Ha",
     nameKo: "하영욱",
     org: "Valley innovation Partners",
+    logoDomain: "valleyinnovationpartners.com",
     linkedin: "https://www.linkedin.com/in/young-wook-ha/",
     areas: ["industry"],
     meeting: "inPerson",
@@ -722,6 +731,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     name: "Luciana Frazão",
     title: "Head of Beer Garage Silicon Valley (former)",
     org: "Fluence.AI,Inc",
+    logoDomain: "fluenceinsights.com",
     linkedin: "https://www.linkedin.com/in/luciana-frazao/",
     areas: ["industry"],
     meeting: "online",
@@ -972,6 +982,8 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     nameKo: "안성호",
     title: "CEO",
     org: "Claythis",
+    logoDomain: "claythis.com",
+    logo: "https://claythis.com/logo.png",
     linkedin: "https://www.linkedin.com/in/lukeahn",
     areas: ["founders"],
     meeting: "inPerson",
@@ -1031,6 +1043,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     nameKo: "엄상호",
     title: "CEO",
     org: "yourly",
+    logoDomain: "yourly.ai",
     linkedin: "https://www.linkedin.com/in/sanghoe/",
     areas: ["founders"],
     meeting: "inPerson",

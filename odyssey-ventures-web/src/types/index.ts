@@ -19,8 +19,8 @@ export interface Testimonial {
 
 export interface Partner {
   name: string;
-  /** Path inside /public, e.g. "/logos/partner.svg" */
-  logoSrc: string;
+  /** Path inside /public, e.g. "/images/partners/partner.svg". Without one, the name is shown as a text wordmark. */
+  logoSrc?: string;
   href?: string;
 }
 
@@ -47,9 +47,52 @@ export interface Program {
   /** e.g. "Zoom" or "Google Meet" */
   format: string;
   capacity: string;
-  /** Fee in Korean won. Missing or 0 means free; a paid session opens the payment window on registration. */
-  price?: number;
-  /** Payment page for a paid session, e.g. a Stripe Payment Link. Falls back to ACADEMY_PAYMENT_URL. */
-  paymentUrl?: string;
   registrationOpen: boolean;
+  /** Optional thumbnail: a path inside /public (e.g. "/images/programs/x.webp") or an https URL. Without one, the card shows a branded date panel. */
+  image?: string;
+  /** Optional speaker title shown under the name, e.g. "CEO, Odyssey Ventures" */
+  instructorTitle?: string;
+  /** Optional fee as display text, e.g. "$20". The charge itself is set on the payment page. */
+  price?: string;
+  /** Optional https payment page, e.g. a Stripe Payment Link. Registering sends the person there to pay. */
+  paymentUrl?: string;
+  /** Optional minimum number of paid registrations for the session to go ahead. Below it, everyone is refunded. */
+  minParticipants?: number;
+}
+
+/** One figure in the Home "Our Impact" section. Managed in src/data/impact.ts. */
+export interface ImpactMetric {
+  id: string;
+  /** The number that is counted up to. */
+  value: number;
+  /** Text right after the number, e.g. "+" or { ko: "년", en: " yrs" }. */
+  suffix?: Localized | string;
+  label: Localized;
+  /** What is counted and over which period. Shown in small print under the label. */
+  basis?: Localized;
+  /** Years and other identifiers should not count up from zero. */
+  animate?: boolean;
+  /**
+   * Only verified figures appear on the production site.
+   * Unverified ones are shown on previews with a "needs verification" label.
+   */
+  verified: boolean;
+}
+
+/** One Home "Success Stories" card. Managed in src/data/success-stories.ts. Nothing here may be invented. */
+export interface SuccessStory {
+  /** Used in the detail page address: /[lang]/success-stories/[slug] */
+  slug: string;
+  company: string;
+  /** Path inside /public. Shown on the card top; the logo is used when there is no image. */
+  logoSrc?: string;
+  imageSrc?: string;
+  program: Localized;
+  /** Services or support Odyssey provided. */
+  support: Localized[];
+  /** Verified outcomes only, approved by the company. Leave empty rather than estimate. */
+  outcomes: Localized[];
+  /** Longer write-up for the detail page. Line breaks become paragraphs. */
+  body?: Localized;
+  year?: string;
 }

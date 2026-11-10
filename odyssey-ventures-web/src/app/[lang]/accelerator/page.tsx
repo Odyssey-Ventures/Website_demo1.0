@@ -26,7 +26,7 @@ export default async function AcceleratorPage({ params }: LangParams) {
 
   return (
     <>
-      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="green" />
+      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="green" photo="goldenGate" />
 
       <SectionContainer>
         <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -56,7 +56,7 @@ export default async function AcceleratorPage({ params }: LangParams) {
         </ol>
       </SectionContainer>
 
-      <SectionContainer tone="mist">
+      <SectionContainer id="gallery" tone="mist">
         <Reveal>
           <SectionHeading title={page.galleryTitle}>{page.galleryDescription}</SectionHeading>
         </Reveal>
