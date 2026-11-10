@@ -10,19 +10,29 @@
 const SECRET = PropertiesService.getScriptProperties().getProperty('SUBMISSIONS_WEBHOOK_SECRET');
 // Who receives the "new submission" email. Separate several addresses with commas.
 const NOTIFY_EMAIL = PropertiesService.getScriptProperties().getProperty('NOTIFY_EMAIL');
+// Optional per-topic recipients for Contact inquiries. Script property ROUTE_<INTEREST> (e.g. ROUTE_PARTNERSHIP,
+// ROUTE_CONSULTING, ROUTE_ACCELERATOR, ROUTE_ADVISORY, ROUTE_ACADEMY, ROUTE_MEMBERSHIP, ROUTE_OTHER).
+// A topic without its own property falls back to NOTIFY_EMAIL.
+function recipientFor(sheetName, fields) {
+  if (sheetName === 'Inquiries' && fields.interest) {
+    const routed = PropertiesService.getScriptProperties().getProperty('ROUTE_' + String(fields.interest).toUpperCase());
+    if (routed) return routed;
+  }
+  return NOTIFY_EMAIL;
+}
 // Set to "true" to also send the visitor a short "we received it" email.
 const SEND_CONFIRMATION = PropertiesService.getScriptProperties().getProperty('SEND_CONFIRMATION') === 'true';
 
 // Column order per tab. New columns can be added at the end; never rename or reorder existing ones.
 const COLUMNS = {
   Registrations: ['submittedAt', 'lang', 'programId', 'programTitle', 'programDate', 'name', 'email', 'company', 'question', 'status', 'linkSent', 'memo'],
-  AdvisoryRequests: ['submittedAt', 'lang', 'name', 'email', 'company', 'stage', 'field', 'preferredExpert', 'schedule', 'request', 'status', 'matchedExpert', 'paymentLink', 'paid', 'refunded', 'memo'],
+  AdvisoryRequests: ['submittedAt', 'lang', 'name', 'email', 'company', 'stage', 'field', 'preferredExpert', 'schedule', 'request', 'status', 'matchedExpert', 'paymentLink', 'paid', 'refunded', 'memo', 'attachments', 'requestId'],
   Inquiries: ['submittedAt', 'lang', 'page', 'interest', 'name', 'email', 'company', 'message', 'status', 'memo'],
 };
 
 const SUBJECTS = {
   Registrations: '[웹사이트] 강의 참가 신청',
-  AdvisoryRequests: '[웹사이트] 1:1 자문 신청',
+  AdvisoryRequests: '[웹사이트] 스타트업 자문 신청',
   Inquiries: '[웹사이트] 문의',
 };
 
@@ -44,10 +54,11 @@ function doPost(e) {
       return /^[=+\-@]/.test(value) ? "'" + value : value;
     }));
 
-    if (NOTIFY_EMAIL) {
+    const to = recipientFor(data.sheet, data.fields);
+    if (to) {
       const lines = Object.keys(data.fields).map(function (key) { return key + ': ' + data.fields[key]; });
       MailApp.sendEmail({
-        to: NOTIFY_EMAIL,
+        to: to,
         replyTo: data.fields.email,
         subject: SUBJECTS[data.sheet] + ' — ' + (data.fields.name || ''),
         body: lines.join('\n') + '\n\n시트: ' + book.getUrl(),

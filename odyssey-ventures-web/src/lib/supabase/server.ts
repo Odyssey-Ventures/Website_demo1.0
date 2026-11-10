@@ -32,5 +32,6 @@ export async function getViewer(): Promise<Viewer | null> {
   const { data } = await supabase.auth.getUser();
   const user = data.user;
   if (!user?.email) return null;
-  return { id: user.id, email: user.email, isStaff: isStaffEmail(user.email) };
+  // Same rule as public.is_staff(): a company address that has been confirmed.
+  return { id: user.id, email: user.email, isStaff: isStaffEmail(user.email) && !!user.email_confirmed_at };
 }
