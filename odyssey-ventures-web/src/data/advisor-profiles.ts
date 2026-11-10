@@ -234,6 +234,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     name: "Jayson Kim",
     nameKo: "김정현",
     org: "Kim & Co CPA",
+    logo: "/images/advisors/jayson-kim.webp",
     linkedin: "https://www.linkedin.com/in/jayson-kim-4973712b/",
     areas: ["tax"],
     meeting: "inPerson",
