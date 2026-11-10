@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: NewsParams): Promise<Metadata
   if (!isLocale(lang) || !isSupabaseConfigured) return {};
   const post = await getPost(slug);
   if (!post) return {};
-  return { title: post.title, description: post.summary, robots: post.published ? undefined : { index: false, follow: false } };
+  return { title: post.title, description: post.summary, openGraph: post.cover_image_url ? { images: [post.cover_image_url] } : undefined, robots: post.published ? undefined : { index: false, follow: false } };
 }
 
 export default async function NewsPostPage({ params }: NewsParams) {
@@ -41,7 +41,7 @@ export default async function NewsPostPage({ params }: NewsParams) {
             ← {page.back}
           </Link>
           {viewer?.isStaff ? (
-            <Link href={`${localizedHref(lang, "/news/editor")}?slug=${post.slug}`} className="text-sm font-medium text-brand-blue hover:text-brand-blue-dark">
+            <Link href={`${localizedHref(lang, "/admin/news/edit")}?slug=${post.slug}`} className="text-sm font-medium text-brand-blue hover:text-brand-blue-dark">
               {page.edit}
             </Link>
           ) : null}
@@ -51,6 +51,10 @@ export default async function NewsPostPage({ params }: NewsParams) {
           {!post.published ? <span className="rounded bg-amber-100 px-2 py-0.5 text-xs text-amber-900">{page.draft}</span> : null}
         </p>
         <h1 className="mt-2 text-4xl font-semibold leading-tight tracking-tight text-navy">{post.title}</h1>
+        {post.cover_image_url ? (
+          // eslint-disable-next-line @next/next/no-img-element -- uploaded images live on Supabase Storage
+          <img src={post.cover_image_url} alt="" className="mt-8 aspect-[16/9] w-full rounded-lg object-cover" />
+        ) : null}
         <div className="mt-8 space-y-5 text-lg leading-relaxed text-navy">
           {paragraphs(post.body).map((paragraph, index) => (
             <p key={index} className="whitespace-pre-line">

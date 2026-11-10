@@ -7,6 +7,8 @@ export interface NewsPost {
   summary: string;
   body: string;
   external_url: string | null;
+  /** Public Storage URL (bucket news-images). Missing until migration 0006 is applied. */
+  cover_image_url?: string | null;
   published: boolean;
   author_email: string;
   created_at: string;

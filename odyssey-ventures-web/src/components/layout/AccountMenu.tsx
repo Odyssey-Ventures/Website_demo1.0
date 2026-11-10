@@ -55,6 +55,11 @@ export function AccountMenu({ lang, dict, className }: AccountMenuProps) {
         ) : null}
         {email}
       </span>
+      {isStaffEmail(email) ? (
+        <Link href={localizedHref(lang, "/admin")} className="font-medium text-brand-blue transition-colors hover:text-brand-blue-dark">
+          {dict.adminLink}
+        </Link>
+      ) : null}
       <button type="submit" className="font-medium text-muted transition-colors hover:text-navy">
         {dict.logout}
       </button>

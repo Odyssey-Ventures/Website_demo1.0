@@ -1,9 +1,11 @@
 "use client";
 
+import { useState, type ChangeEvent } from "react";
 import { Field, fieldClass, Honeypot, SubmitRow } from "@/components/forms/FormParts";
 import { useSubmission } from "@/components/forms/useSubmission";
 import { advisorAreas, type AdvisorArea } from "@/data/advisor-profiles";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { ADVISORY_FILE_ACCEPT, checkAdvisoryFiles, MAX_ADVISORY_FILES, saveAdvisoryRequest, type FileProblem } from "@/lib/advisory-requests";
 
 interface AdvisoryRequestFormProps {
   lang: string;
@@ -15,8 +17,20 @@ interface AdvisoryRequestFormProps {
 
 const stageKeys = ["idea", "seed", "seriesA", "growth", "corporate", "other"] as const;
 
-/** 1:1 Advisory request. Saved to the "AdvisoryRequests" sheet; an operator reviews it and matches an expert by hand. */
+/**
+ * Startup Advisory request. Attachments go to the private Supabase bucket and the request is recorded in
+ * advisory_requests (staff read both at /admin/advisory); the same request also goes to the "AdvisoryRequests"
+ * sheet and the operator's email as before. An operator reviews it and matches an expert by hand.
+ */
 export function AdvisoryRequestForm({ lang, dict, areas, advisor }: AdvisoryRequestFormProps) {
+  const [fileProblem, setFileProblem] = useState<FileProblem | null>(null);
+
+  function handleFiles(event: ChangeEvent<HTMLInputElement>) {
+    const problem = checkAdvisoryFiles([...(event.target.files ?? [])]);
+    setFileProblem(problem);
+    if (problem) event.target.value = "";
+  }
+
   const { status, handleSubmit } = useSubmission({
     kind: "advisory",
     lang,
@@ -30,6 +44,24 @@ export function AdvisoryRequestForm({ lang, dict, areas, advisor }: AdvisoryRequ
       preferredExpert: dict.preferredExpert,
       schedule: dict.schedule,
       request: dict.request,
+    },
+    prepare: async (data): Promise<Record<string, string>> => {
+      const files = data.getAll("attachments").filter((value): value is File => value instanceof File && value.size > 0);
+      if (checkAdvisoryFiles(files)) throw new Error("files");
+      const id = crypto.randomUUID();
+      const text = (key: string) => String(data.get(key) ?? "").trim();
+      const fields = Object.fromEntries(
+        ["name", "email", "company", "stage", "field", "preferredExpert", "schedule", "request"].map((key) => [key, text(key)])
+      );
+      try {
+        const attachments = await saveAdvisoryRequest({ id, lang, fields, files });
+        return { requestId: id, attachments: attachments.map((file) => file.name).join(", ") };
+      } catch (error) {
+        // Without files the request can still reach the sheet and the operator's email.
+        if (files.length > 0) throw error;
+        console.error("advisory request not recorded", error);
+        return {};
+      }
     },
   });
 
@@ -75,6 +107,22 @@ export function AdvisoryRequestForm({ lang, dict, areas, advisor }: AdvisoryRequ
       </Field>
       <Field label={dict.schedule} className="mt-5">
         <input name="schedule" type="text" className={fieldClass} />
+      </Field>
+      <Field label={dict.files} className="mt-5">
+        <input
+          name="attachments"
+          type="file"
+          multiple
+          accept={ADVISORY_FILE_ACCEPT}
+          onChange={handleFiles}
+          className="block w-full text-sm text-muted file:mr-4 file:rounded-md file:border-0 file:bg-navy-50 file:px-4 file:py-2 file:text-sm file:font-medium file:text-navy hover:file:bg-navy-100"
+        />
+        <span className="mt-1 block text-xs font-normal text-muted">{dict.filesHint.replace("{max}", String(MAX_ADVISORY_FILES))}</span>
+        {fileProblem ? (
+          <span role="alert" className="mt-1 block text-xs font-medium text-red-700">
+            {dict.fileProblems[fileProblem]}
+          </span>
+        ) : null}
       </Field>
 
       <SubmitRow status={status} messages={dict.status} />

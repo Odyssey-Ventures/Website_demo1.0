@@ -32,7 +32,7 @@ export default async function NewsPage({ params }: LangParams) {
       <SectionContainer>
         {viewer?.isStaff ? (
           <div className="mb-8 flex justify-end">
-            <Button href={localizedHref(lang, "/news/editor")}>{page.write}</Button>
+            <Button href={localizedHref(lang, "/admin/news/edit")}>{page.write}</Button>
           </div>
         ) : null}
         {!isSupabaseConfigured ? (
@@ -42,7 +42,14 @@ export default async function NewsPage({ params }: LangParams) {
         ) : (
           <ul className="divide-y divide-line border-y border-line">
             {posts.map((post) => (
-              <li key={post.id} className="py-8">
+              <li key={post.id} className="flex flex-col gap-6 py-8 sm:flex-row-reverse sm:items-start">
+                {post.cover_image_url ? (
+                  <Link href={localizedHref(lang, `/news/${post.slug}`)} className="shrink-0" tabIndex={-1} aria-hidden="true">
+                    {/* eslint-disable-next-line @next/next/no-img-element -- uploaded images live on Supabase Storage */}
+                    <img src={post.cover_image_url} alt="" className="aspect-[16/10] w-full rounded-lg object-cover sm:w-64" />
+                  </Link>
+                ) : null}
+                <div className="min-w-0 flex-1">
                 <p className="flex items-center gap-3 text-sm font-semibold text-navy-600">
                   {formatPostDate(post.created_at, lang)}
                   {!post.published ? <span className="rounded bg-amber-100 px-2 py-0.5 text-xs text-amber-900">{page.draft}</span> : null}
@@ -53,6 +60,7 @@ export default async function NewsPage({ params }: LangParams) {
                   </Link>
                 </h2>
                 {post.summary ? <p className="mt-2 leading-relaxed text-muted">{post.summary}</p> : null}
+                </div>
               </li>
             ))}
           </ul>
