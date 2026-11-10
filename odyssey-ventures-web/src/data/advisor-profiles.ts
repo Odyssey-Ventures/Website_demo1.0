@@ -360,6 +360,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     nameKo: "강민정",
     title: "Partner",
     org: "Rabbit Ventures",
+    logoDomain: "rabbitvc.com",
     linkedin: "https://www.linkedin.com/in/mjkang8/",
     areas: ["sales", "investment"],
     meeting: "online",
