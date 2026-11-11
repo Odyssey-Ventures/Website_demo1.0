@@ -421,9 +421,9 @@ export const advisorProfilesKo: Readonly<Record<string, AdvisorTranslation>> = {
   },
   "sungjun-maing": {
     title: "엔지니어",
-    specialties: "모빌리티, 전기차 품질 보증·엔지니어링",
-    bio: "맹성준은 Tesla 등에서 13년 넘게 프로젝트 관리와 제품 경험을 쌓은 기계 엔지니어입니다. 전기차 모빌리티 솔루션에 집중하는 DriveTech Odyssey를 설립했으며, 전기차를 더 저렴하게 만드는 방안을 주제로 업계 포럼에서 발표했습니다.",
-    career: ["DriveTech Odyssey 설립자", "Tesla 엔지니어"],
+    specialties: "모빌리티, 전기차 품질 보증·엔지니어링, 실리콘밸리 테크 인사이트",
+    bio: "맹성준은 Tesla 등에서 13년 넘게 프로젝트 관리와 제품 경험을 쌓은 기계 엔지니어입니다. 실리콘밸리 엔지니어의 시각으로 전기차, AI, 최신 테크를 다루는 유튜브 채널 Drive Tech Odyssey를 운영하고 있으며, 전기차를 더 저렴하게 만드는 방안을 주제로 업계 포럼에서 발표했습니다.",
+    career: ["유튜브 채널 Drive Tech Odyssey 운영", "Tesla 엔지니어"],
     education: ["연세대학교 기계공학"],
   },
   "yeonhee-doh": {
