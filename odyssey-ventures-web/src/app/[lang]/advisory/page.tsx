@@ -58,7 +58,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
         <SectionHeading title={page.processTitle} inverse>
           {page.processDescription}
         </SectionHeading>
-        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {page.process.map((step, index) => (
             <li key={step.title} className="border-t-2 border-brand-green pt-5">
               <p className="text-sm font-semibold tracking-widest text-brand-green">{String(index + 1).padStart(2, "0")}</p>

@@ -7,7 +7,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { aboutSections } from "@/config/navigation";
-import { experts } from "@/data/experts";
 import { team } from "@/data/team";
 import { alternatesFor, isLocale, type LangParams } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -23,13 +22,20 @@ export async function generateMetadata({ params }: LangParams): Promise<Metadata
   };
 }
 
-/** Company overview, history, experts and team. Content comes from the 2026 company profile. */
+/** CEO message and profile, company overview and history. Individual team members are no longer listed (Nov 2026 review). */
 export default async function AboutPage({ params }: LangParams) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const dict = getDictionary(lang);
   const page = dict.aboutPage;
   const titles = dict.nav.aboutSections;
+  const ceo = page.team["kevin-kim"];
+  const ceoMember = team.find((member) => member.id === "kevin-kim");
+  const ceoPhoto = ceoMember?.photo;
+  const ceoLinkedin = ceoMember?.linkedin;
+  // Until the CEO's message is supplied, previews show a labeled placeholder; production shows the profile only.
+  const hasMessage = page.ceo.message.length > 0;
+  const showPlaceholder = !hasMessage && process.env.VERCEL_ENV !== "production";
 
   return (
     <>
@@ -54,7 +60,68 @@ export default async function AboutPage({ params }: LangParams) {
         </Container>
       </div>
 
-      <SectionContainer id="overview" containerClassName="grid gap-12 lg:grid-cols-2 lg:gap-20">
+      <SectionContainer id="ceo" containerClassName="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <Reveal className="lg:col-span-7">
+          <SectionHeading eyebrow={page.ceo.eyebrow} title={titles.ceo} />
+          {hasMessage ? (
+            <blockquote className="mt-8 border-l-4 border-brand-blue pl-6">
+              {page.ceo.message.map((paragraph) => (
+                <p key={paragraph} className="mb-5 text-lg leading-relaxed text-navy/80 last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </blockquote>
+          ) : showPlaceholder ? (
+            <div className="mt-8 rounded-lg border border-dashed border-amber-300 bg-amber-50 p-6 text-amber-900">
+              <p className="text-sm font-semibold uppercase tracking-widest">{page.ceo.placeholderLabel}</p>
+              <p className="mt-2 leading-relaxed">{page.ceo.placeholder}</p>
+            </div>
+          ) : (
+            <p className="mt-8 text-lg leading-relaxed text-muted">{page.overview.lead}</p>
+          )}
+          <p className="mt-8 font-semibold text-navy">{ceo.name}</p>
+          <p className="text-muted">{ceo.title}</p>
+        </Reveal>
+        <Reveal delay={120} className="lg:col-span-5">
+          <figure className="overflow-hidden rounded-lg border border-line bg-white shadow-card">
+            {ceoPhoto ? (
+              <Image
+                src={ceoPhoto.src}
+                alt={ceo.name}
+                width={ceoPhoto.width}
+                height={ceoPhoto.height}
+                sizes="(min-width: 1024px) 420px, 100vw"
+                className="aspect-[4/5] w-full object-cover object-top"
+                priority
+              />
+            ) : null}
+            <figcaption className="p-6">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-blue">{page.ceo.profileTitle}</p>
+              <ul className="mt-4 space-y-2">
+                {ceo.credentials.map((line) => (
+                  <li key={line} className="flex gap-3 text-sm leading-relaxed text-muted">
+                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-green" />
+                    {line}
+                  </li>
+                ))}
+              </ul>
+              {ceoLinkedin ? (
+                <a
+                  href={ceoLinkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${ceo.name} ${page.linkedinLabel}`}
+                  className="mt-5 inline-flex w-fit items-center gap-2 text-sm font-medium text-brand-blue transition-colors duration-200 hover:text-brand-blue-dark"
+                >
+                  LinkedIn →
+                </a>
+              ) : null}
+            </figcaption>
+          </figure>
+        </Reveal>
+      </SectionContainer>
+
+      <SectionContainer id="overview" tone="mist" containerClassName="grid gap-12 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <SectionHeading title={titles.overview} />
           <dl className="mt-8 divide-y divide-line border-y border-line">
@@ -96,7 +163,7 @@ export default async function AboutPage({ params }: LangParams) {
         </Reveal>
       </SectionContainer>
 
-      <SectionContainer id="history" tone="mist">
+      <SectionContainer id="history">
         <Reveal>
           <SectionHeading title={titles.history} />
         </Reveal>
@@ -117,113 +184,6 @@ export default async function AboutPage({ params }: LangParams) {
         </ol>
       </SectionContainer>
 
-      <SectionContainer id="experts">
-        <Reveal>
-          <SectionHeading title={titles.experts}>{page.expertsDescription}</SectionHeading>
-        </Reveal>
-        <ul className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
-          {experts.map((expert) => (
-            <li key={expert.name} className="text-center">
-              <Image
-                src={expert.photo}
-                alt={expert.name}
-                width={304}
-                height={304}
-                sizes="(min-width: 640px) 160px, 40vw"
-                className="mx-auto aspect-square w-full max-w-40 rounded-full object-cover"
-              />
-              <p className="mt-4 text-lg font-semibold text-navy">{expert.name}</p>
-              <ul className="mx-auto mt-3 max-w-56 space-y-1.5 border-t border-line pt-3 text-left">
-                {page.experts[expert.id].credentials.map((line) => (
-                  <li key={line} className="flex gap-2 text-xs leading-relaxed text-muted sm:text-sm">
-                    <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-green" />
-                    {line}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={expert.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${expert.name} ${page.linkedinLabel}`}
-                className="mx-auto mt-4 flex w-full max-w-56 items-center gap-2 text-sm font-medium text-brand-blue transition-colors duration-200 hover:text-brand-blue-dark"
-              >
-                <LinkedInIcon />
-                LinkedIn
-              </a>
-            </li>
-          ))}
-        </ul>
-      </SectionContainer>
-
-      <SectionContainer id="team" className="border-t border-line">
-        <Reveal>
-          <SectionHeading title={titles.team}>{page.teamDescription}</SectionHeading>
-        </Reveal>
-        <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {team.map(({ id, photo, linkedin }) => {
-            const member = page.team[id];
-            return (
-              <li key={id} className="flex flex-col overflow-hidden rounded-lg border border-line bg-white shadow-card">
-                {photo ? (
-                  <Image
-                    src={photo.src}
-                    alt={member.name}
-                    width={photo.width}
-                    height={photo.height}
-                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                    className="aspect-[4/5] w-full object-cover object-top"
-                  />
-                ) : (
-                  <div aria-hidden="true" className="flex aspect-[4/5] w-full items-center justify-center bg-navy-50">
-                    <span className="text-5xl font-semibold tracking-tight text-navy/30">
-                      {member.name
-                        .split(" ")
-                        .map((part) => part[0])
-                        .join("")}
-                    </span>
-                  </div>
-                )}
-                <div className="flex flex-1 flex-col p-6">
-                  <span className="w-fit rounded bg-brand-blue-tint px-2 py-1 text-xs font-semibold tracking-widest text-brand-blue-dark">
-                    {member.badge}
-                  </span>
-                  <h3 className="mt-4 text-2xl font-semibold text-navy">{member.name}</h3>
-                  <p className="mt-1 font-medium text-muted">{member.title}</p>
-                  <ul className="mt-5 flex-1 space-y-2 border-t border-line pt-5">
-                    {member.credentials.map((line) => (
-                      <li key={line} className="flex gap-3 text-sm leading-relaxed text-muted">
-                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-green" />
-                        {line}
-                      </li>
-                    ))}
-                  </ul>
-                  {linkedin ? (
-                    <a
-                      href={linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} ${page.linkedinLabel}`}
-                      className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-medium text-brand-blue transition-colors duration-200 hover:text-brand-blue-dark"
-                    >
-                      <LinkedInIcon />
-                      LinkedIn
-                    </a>
-                  ) : null}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      </SectionContainer>
     </>
-  );
-}
-
-function LinkedInIcon() {
-  return (
-    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
-    </svg>
   );
 }

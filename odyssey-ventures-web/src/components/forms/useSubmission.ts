@@ -13,13 +13,18 @@ interface Options {
   emailSubject: (fields: Record<string, string>) => string;
   /** Field labels for the fallback email body, in display order. */
   labels: Record<string, string>;
+  /**
+   * Runs before the form is sent, e.g. to upload attachments. Returns extra fields to send.
+   * Throwing stops the submission and shows the error state.
+   */
+  prepare?: (data: FormData) => Promise<Record<string, string>>;
 }
 
 /**
  * Sends a form to /api/submit. If the site is not connected to the operations sheet yet (503),
  * it opens the visitor's email app with the same content, so no inquiry is lost.
  */
-export function useSubmission({ kind, lang, emailSubject, labels }: Options) {
+export function useSubmission({ kind, lang, emailSubject, labels, prepare }: Options) {
   const [status, setStatus] = useState<SubmissionStatus>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -28,10 +33,12 @@ export function useSubmission({ kind, lang, emailSubject, labels }: Options) {
     const data = new FormData(form);
     const website = String(data.get("website") ?? "");
     data.delete("website");
-    const fields = Object.fromEntries([...data.entries()].map(([key, value]) => [key, String(value)]));
+    // Files are uploaded by `prepare`, never sent as text.
+    const textFields = Object.fromEntries([...data.entries()].filter(([, value]) => typeof value === "string").map(([key, value]) => [key, String(value)]));
 
     setStatus("sending");
     try {
+      const fields = prepare && !website ? { ...textFields, ...(await prepare(data)) } : textFields;
       const response = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
