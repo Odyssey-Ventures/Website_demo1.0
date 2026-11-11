@@ -624,7 +624,7 @@ export const advisorProfiles: readonly AdvisorProfile[] = [
     slug: "will-glaser",
     name: "Will Glaser",
     title: "CEO (former)",
-    org: "WGC",
+    org: "Grabango",
     logo: "/images/advisors/will-glaser.webp",
     linkedin: "https://www.linkedin.com/in/willglaser/",
     areas: ["investment"],
