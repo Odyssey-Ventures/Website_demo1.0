@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AdvisorDirectory } from "@/components/advisory/AdvisorDirectory";
 import { advisorProfiles } from "@/data/advisor-profiles";
+import { localizeAdvisor } from "@/data/advisor-profiles-ko";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -27,7 +28,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
 
   return (
     <>
-      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="navy" />
+      <PageHero eyebrow={page.eyebrow} title={page.title} description={page.description} accent="navy" photo="coitTowerView" />
 
       <SectionContainer>
         <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -53,11 +54,11 @@ export default async function AdvisoryPage({ params }: LangParams) {
         </div>
       </SectionContainer>
 
-      <SectionContainer tone="navy">
+      <SectionContainer tone="navy" photo="skylineHill">
         <SectionHeading title={page.processTitle} inverse>
           {page.processDescription}
         </SectionHeading>
-        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {page.process.map((step, index) => (
             <li key={step.title} className="border-t-2 border-brand-green pt-5">
               <p className="text-sm font-semibold tracking-widest text-brand-green">{String(index + 1).padStart(2, "0")}</p>
@@ -80,7 +81,7 @@ export default async function AdvisoryPage({ params }: LangParams) {
           <AdvisorDirectory
             lang={lang}
             dict={dict.advisors}
-            advisors={advisorProfiles.map(({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }) => ({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }))}
+            advisors={advisorProfiles.map((advisor) => localizeAdvisor(advisor, lang)).map(({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }) => ({ slug, name, nameKo, title, org, logo, logoDomain, areas, specialties }))}
           />
         </div>
       </SectionContainer>

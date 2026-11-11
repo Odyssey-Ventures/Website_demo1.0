@@ -6,7 +6,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 
 type ContactFormDict = Dictionary["contact"]["form"];
 
-const interestKeys = ["consulting", "advisory", "academy", "accelerator", "membership", "other"] as const;
+const interestKeys = ["consulting", "advisory", "academy", "accelerator", "partnership", "membership", "other"] as const;
 export type InterestKey = (typeof interestKeys)[number];
 
 interface ContactFormProps {
@@ -16,7 +16,10 @@ interface ContactFormProps {
   defaultInterest?: InterestKey;
 }
 
-/** General inquiry form (Contact, Consulting, Accelerator, Membership). Saved to the "Inquiries" sheet. */
+/**
+ * General inquiry form (Contact, Consulting, Accelerator, Membership). Saved to the "Inquiries" sheet.
+ * The selected topic ("interest") decides who is emailed: see ROUTE_<INTEREST> in docs/apps-script/Code.gs.
+ */
 export function ContactForm({ dict, lang, defaultInterest = "other" }: ContactFormProps) {
   const { status, handleSubmit } = useSubmission({
     kind: "inquiry",

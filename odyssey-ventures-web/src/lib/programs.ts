@@ -6,6 +6,15 @@ import type { Program } from "@/types";
 /** How long a fetched sheet is reused before the site reads it again. */
 const REVALIDATE_SECONDS = 300;
 
+function httpsUrl(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+  try {
+    return new URL(value.trim()).protocol === "https:" ? value.trim() : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 function toProgram(row: Record<string, string>): Program | null {
   if (!row.id || !row.date || !row.title_ko) return null;
   if ((row.status ?? "").toLowerCase() !== "published") return null;
@@ -22,9 +31,12 @@ function toProgram(row: Record<string, string>): Program | null {
     instructor: row.instructor ?? "",
     format: row.format ?? "",
     capacity: row.capacity ?? "",
-    price: Number((row.price ?? "").replace(/[^0-9]/g, "")) || undefined,
-    paymentUrl: row.payment_url || undefined,
     registrationOpen: (row.registration_open ?? "").toUpperCase() !== "FALSE",
+    image: row.image_url || undefined,
+    instructorTitle: row.instructor_title || undefined,
+    price: row.price || undefined,
+    paymentUrl: httpsUrl(row.payment_url),
+    minParticipants: Number.parseInt(row.min_participants ?? "", 10) || undefined,
   };
 }
 
@@ -86,11 +98,6 @@ export function formatProgramDate(date: string, lang: Locale): string {
     weekday: "short",
     timeZone: "UTC",
   }).format(utc);
-}
-
-/** "20,000원" or "₩20,000". */
-export function formatProgramPrice(price: number, lang: Locale): string {
-  return lang === "ko" ? `${price.toLocaleString("ko-KR")}원` : `₩${price.toLocaleString("en-US")}`;
 }
 
 export function formatProgramTime(program: Program): string {

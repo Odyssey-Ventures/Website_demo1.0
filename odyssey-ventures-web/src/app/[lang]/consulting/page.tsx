@@ -1,7 +1,9 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Contact } from "@/components/home/Contact";
 import { Button } from "@/components/ui/Button";
+import { cityPhotos } from "@/config/photos";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionContainer } from "@/components/ui/SectionContainer";
@@ -30,6 +32,11 @@ export default async function ConsultingPage({ params }: LangParams) {
   return (
     <>
       <section className="focus-dark relative isolate overflow-hidden bg-navy-950 text-white">
+        <Image src={cityPhotos.skylineHill.src} alt="" fill priority sizes="100vw" className="-z-20 object-cover" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-navy-950/80 md:bg-transparent md:bg-gradient-to-r md:from-navy-950/95 md:via-navy-950/75 md:to-navy-950/35"
+        />
         <div
           aria-hidden="true"
           className="absolute -right-32 -top-40 -z-10 h-[30rem] w-[30rem] rounded-full bg-gradient-to-br from-brand-blue/50 to-transparent blur-3xl"
@@ -72,7 +79,7 @@ export default async function ConsultingPage({ params }: LangParams) {
         </ul>
       </SectionContainer>
 
-      <SectionContainer tone="navy">
+      <SectionContainer tone="navy" photo="goldenGate">
         <SectionHeading title={page.processTitle} inverse />
         <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {page.process.map((step, index) => (
